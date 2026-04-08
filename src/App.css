@@ -1,0 +1,244 @@
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 36px 20px 44px;
+}
+
+.hero-section {
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.hero-subtitle {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 1rem;
+}
+
+.search-panel {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  margin-bottom: 20px;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.suggestion-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 6px;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #dbe1ea;
+  background: #ffffff;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: #1e293b;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.suggestion-type-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.search-button {
+  border: 0;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  padding: 0 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.search-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+}
+
+.status-message {
+  margin: 0 0 18px;
+  color: #64748b;
+}
+
+.moves-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 16px;
+}
+
+.move-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.move-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+.move-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.move-name {
+  margin: 0;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.move-type-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.type-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  color: #1e40af;
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.type-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.move-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 12px;
+  color: #64748b;
+  font-size: 0.87rem;
+}
+
+.move-stats p {
+  margin: 0;
+}
+
+.move-stats span {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.move-description {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.move-description p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.move-origin {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 24px 14px 32px;
+  }
+
+  .search-panel {
+    flex-direction: column;
+  }
+
+  .search-button {
+    min-height: 44px;
+  }
+}
