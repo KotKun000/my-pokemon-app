@@ -22,7 +22,7 @@ function MoveTab() {
             type="text"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="พิมพ์ชื่อท่า เช่น thunderbolt หรือ fire"
+            placeholder="พิมพ์ชื่อท่า เช่น thunderbolt"
             className="search-input"
           />
         </div>
