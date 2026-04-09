@@ -43,7 +43,7 @@ function PokemonTab() {
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonLoading, setPokemonLoading] = useState(true);
   const [pokemonError, setPokemonError] = useState('');
-  const [selectedType, setSelectedType] = useState('');
+  const [selectedTypes, setSelectedTypes] = useState([]);
   const [pokemonPage, setPokemonPage] = useState(1);
   const [selectedPokemonName, setSelectedPokemonName] = useState(null);
   const closePokemonDetail = useCallback(() => setSelectedPokemonName(null), []);
@@ -119,21 +119,29 @@ function PokemonTab() {
     loadPokemon();
   }, []);
 
+  const toggleType = useCallback((type) => {
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
+  }, []);
+
   const filteredPokemon = useMemo(() => {
     const keyword = pokemonQuery.trim().toLowerCase();
     let data = pokemonData;
 
-    if (selectedType) {
-      data = data.filter((pokemon) => pokemon.types.includes(selectedType));
+    if (selectedTypes.length > 0) {
+      data = data.filter((pokemon) =>
+        selectedTypes.every((t) => pokemon.types.includes(t))
+      );
     }
 
     if (!keyword) return data;
     return data.filter((pokemon) => pokemon.name.toLowerCase().includes(keyword));
-  }, [pokemonData, pokemonQuery, selectedType]);
+  }, [pokemonData, pokemonQuery, selectedTypes]);
 
   useEffect(() => {
     setPokemonPage(1);
-  }, [pokemonQuery, selectedType, pokemonData.length]);
+  }, [pokemonQuery, selectedTypes, pokemonData.length]);
 
   const totalPokemonPages = Math.max(
     1,
@@ -181,23 +189,25 @@ function PokemonTab() {
       <section className="type-filter-bar">
         <button
           type="button"
-          className={`type-filter-btn ${selectedType === '' ? 'active' : ''}`}
-          onClick={() => setSelectedType('')}
+          className={`type-filter-btn ${selectedTypes.length === 0 ? 'active' : ''}`}
+          onClick={() => setSelectedTypes([])}
         >
           All
         </button>
-        {pokemonTypes.map((type) => (
+        {pokemonTypes.map((type) => {
+          const isActive = selectedTypes.includes(type);
+          return (
           <button
             key={type}
             type="button"
-            className={`type-filter-btn ${selectedType === type ? 'active' : ''}`}
+            className={`type-filter-btn ${isActive ? 'active' : ''}`}
             style={{
               borderColor: TYPE_COLORS[type] || '#94a3b8',
-              ...(selectedType === type && {
+              ...(isActive && {
                 boxShadow: `0 0 0 3px ${(TYPE_COLORS[type] || '#94a3b8')}33`,
               }),
             }}
-            onClick={() => setSelectedType(type)}
+            onClick={() => toggleType(type)}
             title={type}
           >
             <img
@@ -211,7 +221,8 @@ function PokemonTab() {
               }}
             />
           </button>
-        ))}
+          );
+        })}
       </section>
 
       {pokemonLoading && <p className="status-message">กำลังโหลดข้อมูลโปเกมอน...</p>}

@@ -727,6 +727,145 @@
   font-size: 0.9rem;
 }
 
+/* ── Evolution Chain ── */
+.pokemon-detail-evo {
+  grid-column: 1 / -1;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 16px;
+}
+
+.evo-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.evo-toggle-btn:hover {
+  background: #e2e8f0;
+}
+
+.evo-loading {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin: 10px 0 0;
+}
+
+.evo-chain {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.evo-stage-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.evo-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+.evo-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.evo-stage--branch {
+  gap: 10px;
+}
+
+.evo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  border: 3px solid transparent;
+  background: #ffffff;
+  min-width: 90px;
+  text-align: center;
+  transition: box-shadow 0.15s;
+}
+
+.evo-card--current {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.evo-card-image {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.evo-card-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: capitalize;
+  margin-top: 4px;
+}
+
+.evo-card-types {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.evo-card-type-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 999px;
+  padding: 2px;
+  border: 1.5px solid #94a3b8;
+}
+
+.evo-card-form-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  margin-bottom: 2px;
+}
+
+.evo-card-form-label--mega {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #fff;
+}
+
+.evo-card-form-label--gmax {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff;
+}
+
+.evo-card-trigger {
+  font-size: 0.68rem;
+  color: #64748b;
+  margin-top: 2px;
+  text-transform: capitalize;
+}
+
 @media (max-width: 720px) {
   .pokemon-detail-body {
     grid-template-columns: 1fr;

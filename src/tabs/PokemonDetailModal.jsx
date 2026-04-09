@@ -5,6 +5,138 @@ import ABILITY_TH from '../data/abilities_th';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 
 const abilityCache = {};
+const evoChainCache = {};
+
+/** แปลง chain node แบบ recursive เป็น array ของ stages
+ *  แต่ละ stage เป็น array ของ species (รองรับ branching เช่น Eevee) */
+function flattenChain(node) {
+  const stages = [];
+  const walk = (n, depth) => {
+    if (!stages[depth]) stages[depth] = [];
+    const detail = n.evolution_details?.[0] || {};
+    stages[depth].push({
+      name: n.species.name,
+      trigger: detail.trigger?.name || null,
+      minLevel: detail.min_level || null,
+      item: detail.item?.name || null,
+    });
+    for (const child of n.evolves_to) {
+      walk(child, depth + 1);
+    }
+  };
+  walk(node, 0);
+  return stages;
+}
+
+/** ดึงข้อมูล image & types ของโปเกมอน 1 ตัว */
+async function fetchPokeDetail(name) {
+  try {
+    const r = await fetch(`https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(name)}`);
+    if (!r.ok) return { name, image: '', types: [] };
+    const d = await r.json();
+    return {
+      name,
+      id: d.id,
+      image:
+        d.sprites.other?.['official-artwork']?.front_default ||
+        d.sprites.front_default ||
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${d.id}.png`,
+      types: d.types.sort((a, b) => a.slot - b.slot).map((t) => t.type.name),
+    };
+  } catch {
+    return { name, image: '', types: [] };
+  }
+}
+
+/** ดึง mega / gmax varieties ของ species หนึ่ง ผ่าน pokemon-species API */
+async function fetchSpecialForms(speciesName) {
+  try {
+    const res = await fetch(
+      `https://pokeapi.co/api/v2/pokemon-species/${encodeURIComponent(speciesName)}`
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    const forms = (data.varieties || [])
+      .filter((v) => !v.is_default)
+      .map((v) => v.pokemon.name)
+      .filter((n) => n.includes('-mega') || n.includes('-gmax'));
+    return forms;
+  } catch {
+    return [];
+  }
+}
+
+async function fetchEvolutionChain(pokemonName) {
+  if (evoChainCache[pokemonName]) return evoChainCache[pokemonName];
+  try {
+    const specRes = await fetch(
+      `https://pokeapi.co/api/v2/pokemon-species/${encodeURIComponent(pokemonName)}`
+    );
+    if (!specRes.ok) return [];
+    const specData = await specRes.json();
+    const chainUrl = specData.evolution_chain?.url;
+    if (!chainUrl) return [];
+
+    const chainRes = await fetch(chainUrl);
+    if (!chainRes.ok) return [];
+    const chainData = await chainRes.json();
+    const stages = flattenChain(chainData.chain);
+
+    // fetch image & types for each species in the chain
+    const allNames = stages.flat().map((s) => s.name);
+    const pokeDetails = await Promise.all(allNames.map(fetchPokeDetail));
+    const detailMap = {};
+    for (const p of pokeDetails) detailMap[p.name] = p;
+
+    const result = stages.map((stage) =>
+      stage.map((s) => ({ ...s, ...detailMap[s.name] }))
+    );
+
+    // ─── ค้นหาร่าง Mega / G-Max ของทุก species ใน chain ───
+    const formChecks = await Promise.all(
+      allNames.map(async (name) => {
+        const forms = await fetchSpecialForms(name);
+        return { baseName: name, forms };
+      })
+    );
+
+    const megaEntries = [];
+    const gmaxEntries = [];
+
+    for (const { baseName, forms } of formChecks) {
+      if (forms.length === 0) continue;
+      const formDetails = await Promise.all(forms.map(fetchPokeDetail));
+      for (const fd of formDetails) {
+        const label = fd.name.includes('-mega')
+          ? `Mega ${fd.name.includes('-mega-x') ? 'X' : fd.name.includes('-mega-y') ? 'Y' : ''}`
+          : 'G-Max';
+        const entry = {
+          ...fd,
+          trigger: fd.name.includes('-mega') ? 'mega-evolution' : 'gigantamax',
+          minLevel: null,
+          item: null,
+          formLabel: label.trim(),
+          baseName,
+        };
+        if (fd.name.includes('-mega')) {
+          megaEntries.push(entry);
+        } else {
+          gmaxEntries.push(entry);
+        }
+      }
+    }
+
+    const specialForms = [...megaEntries, ...gmaxEntries];
+    if (specialForms.length > 0) {
+      result.push(specialForms);
+    }
+
+    evoChainCache[pokemonName] = result;
+    return result;
+  } catch {
+    return [];
+  }
+}
 
 async function fetchAbilityDetail(name) {
   if (abilityCache[name]) return abilityCache[name];
@@ -67,6 +199,9 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [detail, setDetail] = useState(null);
   const [defensiveRows, setDefensiveRows] = useState([]);
   const [abilityDetails, setAbilityDetails] = useState([]);
+  const [evoChain, setEvoChain] = useState([]);
+  const [showEvo, setShowEvo] = useState(false);
+  const [evoLoading, setEvoLoading] = useState(false);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -280,6 +415,91 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                 </ul>
               </section>
             </div>
+
+            <section className="pokemon-detail-evo">
+              <button
+                type="button"
+                className="evo-toggle-btn"
+                onClick={async () => {
+                  const next = !showEvo;
+                  setShowEvo(next);
+                  if (next && evoChain.length === 0) {
+                    setEvoLoading(true);
+                    const chain = await fetchEvolutionChain(detail.name);
+                    setEvoChain(chain);
+                    setEvoLoading(false);
+                  }
+                }}
+              >
+                <span>{showEvo ? '▼' : '▶'} ร่างวิวัฒนาการ (Evolution)</span>
+              </button>
+              {evoLoading && <p className="evo-loading">กำลังโหลดข้อมูลวิวัฒนาการ...</p>}
+              {showEvo && !evoLoading && evoChain.length <= 1 && (
+                <p className="evo-loading">โปเกมอนตัวนี้ไม่มีร่างวิวัฒนาการ</p>
+              )}
+              {showEvo && !evoLoading && evoChain.length > 1 && (
+                <div className="evo-chain">
+                  {evoChain.map((stage, si) => (
+                    <div key={si} className="evo-stage-group">
+                      {si > 0 && (
+                        <div className="evo-arrow">
+                          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#94a3b8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                          </svg>
+                        </div>
+                      )}
+                      <div className={`evo-stage ${stage.length > 1 ? 'evo-stage--branch' : ''}`}>
+                        {stage.map((evo) => (
+                          <div
+                            key={evo.name}
+                            className={`evo-card ${evo.name === detail.name ? 'evo-card--current' : ''}`}
+                            style={getTypeBorderStyle(evo.types || [])}
+                          >
+                            {evo.image && (
+                              <img
+                                src={evo.image}
+                                alt={evo.name}
+                                className="evo-card-image"
+                                loading="lazy"
+                              />
+                            )}
+                            {evo.formLabel && (
+                              <span className={`evo-card-form-label ${evo.trigger === 'gigantamax' ? 'evo-card-form-label--gmax' : 'evo-card-form-label--mega'}`}>
+                                {evo.formLabel}
+                              </span>
+                            )}
+                            <span className="evo-card-name">
+                              {evo.formLabel ? evo.baseName : evo.name}
+                            </span>
+                            <div className="evo-card-types">
+                              {(evo.types || []).map((t) => (
+                                <img
+                                  key={t}
+                                  src={getTypeIconUrl(t)}
+                                  alt={t}
+                                  className="evo-card-type-icon"
+                                  style={{ borderColor: TYPE_COLORS[t] || '#94a3b8' }}
+                                  loading="lazy"
+                                  onError={(event) => {
+                                    event.currentTarget.onerror = null;
+                                    event.currentTarget.src = getFallbackTypeIconUrl(t);
+                                  }}
+                                />
+                              ))}
+                            </div>
+                            {!evo.formLabel && evo.trigger && (
+                              <span className="evo-card-trigger">
+                                {evo.minLevel ? `Lv.${evo.minLevel}` : evo.item ? evo.item.replace(/-/g, ' ') : evo.trigger.replace(/-/g, ' ')}
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
 
             <section className="pokemon-detail-defense">
               <h4>ความต้านทานต่อธาตุ (รับความเสียหาย)</h4>
