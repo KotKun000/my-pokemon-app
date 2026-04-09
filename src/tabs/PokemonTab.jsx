@@ -3,10 +3,38 @@ import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 import PokemonDetailModal from './PokemonDetailModal';
 
 const POKEMON_PER_PAGE = 35;
+const CACHE_KEY = 'pokemon_cache';
+const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 ชั่วโมง
 
 const extractPokemonId = (url) => {
   const parts = url.split('/').filter(Boolean);
   return Number(parts[parts.length - 1]);
+};
+
+/** อ่าน cache จาก localStorage — คืน array ถ้ายังไม่หมดอายุ, null ถ้าหมดอายุหรือไม่มี */
+const readCache = () => {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const { timestamp, data } = JSON.parse(raw);
+    if (Date.now() - timestamp > CACHE_TTL_MS) {
+      localStorage.removeItem(CACHE_KEY);
+      return null;
+    }
+    return data;
+  } catch {
+    localStorage.removeItem(CACHE_KEY);
+    return null;
+  }
+};
+
+/** เขียน cache ลง localStorage */
+const writeCache = (data) => {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
+  } catch {
+    // localStorage เต็ม — ไม่ต้องทำอะไร
+  }
 };
 
 function PokemonTab() {
@@ -25,6 +53,16 @@ function PokemonTab() {
         setPokemonLoading(true);
         setPokemonError('');
 
+        // ─── ตรวจ cache ก่อน ───
+        const cached = readCache();
+        if (cached && cached.length > 0) {
+          console.log(`✅ ใช้ข้อมูลจาก cache (${cached.length} ตัว)`);
+          setPokemonData(cached);
+          return;
+        }
+
+        // ─── ไม่มี cache → ดึงจาก API ───
+        console.log('📡 ไม่พบ cache — กำลังดึงข้อมูลจาก PokeAPI...');
         const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=2000');
         if (!response.ok) {
           throw new Error('โหลดข้อมูล Pokemon ไม่สำเร็จ');
@@ -64,6 +102,10 @@ function PokemonTab() {
 
           detailedPokemon.push(...chunkDetails.filter(Boolean));
         }
+
+        // ─── บันทึก cache ───
+        writeCache(detailedPokemon);
+        console.log(`💾 บันทึก cache แล้ว (${detailedPokemon.length} ตัว)`);
 
         setPokemonData(detailedPokemon);
       } catch (error) {
