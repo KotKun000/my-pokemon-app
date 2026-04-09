@@ -163,8 +163,7 @@
 }
 
 .type-filter-btn.active {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .filter-type-icon {
@@ -187,19 +186,16 @@
   font: inherit;
   cursor: pointer;
   background: #ffffff;
-  border: 3px solid #fb7185;
+  border: 3px solid transparent;
   border-radius: 14px;
   padding: 12px;
   text-align: center;
-  box-shadow: inset 0 0 0 2px #8b5cf6;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .pokemon-card:hover {
   transform: translateY(-2px);
-  box-shadow:
-    inset 0 0 0 2px #8b5cf6,
-    0 8px 20px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
 }
 
 .pokemon-card:focus-visible {
@@ -222,8 +218,9 @@
   object-fit: contain;
   background: #ffffff;
   border-radius: 999px;
-  padding: 2px;
-  border: 1px solid #e2e8f0;
+  padding: 3px;
+  border: 2px solid rgba(15, 23, 42, 0.15);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.18);
 }
 
 .pokemon-image {
@@ -422,7 +419,7 @@
   margin: 24px auto;
   background: #ffffff;
   border-radius: 16px;
-  border: 1px solid #e2e8f0;
+  border: 3px solid transparent;
   box-shadow: 0 24px 48px rgba(15, 23, 42, 0.2);
   max-height: calc(100vh - 48px);
   overflow-y: auto;
@@ -478,7 +475,7 @@
 
 .pokemon-detail-art {
   position: relative;
-  border: 2px solid #e2e8f0;
+  border: 3px solid transparent;
   border-radius: 14px;
   padding: 12px;
   background: #f8fafc;
@@ -499,8 +496,9 @@
   object-fit: contain;
   background: #ffffff;
   border-radius: 999px;
-  padding: 2px;
-  border: 1px solid #e2e8f0;
+  padding: 3px;
+  border: 2px solid rgba(15, 23, 42, 0.15);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.18);
 }
 
 .pokemon-detail-image {
@@ -543,6 +541,92 @@
 .pokemon-detail-hidden {
   color: #94a3b8;
   font-size: 0.85rem;
+}
+
+/* Ability cards */
+.ability-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ability-card {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: box-shadow 0.2s ease;
+}
+
+.ability-card:hover {
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.ability-card--hidden {
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+
+.ability-card--hidden:hover {
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.12);
+}
+
+.ability-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ability-card-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: #2563eb;
+}
+
+.ability-card--hidden .ability-card-icon {
+  color: #7c3aed;
+}
+
+.ability-card-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #1e293b;
+  text-transform: capitalize;
+}
+
+.ability-card-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #7c3aed;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.ability-card-gen {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-left: auto;
+}
+
+.ability-card-name-en {
+  margin: 2px 0 0;
+  font-size: 0.76rem;
+  color: #94a3b8;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+.ability-card-desc {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #475569;
 }
 
 .pokemon-detail-total {

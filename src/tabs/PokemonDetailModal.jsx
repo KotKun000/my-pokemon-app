@@ -1,6 +1,46 @@
 import { useEffect, useState } from 'react';
 import { getDefensiveChart } from '../utils/pokemonTypeDefense';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
+import ABILITY_TH from '../data/abilities_th';
+import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
+
+const abilityCache = {};
+
+async function fetchAbilityDetail(name) {
+  if (abilityCache[name]) return abilityCache[name];
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/ability/${encodeURIComponent(name)}`);
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    const en = data.effect_entries.find((e) => e.language.name === 'en');
+    const flavor = data.flavor_text_entries.find((e) => e.language.name === 'en');
+    const result = {
+      name: data.name,
+      shortEffect: en?.short_effect || flavor?.flavor_text?.replace(/[\n\f]/g, ' ') || '',
+      generation: data.generation?.name?.replace('generation-', '').toUpperCase() || '',
+    };
+    abilityCache[name] = result;
+    return result;
+  } catch {
+    return { name, shortEffect: '', generation: '' };
+  }
+}
+
+function AbilityIcon({ hidden }) {
+  if (hidden) {
+    return (
+      <svg className="ability-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    );
+  }
+  return (
+    <svg className="ability-card-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z" />
+    </svg>
+  );
+}
 
 const STAT_ORDER = [
   { key: 'hp', label: 'HP' },
@@ -26,6 +66,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [error, setError] = useState('');
   const [detail, setDetail] = useState(null);
   const [defensiveRows, setDefensiveRows] = useState([]);
+  const [abilityDetails, setAbilityDetails] = useState([]);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -75,6 +116,13 @@ function PokemonDetailModal({ pokemonName, onClose }) {
           data.sprites.front_default ||
           `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
 
+        const abilityPromises = abilities.map((a) =>
+          fetchAbilityDetail(a.name).then((d) => ({ ...d, isHidden: a.isHidden }))
+        );
+        const abDetails = await Promise.all(abilityPromises);
+        if (cancelled) return;
+        setAbilityDetails(abDetails);
+
         setDetail({
           id: data.id,
           name: data.name,
@@ -121,6 +169,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
         aria-modal="true"
         aria-labelledby="pokemon-detail-title"
         onClick={(e) => e.stopPropagation()}
+        style={detail ? getTypeBorderStyle(detail.types) : {}}
       >
         <div className="pokemon-detail-header">
           <h2 id="pokemon-detail-title" className="pokemon-detail-title">
@@ -145,7 +194,10 @@ function PokemonDetailModal({ pokemonName, onClose }) {
 
         {!loading && !error && detail && (
           <div className="pokemon-detail-body">
-            <div className="pokemon-detail-art">
+            <div
+              className="pokemon-detail-art"
+              style={getTypeBorderStyle(detail.types, '#f8fafc')}
+            >
               <div className="pokemon-detail-type-stack">
                 {detail.types.map((type) => (
                   <img
@@ -153,6 +205,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                     src={getTypeIconUrl(type)}
                     alt={type}
                     className="pokemon-detail-type-icon"
+                    style={{ borderColor: TYPE_COLORS[type] || '#94a3b8' }}
                     loading="lazy"
                     onError={(event) => {
                       event.currentTarget.onerror = null;
@@ -178,16 +231,28 @@ function PokemonDetailModal({ pokemonName, onClose }) {
 
               <section className="pokemon-detail-section">
                 <h4>ความสามารถ (Abilities)</h4>
-                <ul className="pokemon-detail-abilities">
-                  {detail.abilities.map((a) => (
-                    <li key={a.name}>
-                      {a.name}
-                      {a.isHidden ? (
-                        <span className="pokemon-detail-hidden"> (Hidden)</span>
-                      ) : null}
-                    </li>
+                <div className="ability-card-list">
+                  {(abilityDetails.length ? abilityDetails : detail.abilities).map((a) => (
+                    <div
+                      key={a.name}
+                      className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}
+                    >
+                      <div className="ability-card-header">
+                        <AbilityIcon hidden={a.isHidden} />
+                        <span className="ability-card-name">{a.name}</span>
+                        {a.isHidden && <span className="ability-card-badge">Hidden</span>}
+                        {a.generation && (
+                          <span className="ability-card-gen">Gen {a.generation}</span>
+                        )}
+                      </div>
+                      {(ABILITY_TH[a.name]?.desc || a.shortEffect) && (
+                        <p className="ability-card-desc">
+                          {ABILITY_TH[a.name]?.desc || a.shortEffect}
+                        </p>
+                      )}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </section>
 
               <section className="pokemon-detail-section">
