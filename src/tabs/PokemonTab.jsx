@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
+import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 import PokemonDetailModal from './PokemonDetailModal';
 
 const POKEMON_PER_PAGE = 35;
@@ -190,6 +191,12 @@ function PokemonTab() {
             key={type}
             type="button"
             className={`type-filter-btn ${selectedType === type ? 'active' : ''}`}
+            style={{
+              borderColor: TYPE_COLORS[type] || '#94a3b8',
+              ...(selectedType === type && {
+                boxShadow: `0 0 0 3px ${(TYPE_COLORS[type] || '#94a3b8')}33`,
+              }),
+            }}
             onClick={() => setSelectedType(type)}
             title={type}
           >
@@ -218,6 +225,7 @@ function PokemonTab() {
                 key={pokemon.id}
                 type="button"
                 className="pokemon-card"
+                style={getTypeBorderStyle(pokemon.types)}
                 onClick={() => setSelectedPokemonName(pokemon.name)}
               >
                 <div className="pokemon-type-stack">
@@ -227,6 +235,7 @@ function PokemonTab() {
                       src={getTypeIconUrl(type)}
                       alt={type}
                       className="pokemon-type-icon"
+                      style={{ borderColor: TYPE_COLORS[type] || '#94a3b8' }}
                       loading="lazy"
                       onError={(event) => {
                         event.currentTarget.onerror = null;
