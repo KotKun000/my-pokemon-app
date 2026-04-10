@@ -196,15 +196,18 @@ function PokemonTab() {
         </button>
         {pokemonTypes.map((type) => {
           const isActive = selectedTypes.includes(type);
+          const typeColor = TYPE_COLORS[type] || '#94a3b8';
           return (
           <button
             key={type}
             type="button"
             className={`type-filter-btn ${isActive ? 'active' : ''}`}
             style={{
-              borderColor: TYPE_COLORS[type] || '#94a3b8',
+              borderColor: typeColor,
               ...(isActive && {
-                boxShadow: `0 0 0 3px ${(TYPE_COLORS[type] || '#94a3b8')}33`,
+                backgroundColor: `${typeColor}22`,
+                boxShadow: `0 0 0 3px ${typeColor}80, 0 6px 14px ${typeColor}4d`,
+                transform: 'translateY(-1px)',
               }),
             }}
             onClick={() => toggleType(type)}

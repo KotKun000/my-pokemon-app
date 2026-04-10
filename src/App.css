@@ -160,10 +160,18 @@
   color: #334155;
   font-size: 0.7rem;
   font-weight: 700;
+  transition: transform 0.12s ease, box-shadow 0.16s ease, background-color 0.16s ease;
 }
 
 .type-filter-btn.active {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  border-width: 3px;
+  background: #1e40af;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.24), 0 6px 12px rgba(15, 23, 42, 0.2);
+}
+
+.type-filter-btn:hover {
+  transform: translateY(-1px);
 }
 
 .filter-type-icon {
@@ -270,6 +278,108 @@
 .page-btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.item-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.item-card-top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.item-sprite-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.item-sprite {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.item-sprite-fallback {
+  color: #94a3b8;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.item-heading {
+  min-width: 0;
+}
+
+.item-id {
+  margin: 0 0 2px;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.item-name {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.02rem;
+  text-transform: capitalize;
+}
+
+.item-category {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 0.82rem;
+  text-transform: capitalize;
+}
+
+.item-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 12px;
+  color: #64748b;
+  font-size: 0.87rem;
+}
+
+.item-stats p {
+  margin: 0;
+}
+
+.item-stats span {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.item-effect {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.item-effect p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.5;
+  font-size: 0.92rem;
 }
 
 .moves-grid {
@@ -794,16 +904,27 @@
 }
 
 .evo-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 34px 10px 10px;
   border-radius: 12px;
   border: 3px solid transparent;
   background: #ffffff;
   min-width: 90px;
   text-align: center;
-  transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.evo-card:hover {
+  transform: translateY(-2px);
+}
+
+.evo-card:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
 }
 
 .evo-card--current {
@@ -825,9 +946,12 @@
 }
 
 .evo-card-types {
+  position: absolute;
+  right: 8px;
+  top: 8px;
   display: flex;
+  flex-direction: column;
   gap: 4px;
-  margin-top: 4px;
 }
 
 .evo-card-type-icon {
@@ -840,6 +964,47 @@
   border: 1.5px solid #94a3b8;
 }
 
+.evo-card-trigger-badge {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: calc(100% - 42px);
+  border: 1px solid #dbe1ea;
+  background: #f8fafc;
+  color: #475569;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.evo-card-trigger-badge:not(:disabled) {
+  cursor: pointer;
+}
+
+.evo-card-trigger-badge:disabled {
+  opacity: 1;
+}
+
+.evo-card-trigger-item-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evo-card-trigger-item-icon img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
 .evo-card-form-label {
   font-size: 0.65rem;
   font-weight: 800;
@@ -847,6 +1012,14 @@
   border-radius: 6px;
   letter-spacing: 0.03em;
   margin-bottom: 2px;
+}
+
+.evo-card-form-label--topleft {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  margin-bottom: 0;
+  z-index: 1;
 }
 
 .evo-card-form-label--mega {
@@ -859,11 +1032,147 @@
   color: #fff;
 }
 
-.evo-card-trigger {
-  font-size: 0.68rem;
-  color: #64748b;
-  margin-top: 2px;
+.evo-item-detail {
+  margin-top: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 14px;
+}
+
+.evo-item-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.evo-item-detail-header h5 {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #0f172a;
+}
+
+.evo-item-detail-close {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.evo-item-detail-body {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.evo-item-sprite-wrap {
+  flex: 0 0 auto;
+}
+
+.evo-item-detail-content {
+  min-width: 0;
+}
+
+.evo-item-name {
+  margin-bottom: 4px;
+}
+
+.evo-item-stats {
+  margin-bottom: 10px;
+}
+
+/* ── Evolution Condition (How to Evolve) ── */
+.pokemon-detail-evo-condition {
+  margin-bottom: 4px;
+}
+
+.evo-condition-card {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.evo-condition-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.evo-condition-item-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #d1fae5;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.evo-condition-item-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.evo-condition-text {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #065f46;
   text-transform: capitalize;
+}
+
+.evo-condition-level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.evo-condition-trigger-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.evo-condition-form-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.evo-condition-form-badge--mega {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #fff;
+}
+
+.evo-condition-form-badge--gmax {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #fff;
 }
 
 @media (max-width: 720px) {
@@ -874,6 +1183,10 @@
   .pokemon-detail-art {
     max-width: 240px;
     margin: 0 auto;
+  }
+
+  .evo-item-detail-body {
+    flex-direction: column;
   }
 }
 
