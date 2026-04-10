@@ -6,6 +6,8 @@ import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 
 const abilityCache = {};
 const evoChainCache = {};
+const itemCache = {};
+const ITEMS_CACHE_KEY = 'poke_items_cache_v1';
 
 /** แปลง chain node แบบ recursive เป็น array ของ stages
  *  แต่ละ stage เป็น array ของ species (รองรับ branching เช่น Eevee) */
@@ -69,8 +71,22 @@ async function fetchSpecialForms(speciesName) {
 async function fetchEvolutionChain(pokemonName) {
   if (evoChainCache[pokemonName]) return evoChainCache[pokemonName];
   try {
+    // ใช้ pokemon endpoint ก่อน เพื่อย้อนหา species หลักให้รองรับร่างพิเศษ (mega/gmax)
+    const pokeRes = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(pokemonName)}`
+    );
+    if (!pokeRes.ok) return [];
+    const pokeData = await pokeRes.json();
+    const speciesName = pokeData.species?.name || pokemonName;
+
+    // cache ทั้งชื่อร่างและชื่อ species หลัก
+    if (evoChainCache[speciesName]) {
+      evoChainCache[pokemonName] = evoChainCache[speciesName];
+      return evoChainCache[speciesName];
+    }
+
     const specRes = await fetch(
-      `https://pokeapi.co/api/v2/pokemon-species/${encodeURIComponent(pokemonName)}`
+      `https://pokeapi.co/api/v2/pokemon-species/${encodeURIComponent(speciesName)}`
     );
     if (!specRes.ok) return [];
     const specData = await specRes.json();
@@ -131,6 +147,7 @@ async function fetchEvolutionChain(pokemonName) {
       result.push(specialForms);
     }
 
+    evoChainCache[speciesName] = result;
     evoChainCache[pokemonName] = result;
     return result;
   } catch {
@@ -193,7 +210,76 @@ function formatMult(m) {
   return String(m);
 }
 
+function formatEvolutionTrigger(evo) {
+  if (evo.minLevel) return `Lv.${evo.minLevel}`;
+  if (evo.item) return evo.item.replace(/-/g, ' ');
+  if (evo.trigger) return evo.trigger.replace(/-/g, ' ');
+  return '';
+}
+
+function readItemFromLocalCache(name) {
+  try {
+    const raw = localStorage.getItem(ITEMS_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    const items = Array.isArray(parsed?.items) ? parsed.items : [];
+    return items.find((item) => item.name === name) || null;
+  } catch {
+    return null;
+  }
+}
+
+async function fetchItemDetail(name) {
+  if (!name) return null;
+  if (itemCache[name]) return itemCache[name];
+
+  const cachedItem = readItemFromLocalCache(name);
+  if (cachedItem) {
+    itemCache[name] = cachedItem;
+    return cachedItem;
+  }
+
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/item/${encodeURIComponent(name)}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const detail = {
+      id: data.id,
+      name: data.name,
+      sprite: data.sprites?.default || '',
+      category: data.category?.name || 'unknown',
+      cost: data.cost ?? 0,
+      flingPower: data.fling_power ?? 0,
+      effect:
+        data.effect_entries.find((entry) => entry.language.name === 'en')?.short_effect ||
+        'No effect description.',
+    };
+    itemCache[name] = detail;
+    return detail;
+  } catch {
+    return null;
+  }
+}
+
+/** ค้นหาเงื่อนไขการวิวัฒนาการสำหรับโปเกมอนที่กำลังดูอยู่ */
+function findEvolutionTriggerForPokemon(name, evoChain) {
+  if (!evoChain || evoChain.length === 0) return null;
+  for (const stage of evoChain) {
+    for (const evo of stage) {
+      // ตรวจชื่อ species หรือชื่อร่างพิเศษ
+      if (evo.name === name) {
+        // ถ้ามี trigger แสดงว่ามีเงื่อนไข
+        if (evo.trigger || evo.minLevel || evo.item || evo.formLabel) {
+          return evo;
+        }
+      }
+    }
+  }
+  return null;
+}
+
 function PokemonDetailModal({ pokemonName, onClose }) {
+  const [currentPokemonName, setCurrentPokemonName] = useState(pokemonName);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [detail, setDetail] = useState(null);
@@ -202,6 +288,18 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [evoChain, setEvoChain] = useState([]);
   const [showEvo, setShowEvo] = useState(false);
   const [evoLoading, setEvoLoading] = useState(false);
+  const [selectedEvoItem, setSelectedEvoItem] = useState(null);
+  const [selectedEvoItemDetail, setSelectedEvoItemDetail] = useState(null);
+  const [evoTriggerForCurrent, setEvoTriggerForCurrent] = useState(null);
+  const [evoTriggerItemDetail, setEvoTriggerItemDetail] = useState(null);
+
+  useEffect(() => {
+    setCurrentPokemonName(pokemonName);
+    setSelectedEvoItem(null);
+    setShowEvo(false);
+    setEvoTriggerForCurrent(null);
+    setEvoTriggerItemDetail(null);
+  }, [pokemonName]);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -212,7 +310,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   }, [onClose]);
 
   useEffect(() => {
-    if (!pokemonName) return undefined;
+    if (!currentPokemonName) return undefined;
 
     let cancelled = false;
 
@@ -224,7 +322,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
         setDefensiveRows([]);
 
         const res = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(pokemonName)}`
+          `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(currentPokemonName)}`
         );
         if (!res.ok) throw new Error('โหลดข้อมูลโปเกมอนไม่สำเร็จ');
         const data = await res.json();
@@ -283,10 +381,57 @@ function PokemonDetailModal({ pokemonName, onClose }) {
     };
 
     load();
+
+    // ดึงเงื่อนไขวิวัฒนาการสำหรับโปเกมอนตัวที่กำลังดู
+    const loadEvoTrigger = async () => {
+      try {
+        const chain = await fetchEvolutionChain(currentPokemonName);
+        if (!cancelled) {
+          setEvoChain(chain);
+          const trigger = findEvolutionTriggerForPokemon(currentPokemonName, chain);
+          setEvoTriggerForCurrent(trigger);
+          // ถ้ามี item ให้ดึงรายละเอียด
+          if (trigger?.item) {
+            const itemDetail = await fetchItemDetail(trigger.item);
+            if (!cancelled) setEvoTriggerItemDetail(itemDetail);
+          } else {
+            setEvoTriggerItemDetail(null);
+          }
+        }
+      } catch {
+        if (!cancelled) {
+          setEvoTriggerForCurrent(null);
+          setEvoTriggerItemDetail(null);
+        }
+      }
+    };
+    loadEvoTrigger();
+
     return () => {
       cancelled = true;
     };
-  }, [pokemonName]);
+  }, [currentPokemonName]);
+
+  useEffect(() => {
+    if (!selectedEvoItem) {
+      setSelectedEvoItemDetail(null);
+      return;
+    }
+
+    let cancelled = false;
+
+    const loadItem = async () => {
+      const itemDetail = await fetchItemDetail(selectedEvoItem);
+      if (!cancelled) {
+        setSelectedEvoItemDetail(itemDetail);
+      }
+    };
+
+    loadItem();
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedEvoItem]);
 
   const totalStats =
     detail &&
@@ -363,6 +508,53 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                 {(detail.heightDm / 10).toFixed(1)} m · น้ำหนัก{' '}
                 {(detail.weightHg / 10).toFixed(1)} kg
               </p>
+
+              {/* ── เงื่อนไขการวิวัฒนาการ (แสดงเหนือ Abilities) ── */}
+              {evoTriggerForCurrent && (
+                <section className="pokemon-detail-section pokemon-detail-evo-condition">
+                  <h4>วิธีวิวัฒนาการ (How to Evolve)</h4>
+                  <div className="evo-condition-card">
+                    {evoTriggerForCurrent.formLabel ? (
+                      /* Mega / G-Max */
+                      <div className="evo-condition-content">
+                        <span className={`evo-condition-form-badge ${evoTriggerForCurrent.trigger === 'gigantamax' ? 'evo-condition-form-badge--gmax' : 'evo-condition-form-badge--mega'}`}>
+                          {evoTriggerForCurrent.formLabel}
+                        </span>
+                        <span className="evo-condition-text">
+                          {evoTriggerForCurrent.trigger === 'gigantamax' ? 'Gigantamax Factor' : 'Mega Evolution'}
+                        </span>
+                      </div>
+                    ) : evoTriggerForCurrent.item ? (
+                      /* Stone / Item */
+                      <div className="evo-condition-content">
+                        <div className="evo-condition-item-icon">
+                          <img
+                            src={evoTriggerItemDetail?.sprite || `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${evoTriggerForCurrent.item}.png`}
+                            alt={evoTriggerForCurrent.item}
+                            loading="lazy"
+                          />
+                        </div>
+                        <span className="evo-condition-text">
+                          {evoTriggerForCurrent.item.replace(/-/g, ' ')}
+                        </span>
+                      </div>
+                    ) : evoTriggerForCurrent.minLevel ? (
+                      /* Level up */
+                      <div className="evo-condition-content">
+                        <span className="evo-condition-level-badge">Lv.{evoTriggerForCurrent.minLevel}</span>
+                        <span className="evo-condition-text">Level Up</span>
+                      </div>
+                    ) : evoTriggerForCurrent.trigger ? (
+                      /* Other trigger (trade, friendship, etc.) */
+                      <div className="evo-condition-content">
+                        <span className="evo-condition-trigger-badge">
+                          {evoTriggerForCurrent.trigger.replace(/-/g, ' ')}
+                        </span>
+                      </div>
+                    ) : null}
+                  </div>
+                </section>
+              )}
 
               <section className="pokemon-detail-section">
                 <h4>ความสามารถ (Abilities)</h4>
@@ -454,7 +646,50 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                             key={evo.name}
                             className={`evo-card ${evo.name === detail.name ? 'evo-card--current' : ''}`}
                             style={getTypeBorderStyle(evo.types || [])}
+                            role="button"
+                            tabIndex={0}
+                            onClick={() => {
+                              setSelectedEvoItem(null);
+                              setCurrentPokemonName(evo.name);
+                            }}
+                            onKeyDown={(event) => {
+                              if (event.key === 'Enter' || event.key === ' ') {
+                                event.preventDefault();
+                                setSelectedEvoItem(null);
+                                setCurrentPokemonName(evo.name);
+                              }
+                            }}
                           >
+                            {!evo.formLabel && formatEvolutionTrigger(evo) && (
+                              <button
+                                type="button"
+                                className="evo-card-trigger-badge"
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  if (evo.item) {
+                                    setSelectedEvoItem(evo.item);
+                                  }
+                                }}
+                                disabled={!evo.item}
+                                title={evo.item ? 'ดูรายละเอียดไอเทมวิวัฒนาการ' : undefined}
+                              >
+                                {evo.item && (
+                                  <span className="evo-card-trigger-item-icon">
+                                    <img
+                                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${evo.item}.png`}
+                                      alt={evo.item}
+                                      loading="lazy"
+                                    />
+                                  </span>
+                                )}
+                                <span>{formatEvolutionTrigger(evo)}</span>
+                              </button>
+                            )}
+                            {evo.formLabel && (
+                              <span className={`evo-card-form-label evo-card-form-label--topleft ${evo.trigger === 'gigantamax' ? 'evo-card-form-label--gmax' : 'evo-card-form-label--mega'}`}>
+                                {evo.formLabel}
+                              </span>
+                            )}
                             {evo.image && (
                               <img
                                 src={evo.image}
@@ -462,11 +697,6 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                                 className="evo-card-image"
                                 loading="lazy"
                               />
-                            )}
-                            {evo.formLabel && (
-                              <span className={`evo-card-form-label ${evo.trigger === 'gigantamax' ? 'evo-card-form-label--gmax' : 'evo-card-form-label--mega'}`}>
-                                {evo.formLabel}
-                              </span>
                             )}
                             <span className="evo-card-name">
                               {evo.formLabel ? evo.baseName : evo.name}
@@ -487,16 +717,59 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                                 />
                               ))}
                             </div>
-                            {!evo.formLabel && evo.trigger && (
-                              <span className="evo-card-trigger">
-                                {evo.minLevel ? `Lv.${evo.minLevel}` : evo.item ? evo.item.replace(/-/g, ' ') : evo.trigger.replace(/-/g, ' ')}
-                              </span>
-                            )}
                           </div>
                         ))}
                       </div>
                     </div>
                   ))}
+                </div>
+              )}
+              {showEvo && selectedEvoItem && (
+                <div className="evo-item-detail">
+                  <div className="evo-item-detail-header">
+                    <h5>รายละเอียดไอเทมวิวัฒนาการ</h5>
+                    <button
+                      type="button"
+                      className="evo-item-detail-close"
+                      onClick={() => setSelectedEvoItem(null)}
+                    >
+                      ปิด
+                    </button>
+                  </div>
+                  {selectedEvoItemDetail ? (
+                    <div className="evo-item-detail-body">
+                      <div className="item-sprite-wrap evo-item-sprite-wrap">
+                        {selectedEvoItemDetail.sprite ? (
+                          <img
+                            src={selectedEvoItemDetail.sprite}
+                            alt={selectedEvoItemDetail.name}
+                            className="item-sprite"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="item-sprite item-sprite-fallback">?</div>
+                        )}
+                      </div>
+                      <div className="evo-item-detail-content">
+                        <p className="item-id">#{selectedEvoItemDetail.id}</p>
+                        <h6 className="item-name evo-item-name">{selectedEvoItemDetail.name}</h6>
+                        <p className="item-category">{selectedEvoItemDetail.category}</p>
+                        <div className="item-stats evo-item-stats">
+                          <p>
+                            ราคา: <span>{selectedEvoItemDetail.cost}</span>
+                          </p>
+                          <p>
+                            Fling: <span>{selectedEvoItemDetail.flingPower}</span>
+                          </p>
+                        </div>
+                        <div className="item-effect">
+                          <p>{selectedEvoItemDetail.effect}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="evo-loading">กำลังโหลดรายละเอียดไอเทม...</p>
+                  )}
                 </div>
               )}
             </section>
