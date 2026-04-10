@@ -841,6 +841,8 @@
     "category": "evolution"
   },
   {
+    "id": 303,
+    "name": "razor-claw",
     "effect": "Held: When the holder attacks with most damaging moves, provides an extra 11.7% (30/256) chance for the target to flinch.\nHeld by Gligar: Evolves the holder into Gliscor when it levels up.",
     "effect_th": "เมื่อผู้ถือโจมตีด้วยท่าสร้างความเสียหาย มีโอกาสเพิ่ม 11.7% (30/256) ที่เป้าหมายจะสะดุ้ง (Flinch)\nถือโดยกลายการ์ (Gligar): ช่วยให้พัฒนาเป็นกลิสคอร์ (Gliscor) เมื่อเลเวลอัพ",
     "category": "held-items"
