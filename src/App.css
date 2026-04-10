@@ -282,8 +282,9 @@
 }
 
 .move-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--move-card-bg, #ffffff);
+  border: 1px solid var(--move-card-border, #e2e8f0);
+  border-top: 4px solid var(--move-card-accent, #fb7185);
   border-radius: 16px;
   padding: 16px;
   box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
@@ -338,6 +339,34 @@
   background: #dbeafe;
   border: 1px solid #93c5fd;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.damage-class-badge {
+  box-shadow: none;
+}
+
+.damage-class-physical {
+  color: #9a3412;
+  background: #ffedd5;
+  border-color: #fdba74;
+}
+
+.damage-class-special {
+  color: #1d4ed8;
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.damage-class-status {
+  color: #166534;
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.damage-class-unknown {
+  color: #475569;
+  background: #e2e8f0;
+  border-color: #cbd5e1;
 }
 
 .type-icon {
