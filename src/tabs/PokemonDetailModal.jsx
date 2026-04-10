@@ -433,9 +433,32 @@ function PokemonDetailModal({ pokemonName, onClose }) {
     };
   }, [selectedEvoItem]);
 
+  const [statLevel, setStatLevel] = useState(50);
+
   const totalStats =
     detail &&
     STAT_ORDER.reduce((sum, { key }) => sum + (detail.statsMap[key] ?? 0), 0);
+
+  const calcHP = (base, level, iv, ev) =>
+    Math.floor(((2 * base + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
+
+  const calcStat = (base, level, iv, ev, nature) =>
+    Math.floor(
+      (Math.floor(((2 * base + iv + Math.floor(ev / 4)) * level) / 100) + 5) * nature
+    );
+
+  const getStatRange = (key, base, level) => {
+    if (key === 'hp') {
+      return {
+        min: calcHP(base, level, 0, 0),
+        max: calcHP(base, level, 31, 252),
+      };
+    }
+    return {
+      min: calcStat(base, level, 0, 0, 0.9),
+      max: calcStat(base, level, 31, 252, 1.1),
+    };
+  };
 
   return (
     <div
@@ -584,27 +607,55 @@ function PokemonDetailModal({ pokemonName, onClose }) {
 
               <section className="pokemon-detail-section">
                 <h4>สเตตส์ฐาน (Base stats)</h4>
-                <p className="pokemon-detail-total">
-                  รวม: <strong>{totalStats}</strong>
-                </p>
+                <div className="stat-col-headers">
+                  <span />
+                  <span>Base</span>
+                  <span />
+                  <span>Min</span>
+                  <span>Max</span>
+                </div>
                 <ul className="pokemon-detail-stats">
                   {STAT_ORDER.map(({ key, label }) => {
                     const value = detail.statsMap[key] ?? 0;
-                    const pct = Math.min(100, Math.round((value / 255) * 100));
+                    const { min, max } = getStatRange(key, value, statLevel);
+                    const ceiling = key === 'hp'
+                      ? calcHP(255, 100, 31, 252)
+                      : calcStat(255, 100, 31, 252, 1.1);
+                    const pct = Math.min(100, Math.round((max / ceiling) * 100));
                     return (
                       <li key={key} className="pokemon-detail-stat-row">
                         <span className="pokemon-detail-stat-label">{label}</span>
+                        <span className="pokemon-detail-stat-num">{value}</span>
                         <div className="pokemon-detail-stat-bar-wrap">
                           <div
                             className="pokemon-detail-stat-bar"
                             style={{ width: `${pct}%` }}
                           />
                         </div>
-                        <span className="pokemon-detail-stat-num">{value}</span>
+                        <span className="pokemon-detail-stat-minmax">{min}</span>
+                        <span className="pokemon-detail-stat-minmax">{max}</span>
                       </li>
                     );
                   })}
                 </ul>
+                <div className="stat-total-row">
+                  <span className="pokemon-detail-stat-label">Total</span>
+                  <span className="pokemon-detail-stat-num">{totalStats}</span>
+                </div>
+                <div className="stat-level-control">
+                  <label className="stat-level-label" htmlFor="stat-level-slider">
+                    Lv.<strong>{statLevel}</strong>
+                  </label>
+                  <input
+                    id="stat-level-slider"
+                    type="range"
+                    min="1"
+                    max="100"
+                    value={statLevel}
+                    className="stat-level-slider"
+                    onChange={(e) => setStatLevel(Number(e.target.value))}
+                  />
+                </div>
               </section>
             </div>
 

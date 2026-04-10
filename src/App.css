@@ -824,7 +824,7 @@
 
 .pokemon-detail-stat-row {
   display: grid;
-  grid-template-columns: 72px 1fr 36px;
+  grid-template-columns: 72px 36px 1fr 40px 40px;
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
@@ -846,12 +846,89 @@
   height: 100%;
   background: linear-gradient(90deg, #22c55e, #16a34a);
   border-radius: 999px;
+  transition: width 0.3s ease;
 }
 
 .pokemon-detail-stat-num {
   text-align: right;
   font-weight: 800;
   color: #0f172a;
+}
+
+.pokemon-detail-stat-minmax {
+  text-align: right;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.stat-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stat-section-header h4 {
+  margin: 0;
+}
+
+.stat-level-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.stat-level-label {
+  font-size: 0.82rem;
+  color: #475569;
+  white-space: nowrap;
+  min-width: 48px;
+}
+
+.stat-level-slider {
+  flex: 1;
+  min-width: 0;
+  accent-color: #3b82f6;
+  cursor: pointer;
+  height: 6px;
+}
+
+.stat-col-headers {
+  display: grid;
+  grid-template-columns: 72px 36px 1fr 40px 40px;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.stat-col-headers span:nth-child(1),
+.stat-col-headers span:nth-child(3) {
+  visibility: hidden;
+}
+
+.stat-col-headers span:nth-child(4),
+.stat-col-headers span:nth-child(5) {
+  text-align: right;
+}
+
+.stat-total-row {
+  display: grid;
+  grid-template-columns: 72px 36px 1fr 40px 40px;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.88rem;
 }
 
 .pokemon-detail-defense {
