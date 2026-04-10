@@ -2,7 +2,16 @@ import { useMemo, useState } from 'react';
 import movesData from '../data/moves_th.json';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
-const MOVE_PER_PAGE = 12;
+const getDamageClassIconUrl = (damageClass) => {
+  const iconMap = {
+    physical: '/src/assets/Move Class Icon/move-physical.png',
+    special: '/src/assets/Move Class Icon/move-special.png',
+    status: '/src/assets/Move Class Icon/move-status.png',
+  };
+  return iconMap[damageClass] || iconMap.status;
+};
+
+const MOVE_PER_PAGE = 16;
 const TYPE_CARD_STYLES = {
   normal: {
     '--move-card-bg': 'linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)',
@@ -111,6 +120,7 @@ const getDamageClassBadgeClass = (damageClass) => {
 function MoveTab() {
   const [query, setQuery] = useState('');
   const [selectedType, setSelectedType] = useState('');
+  const [selectedDamageClass, setSelectedDamageClass] = useState('');
   const [movePage, setMovePage] = useState(1);
 
   const filteredMoves = useMemo(() => {
@@ -121,10 +131,14 @@ function MoveTab() {
       data = data.filter((move) => move.type === selectedType);
     }
 
+    if (selectedDamageClass) {
+      data = data.filter((move) => move.damage_class === selectedDamageClass);
+    }
+
     if (!keyword) return data;
 
     return data.filter((move) => move.name.toLowerCase().includes(keyword));
-  }, [query, selectedType]);
+  }, [query, selectedType, selectedDamageClass]);
 
   const moveTypes = useMemo(() => {
     const typeSet = new Set();
@@ -135,6 +149,8 @@ function MoveTab() {
     }
     return Array.from(typeSet).sort();
   }, []);
+
+  const damageClasses = ['physical', 'special', 'status'];
 
   const totalMovePages = Math.max(1, Math.ceil(filteredMoves.length / MOVE_PER_PAGE));
 
@@ -208,6 +224,38 @@ function MoveTab() {
         ))}
       </section>
 
+      <section className="damage-class-filter-bar">
+        <button
+          type="button"
+          className={`damage-class-filter-btn ${selectedDamageClass === '' ? 'active' : ''}`}
+          onClick={() => {
+            setSelectedDamageClass('');
+            setMovePage(1);
+          }}
+        >
+          All
+        </button>
+        {damageClasses.map((dc) => (
+          <button
+            key={dc}
+            type="button"
+            className={`damage-class-filter-btn ${selectedDamageClass === dc ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedDamageClass(dc);
+              setMovePage(1);
+            }}
+            title={dc}
+          >
+            <img
+              src={getDamageClassIconUrl(dc)}
+              alt={dc}
+              className="filter-damage-class-icon"
+              loading="lazy"
+            />
+          </button>
+        ))}
+      </section>
+
       {filteredMoves.length === 0 && (
         <p className="status-message">ไม่พบท่าที่ตรงกับคำค้น `{query}`</p>
       )}
@@ -237,7 +285,12 @@ function MoveTab() {
                   {move.type}
                 </span>
                 <span className={getDamageClassBadgeClass(move.damage_class)}>
-                  {move.damage_class}
+                  <img
+                    src={getDamageClassIconUrl(move.damage_class)}
+                    alt={move.damage_class}
+                    className="damage-class-icon"
+                    loading="lazy"
+                  />
                 </span>
               </div>
             </header>
