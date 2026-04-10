@@ -175,6 +175,413 @@
     "category": "medicine"
   },
   {
+    "id": 136,
+    "name": "figy-berry",
+    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/8 its max HP.  If the holder dislikes spicy flavors (i.e., has a nature that lowers Attack), it will also become confused.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/2 หรือน้อยกว่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู HP 1/8 ของ HP สูงสุดโดยอัตโนมัติ  หากผู้ถือไม่ชอบรสเผ็ด (คือมี Nature ที่ลด Attack) จะติดสภาวะสับสน (Confusion) ด้วย",
+    "category": "picky-healing"
+  },
+  {
+    "id": 137,
+    "name": "wiki-berry",
+    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/8 its max HP.  If the holder dislikes dry flavors (i.e., has a nature that lowers Special Attack), it will also become confused.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/2 หรือน้อยกว่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู HP 1/8 ของ HP สูงสุดโดยอัตโนมัติ  หากผู้ถือไม่ชอบรสฝาด (คือมี Nature ที่ลด Special Attack) จะติดสภาวะสับสน (Confusion) ด้วย",
+    "category": "picky-healing"
+  },
+  {
+    "id": 138,
+    "name": "mago-berry",
+    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/8 its max HP.  If the holder dislikes sweet flavors (i.e., has a nature that lowers Speed), it will also become confused.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/2 หรือน้อยกว่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู HP 1/8 ของ HP สูงสุดโดยอัตโนมัติ  หากผู้ถือไม่ชอบรสหวาน (คือมี Nature ที่ลด Speed) จะติดสภาวะสับสน (Confusion) ด้วย",
+    "category": "picky-healing"
+  },
+  {
+    "id": 139,
+    "name": "aguav-berry",
+    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/8 its max HP.  If the holder dislikes bitter flavors (i.e., has a nature that lowers Special Defense), it will also become confused.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/2 หรือน้อยกว่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู HP 1/8 ของ HP สูงสุดโดยอัตโนมัติ  หากผู้ถือไม่ชอบรสขม (คือมี Nature ที่ลด Special Defense) จะติดสภาวะสับสน (Confusion) ด้วย",
+    "category": "picky-healing"
+  },
+  {
+    "id": 140,
+    "name": "iapapa-berry",
+    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/8 its max HP.  If the holder dislikes sour flavors (i.e., has a nature that lowers Defense), it will also become confused.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/2 หรือน้อยกว่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู HP 1/8 ของ HP สูงสุดโดยอัตโนมัติ  หากผู้ถือไม่ชอบรสเปรี้ยว (คือมี Nature ที่ลด Defense) จะติดสภาวะสับสน (Confusion) ด้วย",
+    "category": "picky-healing"
+  },
+  {
+    "id": 141,
+    "name": "razz-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 142,
+    "name": "bluk-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 143,
+    "name": "nanab-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 144,
+    "name": "wepear-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 145,
+    "name": "pinap-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 146,
+    "name": "pomeg-berry",
+    "effect": "Used on a party Pokémon\n:   Increases happiness by 10/5/2.  Lowers HP effort by 10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม\n:   เพิ่มความรู้สึก (Happiness) 10/5/2 ลด EV ของ HP ลง 10",
+    "category": "effort-drop"
+  },
+  {
+    "id": 147,
+    "name": "kelpsy-berry",
+    "effect": "Used on a party Pokémon\n:   Increases happiness by 10/5/2.  Lowers Attack effort by 10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม\n:   เพิ่มความรู้สึก (Happiness) 10/5/2 ลด EV ของ Attack ลง 10",
+    "category": "effort-drop"
+  },
+  {
+    "id": 148,
+    "name": "qualot-berry",
+    "effect": "Used on a party Pokémon\n:   Increases happiness by 10/5/2.  Lowers Defense effort by 10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม\n:   เพิ่มความรู้สึก (Happiness) 10/5/2 ลด EV ของ Defense ลง 10",
+    "category": "effort-drop"
+  },
+  {
+    "id": 149,
+    "name": "hondew-berry",
+    "effect": "Used on a party Pokémon\n:   Increases happiness by 10/5/2.  Lowers Special Attack effort by 10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม\n:   เพิ่มความรู้สึก (Happiness) 10/5/2 ลด EV ของ Special Attack ลง 10",
+    "category": "effort-drop"
+  },
+  {
+    "id": 150,
+    "name": "grepa-berry",
+    "effect": "Used on a party Pokémon\n:   Increases happiness by 10/5/2.  Lowers Special Defense effort by 10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม\n:   เพิ่มความรู้สึก (Happiness) 10/5/2 ลด EV ของ Special Defense ลง 10",
+    "category": "effort-drop"
+  },
+  {
+    "id": 151,
+    "name": "tamato-berry",
+    "effect": "Used on a party Pokémon\n:   Increases happiness by 10/5/2.  Lowers Speed effort by 10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม\n:   เพิ่มความรู้สึก (Happiness) 10/5/2 ลด EV ของ Speed ลง 10",
+    "category": "effort-drop"
+  },
+  {
+    "id": 152,
+    "name": "cornn-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 153,
+    "name": "magost-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 154,
+    "name": "rabuta-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 155,
+    "name": "nomel-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 156,
+    "name": "spelon-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 157,
+    "name": "pamtre-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 158,
+    "name": "watmel-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 159,
+    "name": "durin-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 160,
+    "name": "belue-berry",
+    "effect": "No effect; only useful for planting and cooking.",
+    "effect_th": "ไม่มีเอฟเฟกต์; มีประโยชน์เฉพาะการปลูกและการทำอาหาร",
+    "category": "baking-only"
+  },
+  {
+    "id": 161,
+    "name": "occa-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective fire-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุไฟ (Fire-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 162,
+    "name": "passho-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective water-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุน้ำ (Water-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 163,
+    "name": "wacan-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective electric-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุไฟฟ้า (Electric-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 164,
+    "name": "rindo-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective grass-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุหญ้า (Grass-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 165,
+    "name": "yache-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective ice-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุน้ำแข็ง (Ice-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 166,
+    "name": "chople-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective fighting-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุต่อสู้ (Fighting-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 167,
+    "name": "kebia-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective poison-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุพิษ (Poison-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 168,
+    "name": "shuca-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective ground-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุดิน (Ground-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 169,
+    "name": "coba-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective flying-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุบิน (Flying-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 170,
+    "name": "payapa-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective psychic-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุจิต (Psychic-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 171,
+    "name": "tanga-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective bug-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุแมลง (Bug-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 172,
+    "name": "charti-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective rock-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุหิน (Rock-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 173,
+    "name": "kasib-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective ghost-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุผี (Ghost-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 174,
+    "name": "haban-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective dragon-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุมังกร (Dragon-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 175,
+    "name": "colbur-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective dark-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุมืด (Dark-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 176,
+    "name": "babiri-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take super-effective steel-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุเหล็ก (Steel-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 177,
+    "name": "chilan-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder would take normal-type damage, it consumes this item to halve the amount of damage taken.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุปกติ (Normal-type) จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
+    "category": "type-protection"
+  },
+  {
+    "id": 178,
+    "name": "liechi-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Attack by one stage.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Attack ขึ้น 1 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 179,
+    "name": "ganlon-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Defense by one stage.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Defense ขึ้น 1 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 180,
+    "name": "salac-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Speed by one stage.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Speed ขึ้น 1 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 181,
+    "name": "petaya-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Special Attack by one stage.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Special Attack ขึ้น 1 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 182,
+    "name": "apicot-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Special Defense by one stage.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Special Defense ขึ้น 1 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 183,
+    "name": "lansat-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its critical hit chance by one stage.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่มโอกาสคริติคอลฮิต (Critical Hit) ขึ้น 1 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 184,
+    "name": "starf-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise a random stat by two stages.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่มสถิติสุ่มขึ้น 2 ระดับโดยอัตโนมัติ",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 185,
+    "name": "enigma-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder takes super-effective damage, it consumes this item to restore 1/4 its max HP.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือได้รับความเสียหายแบบ Super Effective จะกินไอเท็มนี้เพื่อฟื้นฟู HP 1/4 ของ HP สูงสุดโดยอัตโนมัติ",
+    "category": "other"
+  },
+  {
+    "id": 186,
+    "name": "micle-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item, and its next used move has 1.2× its normal accuracy.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้โดยอัตโนมัติ และท่าที่ใช้ครั้งถัดไปจะมีความแม่นยำ (Accuracy) เพิ่มเป็น 1.2×",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 187,
+    "name": "custap-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item.  On the following turn, the holder will act first among moves with the same priority, regardless of Speed.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้โดยอัตโนมัติ ในเทิร์นถัดไป ผู้ถือจะออนท่าก่อนในกลุ่มท่าที่มี Priority เท่ากัน โดยไม่สนความเร็ว",
+    "category": "in-a-pinch"
+  },
+  {
+    "id": 188,
+    "name": "jaboca-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder takes physical damage, it consumes this item to damage the attacking Pokémon for 1/8 its max HP.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือได้รับความเสียหายกายภาพ จะกินไอเท็มนี้เพื่อสร้างความเสียหายให้โปเกมอนที่โจมตีเป็น 1/8 ของ HP สูงสุดโดยอัตโนมัติ",
+    "category": "other"
+  },
+  {
+    "id": 189,
+    "name": "rowap-berry",
+    "name_th": "",
+    "effect": "Held in battle\n:   When the holder takes special damage, it consumes this item to damage the attacking Pokémon for 1/8 its max HP.",
+    "effect_th": "ถือในการต่อสู้\n:   เมื่อผู้ถือได้รับความเสียหายพิเศษ จะกินไอเท็มนี้เพื่อสร้างความเสียหายให้โปเกมอนที่โจมตีเป็น 1/8 ของ HP สูงสุดโดยอัตโนมัติ",
+    "category": "other"
+  },
+  {
     "id": 190,
     "name": "bright-powder",
     "effect": "Held in battle\n:   Moves targeting the holder have 0.9× chance to hit.",

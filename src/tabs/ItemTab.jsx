@@ -110,9 +110,7 @@ function ItemTab() {
                     </div>
                   </div>
                   <div className="item-heading">
-                    <p className="item-id">#{item.id}</p>
                     <h3 className="item-name">{item.name}</h3>
-                    <p className="item-category">{item.category}</p>
                     {item.hasThaiTranslation && (
                       <span className="th-badge">คำอธิบาย</span>
                     )}

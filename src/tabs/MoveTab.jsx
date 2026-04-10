@@ -3,10 +3,11 @@ import movesData from '../data/moves_th.json';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
 const getDamageClassIconUrl = (damageClass) => {
+  const base = import.meta.env.BASE_URL || '/';
   const iconMap = {
-    physical: '/src/assets/Move Class Icon/move-physical.png',
-    special: '/src/assets/Move Class Icon/move-special.png',
-    status: '/src/assets/Move Class Icon/move-status.png',
+    physical: `${base}MoveClassIcon/move-physical.png`,
+    special: `${base}MoveClassIcon/move-special.png`,
+    status: `${base}MoveClassIcon/move-status.png`,
   };
   return iconMap[damageClass] || iconMap.status;
 };
@@ -14,101 +15,101 @@ const getDamageClassIconUrl = (damageClass) => {
 const MOVE_PER_PAGE = 16;
 const TYPE_CARD_STYLES = {
   normal: {
-    '--move-card-bg': 'linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%)',
-    '--move-card-border': '#cbd5e1',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#64748b',
     '--move-card-accent': '#64748b',
   },
   fire: {
-    '--move-card-bg': 'linear-gradient(180deg, #fff7ed 0%, #ffedd5 100%)',
-    '--move-card-border': '#fdba74',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#ea580c',
     '--move-card-accent': '#ea580c',
   },
   water: {
-    '--move-card-bg': 'linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%)',
-    '--move-card-border': '#93c5fd',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#2563eb',
     '--move-card-accent': '#2563eb',
   },
   electric: {
-    '--move-card-bg': 'linear-gradient(180deg, #fefce8 0%, #fef08a 100%)',
-    '--move-card-border': '#facc15',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#ca8a04',
     '--move-card-accent': '#ca8a04',
   },
   grass: {
-    '--move-card-bg': 'linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%)',
-    '--move-card-border': '#86efac',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#16a34a',
     '--move-card-accent': '#16a34a',
   },
   ice: {
-    '--move-card-bg': 'linear-gradient(180deg, #ecfeff 0%, #cffafe 100%)',
-    '--move-card-border': '#67e8f9',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#0891b2',
     '--move-card-accent': '#0891b2',
   },
   fighting: {
-    '--move-card-bg': 'linear-gradient(180deg, #fff1f2 0%, #ffe4e6 100%)',
-    '--move-card-border': '#fda4af',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#dc2626',
     '--move-card-accent': '#dc2626',
   },
   poison: {
-    '--move-card-bg': 'linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%)',
-    '--move-card-border': '#d8b4fe',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#9333ea',
     '--move-card-accent': '#9333ea',
   },
   ground: {
-    '--move-card-bg': 'linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%)',
-    '--move-card-border': '#fcd34d',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#b45309',
     '--move-card-accent': '#b45309',
   },
   flying: {
-    '--move-card-bg': 'linear-gradient(180deg, #f5f3ff 0%, #ede9fe 100%)',
-    '--move-card-border': '#c4b5fd',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#7c3aed',
     '--move-card-accent': '#7c3aed',
   },
   psychic: {
-    '--move-card-bg': 'linear-gradient(180deg, #fdf2f8 0%, #fce7f3 100%)',
-    '--move-card-border': '#f9a8d4',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#db2777',
     '--move-card-accent': '#db2777',
   },
   bug: {
-    '--move-card-bg': 'linear-gradient(180deg, #f7fee7 0%, #ecfccb 100%)',
-    '--move-card-border': '#bef264',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#65a30d',
     '--move-card-accent': '#65a30d',
   },
   rock: {
-    '--move-card-bg': 'linear-gradient(180deg, #fafaf9 0%, #e7e5e4 100%)',
-    '--move-card-border': '#d6d3d1',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#78716c',
     '--move-card-accent': '#78716c',
   },
   ghost: {
-    '--move-card-bg': 'linear-gradient(180deg, #f5f3ff 0%, #ddd6fe 100%)',
-    '--move-card-border': '#a78bfa',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#6d28d9',
     '--move-card-accent': '#6d28d9',
   },
   dragon: {
-    '--move-card-bg': 'linear-gradient(180deg, #eef2ff 0%, #e0e7ff 100%)',
-    '--move-card-border': '#a5b4fc',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#4338ca',
     '--move-card-accent': '#4338ca',
   },
   dark: {
-    '--move-card-bg': 'linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)',
-    '--move-card-border': '#94a3b8',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#334155',
     '--move-card-accent': '#334155',
   },
   steel: {
-    '--move-card-bg': 'linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)',
-    '--move-card-border': '#94a3b8',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#475569',
     '--move-card-accent': '#475569',
   },
   fairy: {
-    '--move-card-bg': 'linear-gradient(180deg, #fdf2f8 0%, #fbcfe8 100%)',
-    '--move-card-border': '#f9a8d4',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#c026d3',
     '--move-card-accent': '#c026d3',
   },
 };
 
 const getMoveCardStyle = (type) =>
   TYPE_CARD_STYLES[type] || {
-    '--move-card-bg': 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)',
-    '--move-card-border': '#cbd5e1',
+    '--move-card-bg': '#f8fafc',
+    '--move-card-border': '#475569',
     '--move-card-accent': '#475569',
   };
 
