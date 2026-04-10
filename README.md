@@ -96,7 +96,7 @@ npm run dev
 my-pokemon-app/
 ├── .github/workflows/    # GitHub Actions (auto deploy)
 │   └── deploy.yml
-├── public/               # Static files
+├── public/               # Static file
 ├── scripts/
 │   └── fetch-moves.js    # สคริปต์ดึงข้อมูล Move จาก PokeAPI
 ├── src/
