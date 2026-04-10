@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { getDefensiveChart } from '../utils/pokemonTypeDefense';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 import ABILITY_TH from '../data/abilities_th';
+import movesData from '../data/moves_th.json';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
+
+const MOVES_INDEX = Object.fromEntries(movesData.map((m) => [m.name, m]));
 
 const abilityCache = {};
 const evoChainCache = {};
@@ -292,11 +295,15 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [selectedEvoItemDetail, setSelectedEvoItemDetail] = useState(null);
   const [evoTriggerForCurrent, setEvoTriggerForCurrent] = useState(null);
   const [evoTriggerItemDetail, setEvoTriggerItemDetail] = useState(null);
+  const [showMoves, setShowMoves] = useState(false);
+  const [selectedMove, setSelectedMove] = useState(null);
 
   useEffect(() => {
     setCurrentPokemonName(pokemonName);
     setSelectedEvoItem(null);
     setShowEvo(false);
+    setShowMoves(false);
+    setSelectedMove(null);
     setEvoTriggerForCurrent(null);
     setEvoTriggerItemDetail(null);
   }, [pokemonName]);
@@ -349,6 +356,11 @@ function PokemonDetailModal({ pokemonName, onClose }) {
           data.sprites.front_default ||
           `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
 
+        const moves = data.moves.map((m) => ({
+          name: m.move.name,
+          learnMethods: [...new Set(m.version_group_details.map((v) => v.move_learn_method.name))],
+        }));
+
         const abilityPromises = abilities.map((a) =>
           fetchAbilityDetail(a.name).then((d) => ({ ...d, isHidden: a.isHidden }))
         );
@@ -365,6 +377,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
           statsMap,
           abilities,
           image,
+          moves,
         });
 
         const chart = await getDefensiveChart(types);
@@ -821,6 +834,110 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                   ) : (
                     <p className="evo-loading">กำลังโหลดรายละเอียดไอเทม...</p>
                   )}
+                </div>
+              )}
+            </section>
+
+            <section className="pokemon-detail-moves">
+              <button
+                type="button"
+                className="evo-toggle-btn"
+                onClick={() => setShowMoves((prev) => !prev)}
+              >
+                <span>{showMoves ? '▼' : '▶'} ท่าที่เรียนรู้ได้ (Moves)</span>
+                {detail.moves && (
+                  <span className="moves-count-badge">{detail.moves.length}</span>
+                )}
+              </button>
+
+              {showMoves && !selectedMove && (
+                <ul className="moves-list">
+                  {(detail.moves || []).map((m) => {
+                    const info = MOVES_INDEX[m.name];
+                    return (
+                      <li
+                        key={m.name}
+                        className={`move-list-item ${selectedMove?.name === m.name ? 'move-list-item--active' : ''}`}
+                        onClick={() => setSelectedMove(selectedMove?.name === m.name ? null : (info ? { ...info, learnMethods: m.learnMethods } : { name: m.name, learnMethods: m.learnMethods }))}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.click(); }}
+                      >
+                        {info?.type && (
+                          <img
+                            src={getTypeIconUrl(info.type)}
+                            alt={info.type}
+                            className="move-list-type-icon"
+                            style={{ borderColor: TYPE_COLORS[info.type] || '#94a3b8' }}
+                            loading="lazy"
+                            onError={(event) => {
+                              event.currentTarget.onerror = null;
+                              event.currentTarget.src = getFallbackTypeIconUrl(info.type);
+                            }}
+                          />
+                        )}
+                        <span className="move-list-name">{m.name.replace(/-/g, ' ')}</span>
+                        {info?.damage_class && (
+                          <span className={`move-list-class move-list-class--${info.damage_class}`}>
+                            {info.damage_class}
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+
+              {showMoves && selectedMove && (
+                <div className="move-detail-popup">
+                  <div className="move-detail-popup-header">
+                    <h5 className="move-detail-popup-name">{selectedMove.name.replace(/-/g, ' ')}</h5>
+                    <button
+                      type="button"
+                      className="evo-item-detail-close"
+                      onClick={() => setSelectedMove(null)}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="move-detail-popup-body">
+                    {selectedMove.type && (
+                      <div className="move-detail-type-row">
+                        <img
+                          src={getTypeIconUrl(selectedMove.type)}
+                          alt={selectedMove.type}
+                          className="move-detail-type-icon"
+                          style={{ borderColor: TYPE_COLORS[selectedMove.type] || '#94a3b8' }}
+                          loading="lazy"
+                          onError={(event) => {
+                            event.currentTarget.onerror = null;
+                            event.currentTarget.src = getFallbackTypeIconUrl(selectedMove.type);
+                          }}
+                        />
+                        <span className="move-detail-type-name">{selectedMove.type}</span>
+                        {selectedMove.damage_class && (
+                          <span className={`move-list-class move-list-class--${selectedMove.damage_class}`}>
+                            {selectedMove.damage_class}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    <div className="move-detail-stats">
+                      <span>พลัง: <strong>{selectedMove.power ?? '—'}</strong></span>
+                      <span>แม่นยำ: <strong>{selectedMove.accuracy != null ? `${selectedMove.accuracy}%` : '—'}</strong></span>
+                      <span>PP: <strong>{selectedMove.pp ?? '—'}</strong></span>
+                    </div>
+                    {selectedMove.description_th && (
+                      <p className="move-detail-desc">{selectedMove.description_th}</p>
+                    )}
+                    {selectedMove.learnMethods?.length > 0 && (
+                      <div className="move-detail-learn">
+                        {selectedMove.learnMethods.map((lm) => (
+                          <span key={lm} className="move-learn-badge">{lm.replace(/-/g, ' ')}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </section>

@@ -931,6 +931,183 @@
   font-size: 0.88rem;
 }
 
+/* ── Moves Section ── */
+.pokemon-detail-moves {
+  grid-column: 1 / -1;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 12px;
+}
+
+.moves-count-badge {
+  margin-left: 8px;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 999px;
+}
+
+.moves-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px;
+}
+
+.move-list-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: border-color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.move-list-item:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.move-list-item--active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.move-list-type-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 999px;
+  border: 1.5px solid #94a3b8;
+  background: #fff;
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.move-list-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: capitalize;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.move-list-class {
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.move-list-class--physical { background: #fed7aa; color: #9a3412; }
+.move-list-class--special  { background: #bfdbfe; color: #1e40af; }
+.move-list-class--status   { background: #e9d5ff; color: #6b21a8; }
+
+.move-detail-popup {
+  margin-top: 10px;
+  border: 1.5px solid #3b82f6;
+  border-radius: 12px;
+  background: #f0f7ff;
+  overflow: hidden;
+}
+
+.move-detail-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #dbeafe;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.move-detail-popup-name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  text-transform: capitalize;
+}
+
+.move-detail-popup-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.move-detail-type-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.move-detail-type-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 999px;
+  border: 1.5px solid #94a3b8;
+  background: #fff;
+  padding: 2px;
+}
+
+.move-detail-type-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #334155;
+}
+
+.move-detail-stats {
+  display: flex;
+  gap: 14px;
+  font-size: 0.82rem;
+  color: #475569;
+  flex-wrap: wrap;
+}
+
+.move-detail-stats strong {
+  color: #0f172a;
+}
+
+.move-detail-desc {
+  font-size: 0.82rem;
+  color: #334155;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.move-detail-learn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.move-learn-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #475569;
+  text-transform: capitalize;
+}
+
+/* ── End Moves Section ── */
+
 .pokemon-detail-defense {
   grid-column: 1 / -1;
   border-top: 1px solid #e2e8f0;
