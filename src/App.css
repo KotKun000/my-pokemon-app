@@ -615,6 +615,249 @@
   color: #475569;
 }
 
+/* Tips tab — type effectiveness charts */
+.tips-panel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 0 32px;
+}
+
+.tips-header {
+  margin-bottom: 20px;
+}
+
+.tips-heading {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+.tips-lead {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.tips-error {
+  color: #b91c1c;
+}
+
+.tips-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.tips-type-card {
+  --tips-card-accent: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  border: 1px solid #e8ecf1;
+  background: linear-gradient(
+    165deg,
+    #ffffff 0%,
+    #f9fafb 48%,
+    #f4f6f8 100%
+  );
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.tips-type-card::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--tips-card-accent);
+  opacity: 0.92;
+}
+
+.tips-type-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px 12px;
+}
+
+.tips-type-card-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 1px 2px rgba(15, 23, 42, 0.12));
+}
+
+.tips-type-card-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.tips-type-card-sub {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.tips-type-card-body {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px 0;
+  padding: 0 18px 16px;
+  border-top: 1px solid #eef1f5;
+  align-items: start;
+}
+
+.tips-card-divider {
+  width: 1px;
+  min-height: 100%;
+  margin: 0 14px;
+  align-self: stretch;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #d1d9e2 12%,
+    #d1d9e2 88%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 520px) {
+  .tips-type-card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .tips-card-divider {
+    width: 100%;
+    height: 1px;
+    min-height: 0;
+    margin: 4px 0 12px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #d1d9e2 15%,
+      #d1d9e2 85%,
+      transparent 100%
+    );
+  }
+}
+
+.tips-card-col-label {
+  margin: 0 0 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.tips-match-block {
+  margin-bottom: 12px;
+}
+
+.tips-match-block:last-child {
+  margin-bottom: 0;
+}
+
+.tips-match-title {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.tips-match-se {
+  color: #166534;
+}
+
+.tips-match-nve {
+  color: #9a3412;
+}
+
+.tips-match-imm {
+  color: #1e3a8a;
+}
+
+.tips-empty-line {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.tips-type-chip-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+}
+
+.tips-type-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px 3px 5px;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.tips-chip-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.tips-type-chip-label {
+  line-height: 1.2;
+}
+
+.tips-type-card-foot {
+  margin-top: auto;
+  padding: 12px 18px 16px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
+  border-top: 1px dashed #bbf7d0;
+}
+
+.tips-special-title {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #15803d;
+}
+
+.tips-special-list {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 0.82rem;
+  color: #14532d;
+  line-height: 1.55;
+}
+
+.tips-special-list li {
+  margin-bottom: 4px;
+}
+
+.tips-special-list li:last-child {
+  margin-bottom: 0;
+}
+
 /* Pokemon detail modal */
 .pokemon-detail-backdrop {
   position: fixed;

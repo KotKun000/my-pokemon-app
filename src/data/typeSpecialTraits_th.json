@@ -1,0 +1,20 @@
+{
+  "normal": [],
+  "fire": ["ไม่ติดสถานะ Burn / ท่า Will-O-Wisp ไม่สามารถใช้กับโปเกมอนประเภทนี้ได้"],
+  "water": [],
+  "electric": ["ไม่ติดสถานะ Paralysis / ท่า Thunder Wave ไม่สามารถใช้กับโปเกมอนประเภทนี้ได้"],
+  "grass": ["ไม่รับผลจากท่าประเภทผง (Powder) เช่น Sleep Powder , Stun Spore , Spore / ท่า Leech Seed ไม่สามารถใช้กับโปเกมอนประเภทนี้ได้"],
+  "ice": ["ไม่รับความเสียหายจากสภาพอากาศ Hail และ ไม่ติดสถานะ Freeze / ท่า Ice Beam ไม่สามารถใช้กับโปเกมอนประเภทนี้ได้"],
+  "fighting": [],
+  "poison": ["ไม่ติดสถานะ Poison และ Bad Poison / ท่า Toxic ไม่สามารถใช้กับโปเกมอนประเภทนี้ได้"],
+  "ground": ["ไม่รับความเสียหายจากท่าประเภท Electric / ไม่รับความเสียหายจากสภาพอากาศ Sandstorm"],
+  "flying": ["ไม่รับความเสียหายจากท่าประเภท Ground / ไม่รับความเสียหายจากท่า Spike และ Toxic Spikes"],
+  "psychic": [],
+  "bug": [],
+  "rock": ["ไม่รับความเสียหายจากสภาพอากาศ Sandstorm / ได้รับ Sp. Def เมื่ออยู่ในสภาพอากาศ Sandstorm"],
+  "ghost": ["ไม่รับความเสียหายจากท่าประเภท Normal และ Fighting / ไม้รับผลจาก Ability Arena Trap และ Shadow Tag"],
+  "dragon": [],
+  "dark": ["ไม่รับความเสียหายจากท่าประเภท Psychic / ไม่รับผลจาก Ability Prankster (Priority Status Moves)"],
+  "steel": ["ไม่รับความเสียหายจากสภาพอากาศ Sandstorm / ไม่ติดสถานะ Poison และ Bad Poison / ท่า Toxic ไม่สามารถใช้กับโปเกมอนประเภทนี้ได้"],
+  "fairy": ["ไม่รับความเสียหายจากท่าประเภท Dragon"]
+}
