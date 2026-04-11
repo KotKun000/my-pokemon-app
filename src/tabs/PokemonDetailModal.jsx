@@ -1,13 +1,110 @@
 import { useEffect, useState } from 'react';
 import { getDefensiveChart } from '../utils/pokemonTypeDefense';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
-import ABILITY_TH from '../data/abilities_th';
+import ABILITY_EN from '../data/abilities_en.json';
 import movesData from '../data/moves_th.json';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 
 const MOVES_INDEX = Object.fromEntries(movesData.map((m) => [m.name, m]));
 
-const abilityCache = {};
+const MOVE_METHOD_LABELS = {
+  'level-up': 'เรียนรู้ด้วยเลเวล (Level Up)',
+  machine: 'เรียนรู้ด้วย TM/TR',
+  tutor: 'เรียนรู้จาก Tutor',
+  egg: 'เรียนรู้จากไข่ (Egg Move)',
+  evolution: 'เรียนรู้เมื่อวิวัฒนาการ',
+  'form-change': 'เรียนรู้จากการเปลี่ยนร่าง',
+};
+
+const METHOD_PRIORITY = ['level-up', 'machine', 'tutor', 'egg', 'evolution', 'form-change'];
+
+const getDamageClassIconUrl = (damageClass) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const iconMap = {
+    physical: `${base}MoveClassIcon/move-physical.png`,
+    special: `${base}MoveClassIcon/move-special.png`,
+    status: `${base}MoveClassIcon/move-status.png`,
+  };
+  return iconMap[damageClass] || iconMap.status;
+};
+
+function categorizeMoves(moves) {
+  const groups = {};
+  for (const m of moves) {
+    for (const method of m.learnMethods) {
+      if (!groups[method]) groups[method] = [];
+      groups[method].push(m);
+    }
+  }
+  const orderedMethods = METHOD_PRIORITY.filter((m) => groups[m]?.length > 0);
+  const otherMethods = Object.keys(groups).filter((m) => !METHOD_PRIORITY.includes(m) && groups[m]?.length > 0);
+  return { groups, orderedMethods: [...orderedMethods, ...otherMethods] };
+}
+
+const VERSION_GROUP_ORDER = [
+  'scarlet-violet',
+  'legends-arceus',
+  'brilliant-diamond-and-shining-pearl',
+  'sword-shield',
+  'ultra-sun-ultra-moon',
+  'sun-moon',
+  'lets-go-pikachu-lets-go-eevee',
+  'omega-ruby-alpha-sapphire',
+  'x-y',
+  'black-2-white-2',
+  'black-white',
+  'heartgold-soulsilver',
+  'platinum',
+  'diamond-pearl',
+  'firered-leafgreen',
+  'emerald',
+  'ruby-sapphire',
+];
+
+const VERSION_GROUP_LABELS = {
+  'scarlet-violet': 'Scarlet / Violet',
+  'legends-arceus': 'Legends: Arceus',
+  'brilliant-diamond-and-shining-pearl': 'BD / SP',
+  'sword-shield': 'Sword / Shield',
+  'ultra-sun-ultra-moon': 'Ultra S/M',
+  'sun-moon': 'Sun / Moon',
+  'lets-go-pikachu-lets-go-eevee': "Let's Go",
+  'omega-ruby-alpha-sapphire': 'OR / AS',
+  'x-y': 'X / Y',
+  'black-2-white-2': 'B2 / W2',
+  'black-white': 'Black / White',
+  'heartgold-soulsilver': 'HG / SS',
+  'platinum': 'Platinum',
+  'diamond-pearl': 'Diamond / Pearl',
+  'firered-leafgreen': 'FR / LG',
+  'emerald': 'Emerald',
+  'ruby-sapphire': 'Ruby / Sapphire',
+};
+
+function getPokemonGen(id) {
+  if (id <= 151) return 1;
+  if (id <= 251) return 2;
+  if (id <= 386) return 3;
+  if (id <= 493) return 4;
+  if (id <= 649) return 5;
+  if (id <= 721) return 6;
+  if (id <= 809) return 7;
+  if (id <= 905) return 8;
+  return 9;
+}
+
+const GEN_MIN_VERSION_GROUP = {
+  1: 'ruby-sapphire',
+  2: 'ruby-sapphire',
+  3: 'ruby-sapphire',
+  4: 'diamond-pearl',
+  5: 'black-white',
+  6: 'x-y',
+  7: 'sun-moon',
+  8: 'sword-shield',
+  9: 'scarlet-violet',
+};
+
 const evoChainCache = {};
 const itemCache = {};
 const ITEMS_CACHE_KEY = 'poke_items_cache_v1';
@@ -158,24 +255,15 @@ async function fetchEvolutionChain(pokemonName) {
   }
 }
 
-async function fetchAbilityDetail(name) {
-  if (abilityCache[name]) return abilityCache[name];
-  try {
-    const res = await fetch(`https://pokeapi.co/api/v2/ability/${encodeURIComponent(name)}`);
-    if (!res.ok) throw new Error();
-    const data = await res.json();
-    const en = data.effect_entries.find((e) => e.language.name === 'en');
-    const flavor = data.flavor_text_entries.find((e) => e.language.name === 'en');
-    const result = {
-      name: data.name,
-      shortEffect: en?.short_effect || flavor?.flavor_text?.replace(/[\n\f]/g, ' ') || '',
-      generation: data.generation?.name?.replace('generation-', '').toUpperCase() || '',
-    };
-    abilityCache[name] = result;
-    return result;
-  } catch {
-    return { name, shortEffect: '', generation: '' };
-  }
+function fetchAbilityDetail(name) {
+  const data = ABILITY_EN[name];
+  if (!data) return { name, shortEffect: '', generation: '', versionDescriptions: {} };
+  return {
+    name,
+    shortEffect: data.short_effect_en || '',
+    generation: '',
+    versionDescriptions: data.game_descriptions || {},
+  };
 }
 
 function AbilityIcon({ hidden }) {
@@ -189,7 +277,7 @@ function AbilityIcon({ hidden }) {
   }
   return (
     <svg className="ability-card-icon" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z" />
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
     </svg>
   );
 }
@@ -297,6 +385,10 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [evoTriggerItemDetail, setEvoTriggerItemDetail] = useState(null);
   const [showMoves, setShowMoves] = useState(false);
   const [selectedMove, setSelectedMove] = useState(null);
+  const [selectedMethod, setSelectedMethod] = useState('');
+  const [selectedVersionGroup, setSelectedVersionGroup] = useState('');
+  const [abilityDropdownOpen, setAbilityDropdownOpen] = useState(false);
+  const [versionSearch, setVersionSearch] = useState('');
 
   useEffect(() => {
     setCurrentPokemonName(pokemonName);
@@ -304,8 +396,10 @@ function PokemonDetailModal({ pokemonName, onClose }) {
     setShowEvo(false);
     setShowMoves(false);
     setSelectedMove(null);
-    setEvoTriggerForCurrent(null);
-    setEvoTriggerItemDetail(null);
+    setSelectedMethod('');
+    setSelectedVersionGroup('');
+    setAbilityDropdownOpen(false);
+    setVersionSearch('');
   }, [pokemonName]);
 
   useEffect(() => {
@@ -356,15 +450,22 @@ function PokemonDetailModal({ pokemonName, onClose }) {
           data.sprites.front_default ||
           `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
 
-        const moves = data.moves.map((m) => ({
-          name: m.move.name,
-          learnMethods: [...new Set(m.version_group_details.map((v) => v.move_learn_method.name))],
-        }));
+        const moves = data.moves.map((m) => {
+          const learnLevels = m.version_group_details
+            .filter((v) => v.move_learn_method.name === 'level-up')
+            .map((v) => v.level_learned_at);
+          const uniqueLevels = [...new Set(learnLevels)].filter((l) => l > 0).sort((a, b) => a - b);
+          return {
+            name: m.move.name,
+            learnMethods: [...new Set(m.version_group_details.map((v) => v.move_learn_method.name))],
+            learnLevel: uniqueLevels.length > 0 ? uniqueLevels[0] : null,
+          };
+        });
 
-        const abilityPromises = abilities.map((a) =>
-          fetchAbilityDetail(a.name).then((d) => ({ ...d, isHidden: a.isHidden }))
-        );
-        const abDetails = await Promise.all(abilityPromises);
+        const abDetails = abilities.map((a) => ({
+          ...fetchAbilityDetail(a.name),
+          isHidden: a.isHidden,
+        }));
         if (cancelled) return;
         setAbilityDetails(abDetails);
 
@@ -594,28 +695,121 @@ function PokemonDetailModal({ pokemonName, onClose }) {
 
               <section className="pokemon-detail-section">
                 <h4>ความสามารถ (Abilities)</h4>
-                <div className="ability-card-list">
-                  {(abilityDetails.length ? abilityDetails : detail.abilities).map((a) => (
-                    <div
-                      key={a.name}
-                      className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}
-                    >
-                      <div className="ability-card-header">
-                        <AbilityIcon hidden={a.isHidden} />
-                        <span className="ability-card-name">{a.name}</span>
-                        {a.isHidden && <span className="ability-card-badge">Hidden</span>}
-                        {a.generation && (
-                          <span className="ability-card-gen">Gen {a.generation}</span>
+                {abilityDetails.length > 0 && (() => {
+                  const allVersionGroups = [...new Set(
+                    abilityDetails.flatMap((a) => Object.keys(a.versionDescriptions || {}))
+                  )];
+                  const orderedGroups = VERSION_GROUP_ORDER.filter((vg) => allVersionGroups.includes(vg));
+                  const otherGroups = allVersionGroups.filter((vg) => !VERSION_GROUP_ORDER.includes(vg));
+                  const pokemonGen = getPokemonGen(detail.id);
+                  const minVG = GEN_MIN_VERSION_GROUP[pokemonGen];
+                  const minVGIndex = VERSION_GROUP_ORDER.indexOf(minVG);
+                  const displayGroups = [...orderedGroups, ...otherGroups].filter((vg) => {
+                    const idx = VERSION_GROUP_ORDER.indexOf(vg);
+                    return idx === -1 || idx <= minVGIndex;
+                  });
+                  const activeVG = (selectedVersionGroup && displayGroups.includes(selectedVersionGroup))
+                    ? selectedVersionGroup
+                    : displayGroups[0] || '';
+                  return (
+                    <>
+                      <div className={`ability-version-dropdown ${abilityDropdownOpen ? 'open' : ''}`}>
+                        <button
+                          type="button"
+                          className="ability-version-trigger"
+                          onClick={() => setAbilityDropdownOpen((v) => !v)}
+                        >
+                          <span>{VERSION_GROUP_LABELS[activeVG] || activeVG}</span>
+                          <svg viewBox="0 0 20 20" fill="currentColor" className="ability-version-chevron"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
+                        </button>
+                        {abilityDropdownOpen && (() => {
+                          const searchLower = versionSearch.toLowerCase();
+                          const filteredGroups = versionSearch
+                            ? displayGroups.filter((vg) =>
+                                (VERSION_GROUP_LABELS[vg] || vg).toLowerCase().includes(searchLower)
+                              )
+                            : displayGroups;
+                          return (
+                            <div className="ability-version-menu">
+                              <div className="ability-version-search-wrap">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" className="ability-version-search-icon"><circle cx="8" cy="8" r="5" /><path d="M13 13l3.5 3.5" strokeLinecap="round" /></svg>
+                                <input
+                                  type="text"
+                                  className="ability-version-search"
+                                  placeholder="ค้นหาเวอร์ชั่น..."
+                                  value={versionSearch}
+                                  onChange={(e) => setVersionSearch(e.target.value)}
+                                  onClick={(e) => e.stopPropagation()}
+                                  autoFocus
+                                />
+                                {versionSearch && (
+                                  <button type="button" className="ability-version-search-clear" onClick={() => setVersionSearch('')}>✕</button>
+                                )}
+                              </div>
+                              <div className="ability-version-list">
+                                {filteredGroups.length > 0 ? filteredGroups.map((vg) => (
+                                  <button
+                                    key={vg}
+                                    type="button"
+                                    className={`ability-version-item ${activeVG === vg ? 'active' : ''}`}
+                                    onClick={() => { setSelectedVersionGroup(vg); setAbilityDropdownOpen(false); setVersionSearch(''); }}
+                                  >
+                                    {VERSION_GROUP_LABELS[vg] || vg}
+                                  </button>
+                                )) : (
+                                  <p className="ability-version-empty">ไม่พบเวอร์ชั่น</p>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })()}
+                      </div>
+                      <div className="ability-card-list">
+                        {abilityDetails.map((a) => {
+                          const versionDesc = a.versionDescriptions?.[activeVG];
+                          const displayDesc = versionDesc || a.shortEffect || '';
+                          return (
+                            <div
+                              key={a.name}
+                              className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}
+                            >
+                              <div className="ability-card-header">
+                                <AbilityIcon hidden={a.isHidden} />
+                                <span className="ability-card-name">{a.name}</span>
+                                {a.isHidden && <span className="ability-card-badge">Hidden</span>}
+                                {a.generation && (
+                                  <span className="ability-card-gen">Gen {a.generation}</span>
+                                )}
+                              </div>
+                              {displayDesc && (
+                                <p className="ability-card-desc">{displayDesc}</p>
+                              )}
+                              {versionDesc && (
+                                <p className="ability-card-version-source">{VERSION_GROUP_LABELS[activeVG] || activeVG}</p>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </>
+                  );
+                })()}
+                {!abilityDetails.length && (
+                  <div className="ability-card-list">
+                    {detail.abilities.map((a) => (
+                      <div key={a.name} className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}>
+                        <div className="ability-card-header">
+                          <AbilityIcon hidden={a.isHidden} />
+                          <span className="ability-card-name">{a.name}</span>
+                          {a.isHidden && <span className="ability-card-badge">Hidden</span>}
+                        </div>
+                        {a.shortEffect && (
+                          <p className="ability-card-desc">{a.shortEffect}</p>
                         )}
                       </div>
-                      {(ABILITY_TH[a.name]?.desc || a.shortEffect) && (
-                        <p className="ability-card-desc">
-                          {ABILITY_TH[a.name]?.desc || a.shortEffect}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </section>
 
               <section className="pokemon-detail-section">
@@ -850,48 +1044,97 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                 )}
               </button>
 
-              {showMoves && !selectedMove && (
-                <ul className="moves-list">
-                  {(detail.moves || []).map((m) => {
-                    const info = MOVES_INDEX[m.name];
-                    return (
-                      <li
-                        key={m.name}
-                        className={`move-list-item ${selectedMove?.name === m.name ? 'move-list-item--active' : ''}`}
-                        onClick={() => setSelectedMove(selectedMove?.name === m.name ? null : (info ? { ...info, learnMethods: m.learnMethods } : { name: m.name, learnMethods: m.learnMethods }))}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.click(); }}
+              {showMoves && !selectedMove && (() => {
+                const { groups, orderedMethods } = categorizeMoves(detail.moves || []);
+                const filteredMethods = selectedMethod ? orderedMethods.filter((m) => m === selectedMethod) : orderedMethods;
+                return (
+                  <div className="moves-categories">
+                    <div className="moves-method-filter">
+                      <button
+                        type="button"
+                        className={`moves-method-btn ${selectedMethod === '' ? 'active' : ''}`}
+                        onClick={() => setSelectedMethod('')}
                       >
-                        {info?.type && (
-                          <img
-                            src={getTypeIconUrl(info.type)}
-                            alt={info.type}
-                            className="move-list-type-icon"
-                            style={{ borderColor: TYPE_COLORS[info.type] || '#94a3b8' }}
-                            loading="lazy"
-                            onError={(event) => {
-                              event.currentTarget.onerror = null;
-                              event.currentTarget.src = getFallbackTypeIconUrl(info.type);
-                            }}
-                          />
-                        )}
-                        <span className="move-list-name">{m.name.replace(/-/g, ' ')}</span>
-                        {info?.damage_class && (
-                          <span className={`move-list-class move-list-class--${info.damage_class}`}>
-                            {info.damage_class}
-                          </span>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
+                        ทั้งหมด
+                      </button>
+                      {orderedMethods.map((method) => (
+                        <button
+                          key={method}
+                          type="button"
+                          className={`moves-method-btn ${selectedMethod === method ? 'active' : ''}`}
+                          onClick={() => setSelectedMethod(method)}
+                        >
+                          {MOVE_METHOD_LABELS[method] || method}
+                        </button>
+                      ))}
+                    </div>
+                    {filteredMethods.map((method) => (
+                      <div key={method} className="moves-category">
+                        <h5 className="moves-category-title">{MOVE_METHOD_LABELS[method] || method.replace(/-/g, ' ')}</h5>
+                        <ul className="moves-list">
+                          {groups[method].map((m) => {
+                            const info = MOVES_INDEX[m.name];
+                            return (
+                              <li
+                                key={m.name}
+                                className="move-list-item"
+                                onClick={() => setSelectedMove(info ? { ...info, learnMethods: m.learnMethods, learnLevel: m.learnLevel } : { name: m.name, learnMethods: m.learnMethods, learnLevel: m.learnLevel })}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.click(); }}
+                              >
+                                {info?.type && (
+                                  <img
+                                    src={getTypeIconUrl(info.type)}
+                                    alt={info.type}
+                                    className="move-list-type-icon"
+                                    style={{ borderColor: TYPE_COLORS[info.type] || '#94a3b8' }}
+                                    loading="lazy"
+                                    onError={(event) => {
+                                      event.currentTarget.onerror = null;
+                                      event.currentTarget.src = getFallbackTypeIconUrl(info.type);
+                                    }}
+                                  />
+                                )}
+                                <span
+                                  className="move-list-name"
+                                  style={{ color: info?.type ? TYPE_COLORS[info.type] : '#1e293b' }}
+                                >
+                                  {m.name.replace(/-/g, ' ')}
+                                </span>
+                                {info?.damage_class && (
+                                  <img
+                                    src={getDamageClassIconUrl(info.damage_class)}
+                                    alt={info.damage_class}
+                                    className="move-list-damage-icon"
+                                    loading="lazy"
+                                  />
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
 
               {showMoves && selectedMove && (
-                <div className="move-detail-popup">
-                  <div className="move-detail-popup-header">
-                    <h5 className="move-detail-popup-name">{selectedMove.name.replace(/-/g, ' ')}</h5>
+                <div
+                  className="move-detail-popup"
+                  style={selectedMove?.type ? getTypeBorderStyle([selectedMove.type], '#f0f7ff') : {}}
+                >
+                  <div
+                    className="move-detail-popup-header"
+                    style={{ borderBottomColor: selectedMove?.type ? TYPE_COLORS[selectedMove.type] : '#bfdbfe' }}
+                  >
+                    <h5
+                      className="move-detail-popup-name"
+                      style={{ color: selectedMove?.type ? TYPE_COLORS[selectedMove.type] : '#1e3a8a' }}
+                    >
+                      {selectedMove.name.replace(/-/g, ' ')}
+                    </h5>
                     <button
                       type="button"
                       className="evo-item-detail-close"
@@ -916,7 +1159,13 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                         />
                         <span className="move-detail-type-name">{selectedMove.type}</span>
                         {selectedMove.damage_class && (
-                          <span className={`move-list-class move-list-class--${selectedMove.damage_class}`}>
+                          <span className={`move-detail-class move-detail-class--${selectedMove.damage_class}`}>
+                            <img
+                              src={getDamageClassIconUrl(selectedMove.damage_class)}
+                              alt={selectedMove.damage_class}
+                              className="move-detail-class-icon"
+                              loading="lazy"
+                            />
                             {selectedMove.damage_class}
                           </span>
                         )}
@@ -925,7 +1174,6 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                     <div className="move-detail-stats">
                       <span>พลัง: <strong>{selectedMove.power ?? '—'}</strong></span>
                       <span>แม่นยำ: <strong>{selectedMove.accuracy != null ? `${selectedMove.accuracy}%` : '—'}</strong></span>
-                      <span>Priority: <strong>{selectedMove.priority ?? '—'}</strong></span>
                       <span>PP: <strong>{selectedMove.pp ?? '—'}</strong></span>
                     </div>
                     {selectedMove.description_th && (
@@ -934,7 +1182,11 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                     {selectedMove.learnMethods?.length > 0 && (
                       <div className="move-detail-learn">
                         {selectedMove.learnMethods.map((lm) => (
-                          <span key={lm} className="move-learn-badge">{lm.replace(/-/g, ' ')}</span>
+                          <span key={lm} className="move-learn-badge">
+                            {lm === 'level-up' && selectedMove.learnLevel
+                              ? `Level ${selectedMove.learnLevel}`
+                              : lm.replace(/-/g, ' ')}
+                          </span>
                         ))}
                       </div>
                     )}
