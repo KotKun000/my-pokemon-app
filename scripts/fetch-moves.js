@@ -32,6 +32,7 @@ async function startScraping() {
         power: detail.data.power || 0,
         accuracy: detail.data.accuracy || 0,
         pp: detail.data.pp,
+        priority: detail.data.priority || 0,
         description_en: descEn,
         description_th: ""
       });
