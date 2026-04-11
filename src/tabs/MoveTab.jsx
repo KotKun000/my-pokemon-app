@@ -271,7 +271,6 @@ function MoveTab() {
             <header className="move-head">
               <h2 className="move-name">{move.name}</h2>
               <div className="move-type-wrap">
-                <span className="type-label"></span>
                 <span className="type-badge">
                   <img
                     src={getTypeIconUrl(move.type)}
@@ -297,15 +296,24 @@ function MoveTab() {
             </header>
 
             <div className="move-stats">
-              <p>
-                พลัง: <span>{move.power}</span>
-              </p>
-              <p>
-                ความแม่นยำ: <span>{move.accuracy}%</span>
-              </p>
-              <p>
-                PP: <span>{move.pp}</span>
-              </p>
+              <div className="move-stat">
+                <span className="move-stat-label">พลัง</span>
+                <span className="move-stat-value">{move.power ?? '—'}</span>
+              </div>
+              <div className="move-stat">
+                <span className="move-stat-label">แม่นยำ</span>
+                <span className="move-stat-value">
+                  {move.accuracy != null ? `${move.accuracy}` : '—'}
+                </span>
+              </div>
+              <div className="move-stat">
+                <span className="move-stat-label">Priority</span>
+                <span className="move-stat-value">{move.priority ?? '—'}</span>
+              </div>
+              <div className="move-stat">
+                <span className="move-stat-label">PP</span>
+                <span className="move-stat-value">{move.pp ?? '—'}</span>
+              </div>
             </div>
 
             <div className="move-description">

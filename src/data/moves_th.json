@@ -2180,7 +2180,7 @@
     "pp": 10,
     "priority": 4,
     "description_en": "Foils attack that turn. It may fail.",
-    "description_th": "ป้องกันการโจมตีทั้งหมดในเทิร์นนั้น (โอกาสสำเร็จจะลดลงหากใช้ติดต่อกัน)",
+    "description_th": "ป้องกันการโจมตีทั้งหมดในเทิร์นนั้น (เมื่อใช้ติดต่อกันโอกาสสำเร็จจะลดลงครึ่งนึง)",
     "damage_class": "status"
   },
   {
@@ -2360,7 +2360,7 @@
     "pp": 5,
     "priority": 4,
     "description_en": "Evades attack that turn. It may fail.",
-    "description_th": "จับสัมผัสเพื่อหลบหลีกการโจมตีทั้งหมดในเทิร์นนั้น (โอกาสสำเร็จจะลดลงหากใช้ติดต่อกัน)",
+    "description_th": "จับสัมผัสเพื่อหลบหลีกการโจมตีทั้งหมดในเทิร์นนั้น (เมื่อใช้ติดต่อกันโอกาสสำเร็จจะลดลงครึ่งนึง)",
     "damage_class": "status"
   },
   {
@@ -5624,7 +5624,7 @@
     "pp": 10,
     "priority": 3,
     "description_en": "The user and its allies are protected from wide-ranging attacks for one turn. If used in succession, its chance of failing rises.",
-    "description_th": "กางม่านป้องกันท่าโจมตีหมู่ให้กับตนเองและเพื่อนร่วมทีมทั้งหมด 1 เทิร์น (โอกาสสำเร็จจะลดลงหากใช้ติดต่อกัน)",
+    "description_th": "กางม่านป้องกันท่าโจมตีหมู่ให้กับตนเองและเพื่อนร่วมทีมทั้งหมด 1 เทิร์น (เมื่อใช้ติดต่อกันโอกาสสำเร็จจะลดลงครึ่งนึง)",
     "damage_class": "status"
   },
   {
@@ -6008,7 +6008,7 @@
     "pp": 15,
     "priority": 3,
     "description_en": "The user protects itself and its allies from priority moves. If used in succession, its chance of failing rises.",
-    "description_th": "ป้องกันอย่างว่องไว ปกป้องตนเองและเพื่อนร่วมทีมจากท่าโจมตีที่ได้สิทธิ์โจมตีก่อน (Priority) ทั้งหมด 1 เทิร์น (โอกาสสำเร็จจะลดลงหากใช้ติดต่อกัน)",
+    "description_th": "ป้องกันอย่างว่องไว ปกป้องตนเองและเพื่อนร่วมทีมจากท่าโจมตีที่ได้สิทธิ์โจมตีก่อน (Priority) ทั้งหมด 1 เทิร์น (เมื่อใช้ติดต่อกันโอกาสสำเร็จจะลดลงครึ่งนึง)",
     "damage_class": "status"
   },
   {
