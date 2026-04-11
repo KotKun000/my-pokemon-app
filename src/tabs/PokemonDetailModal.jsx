@@ -7,6 +7,43 @@ import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 
 const MOVES_INDEX = Object.fromEntries(movesData.map((m) => [m.name, m]));
 
+const MOVE_METHOD_LABELS = {
+  'level-up': 'เรียนรู้ด้วยเลเวล (Level Up)',
+  machine: 'เรียนรู้ด้วย TM/TR',
+  tutor: 'เรียนรู้จาก Tutor',
+  egg: 'เรียนรู้จากไข่ (Egg Move)',
+  evolution: 'เรียนรู้เมื่อวิวัฒนาการ',
+  'form-change': 'เรียนรู้จากการเปลี่ยนร่าง',
+  prevo: 'เรียนรู้จากร่างก่อนหน้า',
+  lightball: 'เรียนรู้จาก Light Ball',
+  stadium: 'เรียนรู้จาก Stadium',
+};
+
+const METHOD_PRIORITY = ['level-up', 'machine', 'tutor', 'egg', 'evolution', 'form-change'];
+
+const getDamageClassIconUrl = (damageClass) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const iconMap = {
+    physical: `${base}MoveClassIcon/move-physical.png`,
+    special: `${base}MoveClassIcon/move-special.png`,
+    status: `${base}MoveClassIcon/move-status.png`,
+  };
+  return iconMap[damageClass] || iconMap.status;
+};
+
+function categorizeMoves(moves) {
+  const groups = {};
+  for (const m of moves) {
+    for (const method of m.learnMethods) {
+      if (!groups[method]) groups[method] = [];
+      groups[method].push(m);
+    }
+  }
+  const orderedMethods = METHOD_PRIORITY.filter((m) => groups[m]?.length > 0);
+  const otherMethods = Object.keys(groups).filter((m) => !METHOD_PRIORITY.includes(m) && groups[m]?.length > 0);
+  return { groups, orderedMethods: [...orderedMethods, ...otherMethods] };
+}
+
 const abilityCache = {};
 const evoChainCache = {};
 const itemCache = {};
@@ -297,6 +334,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [evoTriggerItemDetail, setEvoTriggerItemDetail] = useState(null);
   const [showMoves, setShowMoves] = useState(false);
   const [selectedMove, setSelectedMove] = useState(null);
+  const [selectedMethod, setSelectedMethod] = useState('');
 
   useEffect(() => {
     setCurrentPokemonName(pokemonName);
@@ -304,6 +342,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
     setShowEvo(false);
     setShowMoves(false);
     setSelectedMove(null);
+    setSelectedMethod('');
     setEvoTriggerForCurrent(null);
     setEvoTriggerItemDetail(null);
   }, [pokemonName]);
@@ -356,10 +395,17 @@ function PokemonDetailModal({ pokemonName, onClose }) {
           data.sprites.front_default ||
           `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
 
-        const moves = data.moves.map((m) => ({
-          name: m.move.name,
-          learnMethods: [...new Set(m.version_group_details.map((v) => v.move_learn_method.name))],
-        }));
+        const moves = data.moves.map((m) => {
+          const learnLevels = m.version_group_details
+            .filter((v) => v.move_learn_method.name === 'level-up')
+            .map((v) => v.level_learned_at);
+          const uniqueLevels = [...new Set(learnLevels)].filter((l) => l > 0).sort((a, b) => a - b);
+          return {
+            name: m.move.name,
+            learnMethods: [...new Set(m.version_group_details.map((v) => v.move_learn_method.name))],
+            learnLevel: uniqueLevels.length > 0 ? uniqueLevels[0] : null,
+          };
+        });
 
         const abilityPromises = abilities.map((a) =>
           fetchAbilityDetail(a.name).then((d) => ({ ...d, isHidden: a.isHidden }))
@@ -850,46 +896,82 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                 )}
               </button>
 
-              {showMoves && !selectedMove && (
-                <ul className="moves-list">
-                  {(detail.moves || []).map((m) => {
-                    const info = MOVES_INDEX[m.name];
-                    return (
-                      <li
-                        key={m.name}
-                        className={`move-list-item ${selectedMove?.name === m.name ? 'move-list-item--active' : ''}`}
-                        onClick={() => setSelectedMove(selectedMove?.name === m.name ? null : (info ? { ...info, learnMethods: m.learnMethods } : { name: m.name, learnMethods: m.learnMethods }))}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.click(); }}
+              {showMoves && !selectedMove && (() => {
+                const { groups, orderedMethods } = categorizeMoves(detail.moves || []);
+                const filteredMethods = selectedMethod ? orderedMethods.filter((m) => m === selectedMethod) : orderedMethods;
+                return (
+                  <div className="moves-categories">
+                    <div className="moves-method-filter">
+                      <button
+                        type="button"
+                        className={`moves-method-btn ${selectedMethod === '' ? 'active' : ''}`}
+                        onClick={() => setSelectedMethod('')}
                       >
-                        {info?.type && (
-                          <img
-                            src={getTypeIconUrl(info.type)}
-                            alt={info.type}
-                            className="move-list-type-icon"
-                            style={{ borderColor: TYPE_COLORS[info.type] || '#94a3b8' }}
-                            loading="lazy"
-                            onError={(event) => {
-                              event.currentTarget.onerror = null;
-                              event.currentTarget.src = getFallbackTypeIconUrl(info.type);
-                            }}
-                          />
-                        )}
-                        <span className="move-list-name">{m.name.replace(/-/g, ' ')}</span>
-                        {info?.damage_class && (
-                          <span className={`move-list-class move-list-class--${info.damage_class}`}>
-                            {info.damage_class}
-                          </span>
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
+                        ทั้งหมด
+                      </button>
+                      {orderedMethods.map((method) => (
+                        <button
+                          key={method}
+                          type="button"
+                          className={`moves-method-btn ${selectedMethod === method ? 'active' : ''}`}
+                          onClick={() => setSelectedMethod(method)}
+                        >
+                          {MOVE_METHOD_LABELS[method] || method}
+                        </button>
+                      ))}
+                    </div>
+                    {filteredMethods.map((method) => (
+                      <div key={method} className="moves-category">
+                        <h5 className="moves-category-title">{MOVE_METHOD_LABELS[method] || method.replace(/-/g, ' ')}</h5>
+                        <ul className="moves-list">
+                          {groups[method].map((m) => {
+                            const info = MOVES_INDEX[m.name];
+                            return (
+                              <li
+                                key={m.name}
+                                className="move-list-item"
+                                onClick={() => setSelectedMove(info ? { ...info, learnMethods: m.learnMethods, learnLevel: m.learnLevel } : { name: m.name, learnMethods: m.learnMethods, learnLevel: m.learnLevel })}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.click(); }}
+                              >
+                                {info?.type && (
+                                  <img
+                                    src={getTypeIconUrl(info.type)}
+                                    alt={info.type}
+                                    className="move-list-type-icon"
+                                    style={{ borderColor: TYPE_COLORS[info.type] || '#94a3b8' }}
+                                    loading="lazy"
+                                    onError={(event) => {
+                                      event.currentTarget.onerror = null;
+                                      event.currentTarget.src = getFallbackTypeIconUrl(info.type);
+                                    }}
+                                  />
+                                )}
+                                <span className="move-list-name">{m.name.replace(/-/g, ' ')}</span>
+                                {info?.damage_class && (
+                                  <img
+                                    src={getDamageClassIconUrl(info.damage_class)}
+                                    alt={info.damage_class}
+                                    className="move-list-damage-icon"
+                                    loading="lazy"
+                                  />
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
 
               {showMoves && selectedMove && (
-                <div className="move-detail-popup">
+                <div
+                  className="move-detail-popup"
+                  style={selectedMove?.type ? getTypeBorderStyle([selectedMove.type], '#f0f7ff') : {}}
+                >
                   <div className="move-detail-popup-header">
                     <h5 className="move-detail-popup-name">{selectedMove.name.replace(/-/g, ' ')}</h5>
                     <button
@@ -916,7 +998,13 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                         />
                         <span className="move-detail-type-name">{selectedMove.type}</span>
                         {selectedMove.damage_class && (
-                          <span className={`move-list-class move-list-class--${selectedMove.damage_class}`}>
+                          <span className={`move-detail-class move-detail-class--${selectedMove.damage_class}`}>
+                            <img
+                              src={getDamageClassIconUrl(selectedMove.damage_class)}
+                              alt={selectedMove.damage_class}
+                              className="move-detail-class-icon"
+                              loading="lazy"
+                            />
                             {selectedMove.damage_class}
                           </span>
                         )}
@@ -933,7 +1021,11 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                     {selectedMove.learnMethods?.length > 0 && (
                       <div className="move-detail-learn">
                         {selectedMove.learnMethods.map((lm) => (
-                          <span key={lm} className="move-learn-badge">{lm.replace(/-/g, ' ')}</span>
+                          <span key={lm} className="move-learn-badge">
+                            {lm === 'level-up' && selectedMove.learnLevel
+                              ? `Level ${selectedMove.learnLevel}`
+                              : lm.replace(/-/g, ' ')}
+                          </span>
                         ))}
                       </div>
                     )}

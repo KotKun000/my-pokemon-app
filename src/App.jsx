@@ -22,7 +22,7 @@ function App() {
       <section className="hero-section">
         <h1 className="hero-title">Pokemon Companion Hub</h1>
         <p className="hero-subtitle">
-          ศูนย์รวมข้อมูลโปเกมอนสำหรับค้นหาและเตรียมฟีเจอร์ใหม่ในอนาคต
+          ศูนย์รวมข้อมูลโปเกมอนสำหรับเทรนเนอร์มือใหม่
         </p>
       </section>
       <nav className="nav-tabs">
