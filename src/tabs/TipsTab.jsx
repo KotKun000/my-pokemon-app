@@ -3,6 +3,11 @@ import { loadTypeCards, typeLabelEn } from '../utils/typeMatchups';
 import { TYPE_COLORS } from '../utils/typeColors';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
+const TIPS_SUB_TABS = [
+  { key: 'types', label: 'การแพ้ชนะของประเภทต่างๆ' },
+  { key: 'test', label: 'test' },
+];
+
 function TypeIcon({ type, className = 'tips-chip-icon' }) {
   return (
     <img
@@ -52,7 +57,7 @@ function TypeCard({ card }) {
           <h3 className="tips-type-card-title" id={`tips-type-title-${card.type}`}>
             {card.labelEn}
           </h3>
-          <p className="tips-type-card-sub">{card.nameEn}</p>
+          <p className="tips-type-card-sub">{card.type}</p>
         </div>
       </header>
 
@@ -106,7 +111,31 @@ function TypeCard({ card }) {
   );
 }
 
+function TypesSubPanel({ cards, loading, error }) {
+  return (
+    <>
+      {loading && (
+        <p className="status-message pokemon-detail-status">กำลังโหลดข้อมูลธาตุ...</p>
+      )}
+      {error && (
+        <p className="status-message tips-error pokemon-detail-status">{error}</p>
+      )}
+      {!loading && !error && cards && (
+        <section className="pokemon-detail-section tips-types-section">
+          <h4>การแพ้ชนะของประเภทต่างๆ</h4>
+          <div className="tips-type-grid">
+            {cards.map((card) => (
+              <TypeCard key={card.type} card={card} />
+            ))}
+          </div>
+        </section>
+      )}
+    </>
+  );
+}
+
 function TipsTab() {
+  const [activeSub, setActiveSub] = useState('types');
   const [cards, setCards] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -132,20 +161,38 @@ function TipsTab() {
 
   return (
     <section className="tips-panel" aria-label="เรื่องควรรู้">
-      <header className="tips-header">
-        <h1 className="tips-heading">การแพ้ชนะของประเภทต่างๆ</h1>
-      </header>
-
-      {loading && <p className="status-message">กำลังโหลดข้อมูลธาตุ...</p>}
-      {error && <p className="status-message tips-error">{error}</p>}
-
-      {cards && (
-        <div className="tips-type-grid">
-          {cards.map((card) => (
-            <TypeCard key={card.type} card={card} />
+      <div
+        className="pokemon-detail-modal tips-detail-embed"
+        role="region"
+        aria-labelledby="tips-detail-title"
+      >
+        <nav
+          className="tips-detail-subnav moves-method-filter"
+          aria-label="หมวดในเรื่องควรรู้"
+        >
+          {TIPS_SUB_TABS.map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              className={`moves-method-btn ${activeSub === tab.key ? 'active' : ''}`}
+              onClick={() => setActiveSub(tab.key)}
+            >
+              {tab.label}
+            </button>
           ))}
+        </nav>
+
+        <div className="tips-detail-content">
+          {activeSub === 'types' && (
+            <TypesSubPanel cards={cards} loading={loading} error={error} />
+          )}
+          {activeSub === 'test' && (
+            <section className="pokemon-detail-section tips-test-section">
+              <p className="tips-test-plain">test</p>
+            </section>
+          )}
         </div>
-      )}
+      </div>
     </section>
   );
 }
