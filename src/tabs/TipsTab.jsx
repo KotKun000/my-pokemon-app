@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
+import battleStatusData from '../data/battleStatus_th.json';
 import { loadTypeCards, typeLabelEn } from '../utils/typeMatchups';
 import { TYPE_COLORS } from '../utils/typeColors';
+import { getBattleStatusIconUrl } from '../utils/statusIcons';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
 const TIPS_SUB_TABS = [
   { key: 'types', label: 'การแพ้ชนะของประเภทต่างๆ' },
-  { key: 'test', label: 'test' },
+  { key: 'status', label: 'สถานะต่างๆ' },
 ];
 
 function TypeIcon({ type, className = 'tips-chip-icon' }) {
@@ -111,6 +113,53 @@ function TypeCard({ card }) {
   );
 }
 
+function StatusCard({ item }) {
+  const accent = item.accent || '#64748b';
+
+  return (
+    <article
+      className="tips-status-card"
+      style={{ '--tips-card-accent': accent }}
+      aria-labelledby={`tips-status-${item.id}`}
+    >
+      <header className="tips-status-card-head">
+        <h3 className="tips-status-card-title" id={`tips-status-${item.id}`}>
+          <span className="tips-status-card-name">{item.nameEn}</span>
+          <img
+            src={getBattleStatusIconUrl(item.id)}
+            alt=""
+            className="tips-status-card-icon"
+            width={28}
+            height={28}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </h3>
+      </header>
+      <ul className="tips-status-card-lines">
+        {(item.lines || []).map((line, index) => (
+          <li key={`${item.id}-${index}`}>{line}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+function StatusSubPanel() {
+  return (
+    <section className="pokemon-detail-section tips-status-section">
+      <div className="tips-type-grid">
+        {battleStatusData.map((item) => (
+          <StatusCard key={item.id} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function TypesSubPanel({ cards, loading, error }) {
   return (
     <>
@@ -122,7 +171,6 @@ function TypesSubPanel({ cards, loading, error }) {
       )}
       {!loading && !error && cards && (
         <section className="pokemon-detail-section tips-types-section">
-          <h4>การแพ้ชนะของประเภทต่างๆ</h4>
           <div className="tips-type-grid">
             {cards.map((card) => (
               <TypeCard key={card.type} card={card} />
@@ -186,11 +234,7 @@ function TipsTab() {
           {activeSub === 'types' && (
             <TypesSubPanel cards={cards} loading={loading} error={error} />
           )}
-          {activeSub === 'test' && (
-            <section className="pokemon-detail-section tips-test-section">
-              <p className="tips-test-plain">test</p>
-            </section>
-          )}
+          {activeSub === 'status' && <StatusSubPanel />}
         </div>
       </div>
     </section>
