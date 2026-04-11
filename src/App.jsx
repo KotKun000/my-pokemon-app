@@ -4,14 +4,15 @@ import ItemTab from './tabs/ItemTab';
 import MoveTab from './tabs/MoveTab';
 import PlaceholderTab from './tabs/PlaceholderTab';
 import PokemonTab from './tabs/PokemonTab';
+import TipsTab from './tabs/TipsTab';
 
 const NAV_ITEMS = [
   { key: 'pokemon', label: 'โปเกมอน (Pokemon)' },
   { key: 'item', label: 'ไอเทม (Item)' },
   { key: 'move', label: 'ท่า (Move)' },
   { key: 'build-team', label: 'จัดทีม (Build Team)' },
-  { key: 'type', label: 'ตารางธาตุ (Type)' },
-  { key: 'guide', label: 'แนะนำ' },
+  { key: 'tips', label: 'เรื่องควรรู้ (Tips)' },
+  { key: 'guide', label: 'แนะนำ (Guide)' },
 ];
 
 function App() {
@@ -41,7 +42,10 @@ function App() {
       {activePage === 'pokemon' && <PokemonTab />}
       {activePage === 'item' && <ItemTab />}
       {activePage === 'move' && <MoveTab />}
-      {!['pokemon', 'item', 'move'].includes(activePage) && <PlaceholderTab />}
+      {activePage === 'tips' && <TipsTab />}
+      {!['pokemon', 'item', 'move', 'tips'].includes(activePage) && (
+        <PlaceholderTab />
+      )}
     </main>
   );
 }
