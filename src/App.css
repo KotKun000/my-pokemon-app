@@ -807,6 +807,159 @@
   color: #475569;
 }
 
+.ability-card-version-source {
+  margin: 3px 0 0;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Ability version dropdown */
+.ability-version-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.ability-version-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #bfdbfe;
+  background: #f0f7ff;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.ability-version-trigger:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.ability-version-chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.ability-version-dropdown.open .ability-version-chevron {
+  transform: rotate(180deg);
+}
+
+.ability-version-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 50;
+  min-width: 160px;
+  background: #fff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.ability-version-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.ability-version-search-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.ability-version-search {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.78rem;
+  color: #1e293b;
+  min-width: 0;
+}
+
+.ability-version-search::placeholder {
+  color: #94a3b8;
+}
+
+.ability-version-search-clear {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0 2px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ability-version-search-clear:hover {
+  color: #ef4444;
+}
+
+.ability-version-list {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ability-version-empty {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.ability-version-item {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #334155;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+  white-space: nowrap;
+}
+
+.ability-version-item:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.ability-version-item.active {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+}
+
 .pokemon-detail-total {
   margin: 0 0 8px;
   font-size: 0.9rem;
