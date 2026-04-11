@@ -9,30 +9,506 @@
   {
     "id": 2,
     "name": "ultra-ball",
-    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 2×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
-    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ 2×",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of x2.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ x2",
     "category": "standard-balls"
   },
   {
     "id": 3,
     "name": "great-ball",
-    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1.5×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
-    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ 1.5×",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of x1.5.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ x1.5",
     "category": "standard-balls"
   },
   {
     "id": 4,
     "name": "poke-ball",
-    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
-    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับปกติที่ 1×",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of x1.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับปกติที่ x1",
     "category": "standard-balls"
   },
   {
     "id": 5,
     "name": "safari-ball",
     "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1.5×.\n\nThis item can only be used in the great marsh or kanto safari zone.",
-    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ 1.5×",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ x1.5",
     "category": "standard-balls"
+  },
+  {
+    "id": 6,
+    "name": "net-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  If the wild Pokémon is water- or bug-type, this ball has a catch rate of 3×.  Otherwise, it has a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากโปเกมอนเป็นธาตุน้ำหรือแมลง อัตราจับ x3 มิฉะนั้น x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 7,
+    "name": "dive-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  If the wild Pokémon was encountered by surfing or fishing, this ball has a catch rate of 3.5×.  Otherwise, it has a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากพบจากโต้คลื่นหรือตกปลา อัตราจับ x3.5 มิฉะนั้น x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 8,
+    "name": "nest-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  Has a catch rate of given by `(40 - level) / 10`, where `level` is the wild Pokémon's level, to a maximum of 3.9× for level 1 Pokémon.  If the wild Pokémon's level is higher than 30, this ball has a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า อัตราจับคำนวณจาก (40 - เลเวล) / 10 สูงสุดประมาณ x3.9 เมื่อเลเวล 1 หากเลเวลป่าสูงกว่า 30 อัตราจับ x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 9,
+    "name": "repeat-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  If the wild Pokémon's species is marked as caught in the trainer's Pokédex, this ball has a catch rate of 3×.  Otherwise, it has a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากสายพันธุ์นั้นถูกบันทึกว่าจับแล้วในปฏิทิน อัตราจับ x3 มิฉะนั้น x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 10,
+    "name": "timer-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  Has a catch rate of 1.1× on the first turn of the battle and increases by 0.1× every turn, to a maximum of 4× on turn 30.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า เทิร์นแรกอัตราจับ x1.1 เพิ่มขึ้นทีละ 0.1 ทุกเทิร์น สูงสุด x4 ที่เทิร์น 30",
+    "category": "special-balls"
+  },
+  {
+    "id": 11,
+    "name": "luxury-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1×.  Whenever the caught Pokémon's happiness increases, it increases by one extra point.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า อัตราจับ x1 เมื่อความสุขของตัวที่จับได้เพิ่ม จะได้แต้มพิเศษเพิ่มอีก 1 แต้ม",
+    "category": "special-balls"
+  },
+  {
+    "id": 12,
+    "name": "premier-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า อัตราจับ x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 13,
+    "name": "dusk-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  If it's currently nighttime or the wild Pokémon was encountered while walking in a cave, this ball has a catch rate of 3.5×.  Otherwise, it has a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากเป็นช่วงกลางคืนหรือพบในถ้ำ อัตราจับ x3.5 มิฉะนั้น x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 14,
+    "name": "heal-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1×.  The caught Pokémon's HP is immediately restored, PP for all its moves is restored, and any status ailment is cured.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า อัตราจับ x1 หลังจับสำเร็จฟื้น HP เต็ม ฟื้น PP ทุกท่า และรักษาสถานะผิดปกติ",
+    "category": "special-balls"
+  },
+  {
+    "id": 15,
+    "name": "quick-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 4× on the first turn of a battle, but 1× any other time.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า เทิร์นแรกของการต่อสู้อัตราจับ x4 เทิร์นอื่น x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 16,
+    "name": "cherish-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon, using a catch rate of 1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า อัตราจับ x1",
+    "category": "special-balls"
+  },
+  {
+    "id": 17,
+    "name": "potion",
+    "effect": "Used on a friendly Pokémon\n:   Restores 20 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 20",
+    "category": "healing"
+  },
+  {
+    "id": 18,
+    "name": "antidote",
+    "effect": "Used on a party Pokémon\n:   Cures poison.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาพิษ",
+    "category": "status-cures"
+  },
+  {
+    "id": 19,
+    "name": "burn-heal",
+    "effect": "Used on a party Pokémon\n:   Cures a burn.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาอาการไหม้",
+    "category": "status-cures"
+  },
+  {
+    "id": 20,
+    "name": "ice-heal",
+    "effect": "Used on a party Pokémon\n:   Cures freezing.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาอาการแช่แข็ง",
+    "category": "status-cures"
+  },
+  {
+    "id": 21,
+    "name": "awakening",
+    "effect": "Used on a party Pokémon\n:   Cures sleep.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาอาการหลับ",
+    "category": "status-cures"
+  },
+  {
+    "id": 22,
+    "name": "paralyze-heal",
+    "effect": "Used on a party Pokémon\n:   Cures paralysis.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาอาการอัมพาต",
+    "category": "status-cures"
+  },
+  {
+    "id": 23,
+    "name": "full-restore",
+    "effect": "Used on a party Pokémon\n:   Restores HP to full and cures any status ailment and confusion.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้น HP เต็มและรักษาสถานะผิดปกติและสับสน",
+    "category": "healing"
+  },
+  {
+    "id": 24,
+    "name": "max-potion",
+    "effect": "Used on a party Pokémon\n:   Restores HP to full.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้น HP เต็ม",
+    "category": "healing"
+  },
+  {
+    "id": 25,
+    "name": "hyper-potion",
+    "effect": "Used on a party Pokémon\n:   Restores 200 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 200",
+    "category": "healing"
+  },
+  {
+    "id": 26,
+    "name": "super-potion",
+    "effect": "Used on a party Pokémon\n:   Restores 50 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 50",
+    "category": "healing"
+  },
+  {
+    "id": 27,
+    "name": "full-heal",
+    "effect": "Used on a party Pokémon\n:   Cures any status ailment and confusion.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาสถานะผิดปกติและสับสน",
+    "category": "status-cures"
+  },
+  {
+    "id": 28,
+    "name": "revive",
+    "effect": "Used on a party Pokémon\n:   Revives the Pokémon and restores half its HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม คืนชีพและฟื้น HP ครึ่งหนึ่ง",
+    "category": "revival"
+  },
+  {
+    "id": 29,
+    "name": "max-revive",
+    "effect": "Used on a party Pokémon\n:   Revives the Pokémon and restores its HP to full.",
+    "effect_th": "ใช้กับโปเกมอนในทีม คืนชีพและฟื้น HP เต็ม",
+    "category": "revival"
+  },
+  {
+    "id": 30,
+    "name": "fresh-water",
+    "effect": "Used on a party Pokémon\n:   Restores 50 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 50",
+    "category": "healing"
+  },
+  {
+    "id": 31,
+    "name": "soda-pop",
+    "effect": "Used on a party Pokémon\n:   Restores 60 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 60",
+    "category": "healing"
+  },
+  {
+    "id": 32,
+    "name": "lemonade",
+    "effect": "Used on a party Pokémon\n:   Restores 80 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 80",
+    "category": "healing"
+  },
+  {
+    "id": 33,
+    "name": "moomoo-milk",
+    "effect": "Used on a party Pokémon\n:   Restores 100 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 100",
+    "category": "healing"
+  },
+  {
+    "id": 34,
+    "name": "energy-powder",
+    "effect": "Used on a party Pokémon\n:   Restores 50 HP.  Decreases happiness by 5/5/10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 50 ลดความสุข 5/5/10",
+    "category": "healing"
+  },
+  {
+    "id": 35,
+    "name": "energy-root",
+    "effect": "Used on a party Pokémon\n:   Restores 200 HP.  Decreases happiness by 10/10/15.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 200 ลดความสุข 10/10/15",
+    "category": "healing"
+  },
+  {
+    "id": 36,
+    "name": "heal-powder",
+    "effect": "Used on a party Pokémon\n:   Cures any status ailment.  Decreases happiness by 5/5/10.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาสถานะผิดปกติ ลดความสุข 5/5/10",
+    "category": "status-cures"
+  },
+  {
+    "id": 37,
+    "name": "revival-herb",
+    "effect": "Used on a party Pokémon\n:   Revives a fainted Pokémon and restores its HP to full.  Decreases happiness by 10/10/15.",
+    "effect_th": "ใช้กับโปเกมอนในทีม คืนชีพและฟื้น HP เต็ม ลดความสุข 10/10/15",
+    "category": "revival"
+  },
+  {
+    "id": 38,
+    "name": "ether",
+    "effect": "Used on a party Pokémon\n:   Restores 10 PP for a selected move.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้น PP 10 สำหรับท่าที่เลือก",
+    "category": "pp-recovery"
+  },
+  {
+    "id": 39,
+    "name": "max-ether",
+    "effect": "Used on a party Pokémon\n:   Restores PP to full for a selected move.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้น PP เต็มสำหรับท่าที่เลือก",
+    "category": "pp-recovery"
+  },
+  {
+    "id": 40,
+    "name": "elixir",
+    "effect": "Used on a party Pokémon\n:   Restores 10 PP for each move.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้น PP ท่าละ 10",
+    "category": "pp-recovery"
+  },
+  {
+    "id": 41,
+    "name": "max-elixir",
+    "effect": "Used on a party Pokémon\n:   Restores PP to full for each move.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้น PP เต็มทุกท่า",
+    "category": "pp-recovery"
+  },
+  {
+    "id": 42,
+    "name": "lava-cookie",
+    "effect": "Used on a party Pokémon\n:   Cures any status ailment and confusion.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาสถานะผิดปกติและสับสน",
+    "category": "status-cures"
+  },
+  {
+    "id": 43,
+    "name": "berry-juice",
+    "effect": "Used on a party Pokémon\n:   Restores 20 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 20",
+    "category": "healing"
+  },
+  {
+    "id": 44,
+    "name": "sacred-ash",
+    "effect": "Used\n:   Revives all fainted Pokémon in the party and restores their HP to full.",
+    "effect_th": "ใช้แล้วคืนชีพโปเกมอนหมดสภาพทั้งทีมและฟื้น HP เต็ม",
+    "category": "revival"
+  },
+  {
+    "id": 45,
+    "name": "hp-up",
+    "effect": "Used on a party Pokémon\n:   Increases HP effort by 10, but won't increase it beyond 100.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึก HP 10 ไม่เกิน 100 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 46,
+    "name": "protein",
+    "effect": "Used on a party Pokémon\n:   Increases Attack effort by 10, but won't increase it beyond 100.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกโจมตี 10 ไม่เกิน 100 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 47,
+    "name": "iron",
+    "effect": "Used on a party Pokémon\n:   Increases Defense effort by 10, but won't increase it beyond 100.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกป้องกัน 10 ไม่เกิน 100 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 48,
+    "name": "carbos",
+    "effect": "Used on a party Pokémon\n:   Increases Speed effort by 10, but won't increase it beyond 100.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกความเร็ว 10 ไม่เกิน 100 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 49,
+    "name": "calcium",
+    "effect": "Used on a party Pokémon\n:   Increases Special Attack effort by 10, but won't increase it beyond 100.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกพลังพิเศษโจมตี 10 ไม่เกิน 100 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 50,
+    "name": "rare-candy",
+    "effect": "Used on a party Pokémon\n:   Increases level by 1.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มเลเวล 1 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 51,
+    "name": "pp-up",
+    "effect": "Used on a party Pokémon\n:   Increases a selected move's max PP by 20% its original max PP, to a maximum of 1.6×.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่ม PP สูงสุดของท่าที่เลือก 20% จากค่าเดิม สูงสุด 1.6 เท่า เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 52,
+    "name": "zinc",
+    "effect": "Used on a party Pokémon\n:   Increases Special Defense effort by 10, but won't increase it beyond 100.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกพลังพิเศษป้องกัน 10 ไม่เกิน 100 เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 53,
+    "name": "pp-max",
+    "effect": "Used on a party Pokémon\n:   Increases a selected move's max PP to 1.6× its original max PP.  Increases happiness by 5/3/2.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ตั้ง PP สูงสุดของท่าที่เลือกเป็น 1.6 เท่าของค่าเดิม เพิ่มความสุข 5/3/2",
+    "category": "vitamins"
+  },
+  {
+    "id": 54,
+    "name": "old-gateau",
+    "effect": "Used on a party Pokémon\n:   Cures any status ailment and confusion.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาสถานะผิดปกติและสับสน",
+    "category": "status-cures"
+  },
+  {
+    "id": 55,
+    "name": "guard-spec",
+    "effect": "Used on a party Pokémon in battle\n:   Protects the target's stats from being lowered for the next five turns.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ ป้องกันไม่ให้สถานะถูกลดเป็นเวลา 5 เทิร์น เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 56,
+    "name": "dire-hit",
+    "effect": "Used on a party Pokémon in battle\n:   Increases the target's critical hit chance by one stage until it leaves the field.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มโอกาสคริติคอลฮิต 1 ระดับจนกว่าจะออกจากสนาม เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 57,
+    "name": "x-attack",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Attack by one stage.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังโจมตี 1 ระดับ เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 58,
+    "name": "x-defense",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Defense by one stage.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังป้องกัน 1 ระดับ เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 59,
+    "name": "x-speed",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Speed by one stage.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความเร็ว 1 ระดับ เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 60,
+    "name": "x-accuracy",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's accuracy by one stage.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความแม่นยำ 1 ระดับ เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 61,
+    "name": "x-sp-atk",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Attack by one stage.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษโจมตี 1 ระดับ เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 62,
+    "name": "x-sp-def",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Defense by one stage.  Increases happiness by 1/1/0.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษป้องกัน 1 ระดับ เพิ่มความสุข 1/1/0",
+    "category": "stat-boosts"
+  },
+  {
+    "id": 63,
+    "name": "poke-doll",
+    "effect": "Used in battle\n:   Ends a wild battle.  Cannot be used in trainer battles.",
+    "effect_th": "ใช้ในการต่อสู้ จบการต่อสู้กับโปเกมอนป่า ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "spelunking"
+  },
+  {
+    "id": 64,
+    "name": "fluffy-tail",
+    "effect": "Used in battle\n:   Ends a wild battle.  Cannot be used in trainer battles.",
+    "effect_th": "ใช้ในการต่อสู้ จบการต่อสู้กับโปเกมอนป่า ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "spelunking"
+  },
+  {
+    "id": 65,
+    "name": "blue-flute",
+    "effect": "Used on a party Pokémon\n:   Cures sleep.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาอาการหลับ",
+    "category": "flutes"
+  },
+  {
+    "id": 66,
+    "name": "yellow-flute",
+    "effect": "Used on a party Pokémon in battle\n:   Cures confusion.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ รักษาอาการสับสน",
+    "category": "flutes"
+  },
+  {
+    "id": 67,
+    "name": "red-flute",
+    "effect": "Used on a party Pokémon in battle\n:   Cures attraction.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ รักษาอาการหลงรัก",
+    "category": "flutes"
+  },
+  {
+    "id": 68,
+    "name": "black-flute",
+    "effect": "Used outside of battle\n:   Decreases the wild Pokémon encounter rate by 50%.",
+    "effect_th": "ใช้นอกการต่อสู้ ลดอัตราเจอโปเกมอนป่า 50%",
+    "category": "spelunking"
+  },
+  {
+    "id": 69,
+    "name": "white-flute",
+    "effect": "Used outside of battle\n:   Doubles the wild Pokémon encounter rate.",
+    "effect_th": "ใช้นอกการต่อสู้ เพิ่มอัตราเจอโปเกมอนป่าเป็นสองเท่า",
+    "category": "spelunking"
+  },
+  {
+    "id": 76,
+    "name": "super-repel",
+    "effect": "Used outside of battle\n:   Trainer will skip encounters with wild Pokémon of a lower level than the lead party Pokémon.  This effect wears off after the trainer takes 200 steps.",
+    "effect_th": "ใช้นอกการต่อสู้ ข้ามการเจอโปเกมอนป่าที่เลเวลต่ำกว่าโปเกมอนหัวทีม มีผล 200 ก้าว",
+    "category": "spelunking"
+  },
+  {
+    "id": 77,
+    "name": "max-repel",
+    "effect": "Used outside of battle\n:   Trainer will skip encounters with wild Pokémon of a lower level than the lead party Pokémon.  This effect wears off after the trainer takes 250 steps.",
+    "effect_th": "ใช้นอกการต่อสู้ ข้ามการเจอโปเกมอนป่าที่เลเวลต่ำกว่าโปเกมอนหัวทีม มีผล 250 ก้าว",
+    "category": "spelunking"
+  },
+  {
+    "id": 78,
+    "name": "escape-rope",
+    "effect": "Used outside of battle\n:   Transports the trainer to the last-entered dungeon entrance.  Cannot be used outside, in buildings, or in distortion world, sinnoh hall of origin 1, spear pillar, or turnback cave.",
+    "effect_th": "ใช้นอกการต่อสู้ ย้ายไปทางเข้าดันเจี้ยย์ล่าสุด (ใช้ไม่ได้ในบางพื้นที่พิเศษตามเกม)",
+    "category": "spelunking"
+  },
+  {
+    "id": 79,
+    "name": "repel",
+    "effect": "Used outside of battle\n:   Trainer will skip encounters with wild Pokémon of a lower level than the lead party Pokémon.  This effect wears off after the trainer takes 100 steps.",
+    "effect_th": "ใช้นอกการต่อสู้ ข้ามการเจอโปเกมอนป่าที่เลเวลต่ำกว่าโปเกมอนหัวทีม มีผล 100 ก้าว",
+    "category": "spelunking"
   },
   {
     "id": 80,
@@ -142,7 +618,7 @@
   {
     "id": 131,
     "name": "leppa-berry",
-    "effect": "Held in battle\n:   When the holder is out of PP for one of its moves, it consumes this item to restore 10 of that move’s PP.\n\nUsed on a party Pokémon\n:   Restores 10 PP for a selected move.",
+    "effect": "Held in battle\n:   When the holder is out of PP for one of its moves, it consumes this item to restore 10 of that move's PP.\n\nUsed on a party Pokémon\n:   Restores 10 PP for a selected move.",
     "effect_th": "เมื่อผู้ถือหมด PP ของท่าหนึ่งท่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู PP ของท่านั้น 10 แต้มโดยอัตโนมัติ",
     "category": "medicine"
   },
@@ -170,7 +646,7 @@
   {
     "id": 135,
     "name": "sitrus-berry",
-    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/4 its max HP.\n\nUsed on a party Pokémon\n:   Restores 1/4 the Pokémon’s max HP.",
+    "effect": "Held in battle\n:   When the holder has 1/2 its max HP remaining or less, it consumes this item to restore 1/4 its max HP.\n\nUsed on a party Pokémon\n:   Restores 1/4 the Pokémon's max HP.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/2 หรือน้อยกว่า จะกินเบอร์รี่นี้เพื่อฟื้นฟู HP 1/4 ของ HP สูงสุดโดยอัตโนมัติ",
     "category": "medicine"
   },
@@ -352,7 +828,6 @@
   {
     "id": 161,
     "name": "occa-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective fire-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุไฟ (Fire-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -360,7 +835,6 @@
   {
     "id": 162,
     "name": "passho-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective water-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุน้ำ (Water-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -368,7 +842,6 @@
   {
     "id": 163,
     "name": "wacan-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective electric-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุไฟฟ้า (Electric-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -376,7 +849,6 @@
   {
     "id": 164,
     "name": "rindo-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective grass-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุหญ้า (Grass-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -384,7 +856,6 @@
   {
     "id": 165,
     "name": "yache-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective ice-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุน้ำแข็ง (Ice-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -392,7 +863,6 @@
   {
     "id": 166,
     "name": "chople-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective fighting-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุต่อสู้ (Fighting-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -400,7 +870,6 @@
   {
     "id": 167,
     "name": "kebia-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective poison-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุพิษ (Poison-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -408,7 +877,6 @@
   {
     "id": 168,
     "name": "shuca-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective ground-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุดิน (Ground-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -416,7 +884,6 @@
   {
     "id": 169,
     "name": "coba-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective flying-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุบิน (Flying-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -424,7 +891,6 @@
   {
     "id": 170,
     "name": "payapa-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective psychic-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุจิต (Psychic-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -432,7 +898,6 @@
   {
     "id": 171,
     "name": "tanga-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective bug-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุแมลง (Bug-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -440,7 +905,6 @@
   {
     "id": 172,
     "name": "charti-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective rock-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุหิน (Rock-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -448,7 +912,6 @@
   {
     "id": 173,
     "name": "kasib-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective ghost-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุผี (Ghost-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -456,7 +919,6 @@
   {
     "id": 174,
     "name": "haban-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective dragon-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุมังกร (Dragon-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -464,7 +926,6 @@
   {
     "id": 175,
     "name": "colbur-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective dark-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุมืด (Dark-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -472,7 +933,6 @@
   {
     "id": 176,
     "name": "babiri-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take super-effective steel-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุเหล็ก (Steel-type) แบบ Super Effective จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -480,7 +940,6 @@
   {
     "id": 177,
     "name": "chilan-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder would take normal-type damage, it consumes this item to halve the amount of damage taken.",
     "effect_th": "เมื่อผู้ถือจะได้รับความเสียหายจากท่าธาตุปกติ (Normal-type) จะกินไอเท็มนี้เพื่อลดความเสียหายลงครึ่งหนึ่งโดยอัตโนมัติ",
     "category": "type-protection"
@@ -488,7 +947,6 @@
   {
     "id": 178,
     "name": "liechi-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Attack by one stage.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Attack ขึ้น 1 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -496,7 +954,6 @@
   {
     "id": 179,
     "name": "ganlon-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Defense by one stage.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Defense ขึ้น 1 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -504,7 +961,6 @@
   {
     "id": 180,
     "name": "salac-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Speed by one stage.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Speed ขึ้น 1 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -512,7 +968,6 @@
   {
     "id": 181,
     "name": "petaya-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Special Attack by one stage.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Special Attack ขึ้น 1 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -520,7 +975,6 @@
   {
     "id": 182,
     "name": "apicot-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its Special Defense by one stage.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่ม Special Defense ขึ้น 1 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -528,7 +982,6 @@
   {
     "id": 183,
     "name": "lansat-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise its critical hit chance by one stage.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่มโอกาสคริติคอลฮิต (Critical Hit) ขึ้น 1 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -536,7 +989,6 @@
   {
     "id": 184,
     "name": "starf-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item to raise a random stat by two stages.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้เพื่อเพิ่มสถิติสุ่มขึ้น 2 ระดับโดยอัตโนมัติ",
     "category": "in-a-pinch"
@@ -544,7 +996,6 @@
   {
     "id": 185,
     "name": "enigma-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder takes super-effective damage, it consumes this item to restore 1/4 its max HP.",
     "effect_th": "เมื่อผู้ถือได้รับความเสียหายแบบ Super Effective จะกินไอเท็มนี้เพื่อฟื้นฟู HP 1/4 ของ HP สูงสุดโดยอัตโนมัติ",
     "category": "other"
@@ -552,7 +1003,6 @@
   {
     "id": 186,
     "name": "micle-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item, and its next used move has 1.2× its normal accuracy.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้โดยอัตโนมัติ และท่าที่ใช้ครั้งถัดไปจะมีความแม่นยำ (Accuracy) เพิ่มเป็น 1.2×",
     "category": "in-a-pinch"
@@ -560,7 +1010,6 @@
   {
     "id": 187,
     "name": "custap-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder has 1/4 its max HP remaining or less, it consumes this item.  On the following turn, the holder will act first among moves with the same priority, regardless of Speed.",
     "effect_th": "เมื่อผู้ถือมี HP เหลือ 1/4 หรือน้อยกว่า จะกินไอเท็มนี้โดยอัตโนมัติ ในเทิร์นถัดไป ผู้ถือจะออนท่าก่อนในกลุ่มท่าที่มี Priority เท่ากัน โดยไม่สนความเร็ว",
     "category": "in-a-pinch"
@@ -568,7 +1017,6 @@
   {
     "id": 188,
     "name": "jaboca-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder takes physical damage, it consumes this item to damage the attacking Pokémon for 1/8 its max HP.",
     "effect_th": "เมื่อผู้ถือได้รับความเสียหายกายภาพ จะกินไอเท็มนี้เพื่อสร้างความเสียหายให้โปเกมอนที่โจมตีเป็น 1/8 ของ HP สูงสุดโดยอัตโนมัติ",
     "category": "other"
@@ -576,7 +1024,6 @@
   {
     "id": 189,
     "name": "rowap-berry",
-    "name_th": "",
     "effect": "Held in battle\n:   When the holder takes special damage, it consumes this item to damage the attacking Pokémon for 1/8 its max HP.",
     "effect_th": "เมื่อผู้ถือได้รับความเสียหายพิเศษ จะกินไอเท็มนี้เพื่อสร้างความเสียหายให้โปเกมอนที่โจมตีเป็น 1/8 ของ HP สูงสุดโดยอัตโนมัติ",
     "category": "other"
@@ -584,14 +1031,14 @@
   {
     "id": 190,
     "name": "bright-powder",
-    "effect": "Held in battle\n:   Moves targeting the holder have 0.9× chance to hit.",
-    "effect_th": "ท่าที่เล็งเป้าหมายมาที่ผู้ถือ มีโอกาสโดนลดเหลือ 0.9× (พลาดง่ายขึ้น 10%)",
+    "effect": "Held in battle\n:   Moves targeting the holder have x0.9 chance to hit.",
+    "effect_th": "ท่าที่เล็งเป้าหมายมาที่ผู้ถือ มีโอกาสโดนลดเหลือ x0.9 (พลาดง่ายขึ้น 10%)",
     "category": "held-items"
   },
   {
     "id": 191,
     "name": "white-herb",
-    "effect": "Held in battle\n:   At the end of each turn, if any of the holder’s stats have a negative stat modifier, the holder consumes this item to remove the modifiers from those stats.",
+    "effect": "Held in battle\n:   At the end of each turn, if any of the holder's stats have a negative stat modifier, the holder consumes this item to remove the modifiers from those stats.",
     "effect_th": "ในตอนท้ายของแต่ละเทิร์น หากสถานะใดๆ ของผู้ถือถูกลดลง (ติดลบ) จะกินไอเท็มนี้เพื่อรีเซ็ตสถานะกลับเป็นปกติ",
     "category": "held-items"
   },
@@ -612,7 +1059,7 @@
   {
     "id": 198,
     "name": "kings-rock",
-    "effect": "Held in battle\n:   Holder’s damaging moves have a 10% chance to make their target flinch.  This chance applies independently to each hit of a multi-hit move.\n\n    This item’s chance is rolled independently of any other move effects;\ne.g., a move with a 30% chance to flinch normally will have a 37% total chance to flinch when used with this item, because 3% of the time, both effects activate.\n\nHeld by poliwhirl or slowbro\n:   Holder evolves into politoed or slowking, respectively, when traded.",
+    "effect": "Held in battle\n:   Holder's damaging moves have a 10% chance to make their target flinch.  This chance applies independently to each hit of a multi-hit move.\n\n    This item's chance is rolled independently of any other move effects;\ne.g., a move with a 30% chance to flinch normally will have a 37% total chance to flinch when used with this item, because 3% of the time, both effects activate.\n\nHeld by poliwhirl or slowbro\n:   Holder evolves into politoed or slowking, respectively, when traded.",
     "effect_th": "ท่าโจมตีที่สร้างความเสียหายของผู้ถือ มีโอกาส 10% ที่จะทำให้เป้าหมายสะดุ้ง (Flinch) โอกาสนี้ใช้กับแต่ละฮิตของท่าหลายฮิต\n\nโอกาสของไอเท็มนี้คำนวณแยกจากเอฟเฟกต์ท่าอื่นๆ เช่น ท่าที่มีโอกาสสะดุ้ง 30% จะมีโอกาสรวม 37% เมื่อใช้กับไอเท็มนี้\n\nถือโดย Poliwhirl หรือ Slowbro\n:   ช่วยให้พัฒนา Politoed หรือ Slowking เมื่อแลกเปลี่ยน",
     "category": "held-items"
   },
@@ -652,6 +1099,118 @@
     "category": "evolution"
   },
   {
+    "id": 213,
+    "name": "light-ball",
+    "effect": "Held by Pikachu: Doubles the holder's initial Attack and Special Attack.",
+    "effect_th": "เมื่อ Pikachu ถือ พลังโจมตีและพลังพิเศษโจมตีเริ่มต้นเป็นสองเท่า",
+    "category": "species-specific"
+  },
+  {
+    "id": 214,
+    "name": "soft-sand",
+    "effect": "Held: Increases the power of the holder's Ground moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุดิน (Ground) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 215,
+    "name": "hard-stone",
+    "effect": "Held: Increases the power of the holder's Rock moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุหิน (Rock) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 216,
+    "name": "miracle-seed",
+    "effect": "Held: Increases the power of the holder's Grass moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุหญ้า (Grass) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 217,
+    "name": "black-glasses",
+    "effect": "Held: Increases the power of the holder's Dark moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุมืด (Dark) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 218,
+    "name": "black-belt",
+    "effect": "Held: Increases the power of the holder's Fighting moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุต่อสู้ (Fighting) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 219,
+    "name": "magnet",
+    "effect": "Held: Increases the power of the holder's Electric moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุไฟฟ้า (Electric) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 220,
+    "name": "mystic-water",
+    "effect": "Held: Increases the power of the holder's Water moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุน้ำ (Water) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 221,
+    "name": "sharp-beak",
+    "effect": "Held: Increases the power of the holder's Flying moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุบิน (Flying) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 222,
+    "name": "poison-barb",
+    "effect": "Held: Increases the power of the holder's Poison moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุพิษ (Poison) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 223,
+    "name": "never-melt-ice",
+    "effect": "Held: Increases the power of the holder's Ice moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุน้ำแข็ง (Ice) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 224,
+    "name": "spell-tag",
+    "effect": "Held: Increases the power of the holder's Ghost moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุผี (Ghost) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 225,
+    "name": "twisted-spoon",
+    "effect": "Held: Increases the power of the holder's Psychic moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุพลังจิต (Psychic) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 226,
+    "name": "charcoal",
+    "effect": "Held: Increases the power of the holder's Fire moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุไฟ (Fire) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 227,
+    "name": "dragon-fang",
+    "effect": "Held: Increases the power of the holder's Dragon moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุมังกร (Dragon) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 228,
+    "name": "silk-scarf",
+    "effect": "Held: Increases the power of the holder's Normal moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุปกติ (Normal) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
     "id": 229,
     "name": "up-grade",
     "effect": "Held by Porygon: Evolves the holder into Porygon2 when traded.",
@@ -666,11 +1225,46 @@
     "category": "held-items"
   },
   {
+    "id": 231,
+    "name": "sea-incense",
+    "effect": "Held: Increases the power of the holder's Water moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุน้ำ (Water) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
     "id": 232,
     "name": "lax-incense",
     "effect": "Held: Increases the holder's Evasion by 5%.",
     "effect_th": "เพิ่มความสามารถหลบหลีก (Evasion) ของผู้ถือขึ้น 5%",
     "category": "held-items"
+  },
+  {
+    "id": 233,
+    "name": "lucky-punch",
+    "effect": "Held by Chansey: Raises the holder's critical hit counter by 2.",
+    "effect_th": "เมื่อ Chansey ถือ เพิ่มระดับคริติคอลฮิตขึ้น 2",
+    "category": "species-specific"
+  },
+  {
+    "id": 234,
+    "name": "metal-powder",
+    "effect": "Held by Ditto: Increases the holder's initial Defense and Special Defense by 50%.",
+    "effect_th": "เมื่อ Ditto ถือ เพิ่มพลังป้องกันและพลังพิเศษป้องกันเริ่มต้น 50%",
+    "category": "species-specific"
+  },
+  {
+    "id": 235,
+    "name": "thick-club",
+    "effect": "Held by Cubone or Marowak: Doubles the holder's Attack.",
+    "effect_th": "เมื่อ Cubone หรือ Marowak ถือ พลังโจมตีเริ่มต้นเป็นสองเท่า",
+    "category": "species-specific"
+  },
+  {
+    "id": 236,
+    "name": "stick",
+    "effect": "Held by Farfetch'd: Raises the holder's critical hit counter by 2.",
+    "effect_th": "เมื่อ Farfetch'd ถือ เพิ่มระดับคริติคอลฮิตขึ้น 2",
+    "category": "species-specific"
   },
   {
     "id": 242,
@@ -722,6 +1316,27 @@
     "category": "held-items"
   },
   {
+    "id": 249,
+    "name": "toxic-orb",
+    "effect": "Held: Badly poisons the holder at the end of each turn.",
+    "effect_th": "ทำให้ผู้ถือติดพิษรุนแรง (Badly Poisoned) ในตอนท้ายของแต่ละเทิร์น",
+    "category": "bad-held-items"
+  },
+  {
+    "id": 250,
+    "name": "flame-orb",
+    "effect": "Held: Burns the holder at the end of each turn.",
+    "effect_th": "ทำให้ผู้ถือไหม้ในตอนท้ายของแต่ละเทิร์น",
+    "category": "bad-held-items"
+  },
+  {
+    "id": 251,
+    "name": "quick-powder",
+    "effect": "Held by Ditto: Doubles the holder's initial Speed.",
+    "effect_th": "เมื่อ Ditto ถือ ความเร็วเริ่มต้นเป็นสองเท่า",
+    "category": "species-specific"
+  },
+  {
     "id": 252,
     "name": "focus-sash",
     "effect": "Held: If the holder has full HP and is attacked for regular damage that would faint it, this item is consumed and prevents the holder's HP from lowering below 1.  This effect works against multi-hit attacks, but does not work against the effects of Doom Desire or Future Sight.",
@@ -741,6 +1356,20 @@
     "effect": "Held: Each time the holder uses the same move consecutively, its power is increased by another 10% of its original, to a maximum of 100%.",
     "effect_th": "ทุกครั้งที่ผู้ถือใช้ท่าเดิมซ้ำต่อเนื่อง พลังจะเพิ่มขึ้นอีก 10% จากพลังต้นฉบับ สูงสุด 100%",
     "category": "held-items"
+  },
+  {
+    "id": 255,
+    "name": "iron-ball",
+    "effect": "Held: Decreases the holder's Speed by 50%.  If the holder is Flying or has Levitate, it takes regular damage from Ground attacks and is suspectible to Spikes and Toxic Spikes.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% หากเป็นธาตุบินหรือมี Levitate จะโดนท่าธาตุดินเต็มและได้รับผลจากสไปค์",
+    "category": "bad-held-items"
+  },
+  {
+    "id": 256,
+    "name": "lagging-tail",
+    "effect": "Held: The holder will go last within its move's priority bracket, regardless of Speed.  If multiple Pokémon within the same priority bracket are subject to this effect, the slower Pokémon will go first.  The holder will move after Pokémon with Stall.  If the holder has Stall, Stall is ignored.  This item ignores Trick Room.",
+    "effect_th": "ผู้ถือจะออกท่าทีหลังในระดับความสำคัญเดียวกันโดยไม่สนความเร็ว หากหลายตัวได้รับผลเดียวกัน ตัวที่ช้ากว่าจะออกก่อน ไม่สน Trick Room (รายละเอียดตามกลไกเกม)",
+    "category": "bad-held-items"
   },
   {
     "id": 257,
@@ -792,6 +1421,62 @@
     "category": "held-items"
   },
   {
+    "id": 264,
+    "name": "choice-scarf",
+    "effect": "Held: Increases the holder's Speed by 50%, but restricts it to the first move it uses until it leaves battle or loses this item.  If this item is swapped for another Choice item via Trick or Switcheroo, the holder's restriction is still lifted, but it will again be restricted to the next move it uses.\n(Quirk: If the holder is switched in by U-Turn and it also knows U-Turn, U-Turn becomes its restricted move.)",
+    "effect_th": "เพิ่มความเร็วผู้ถือ 50% แต่ใช้ได้แค่ท่าแรกที่ใช้จนออกจากการต่อสู้หรือเสียไอเท็ม หากสลับกับไอเท็ม Choice อื่นผ่าน Trick หรือ Switcheroo ข้อจำกัดจะหายแต่จะล็อกท่าถัดไป (กรณีสลับเข้ามาด้วย U-Turn มีข้อยกเว้นพิเศษ)",
+    "category": "choice"
+  },
+  {
+    "id": 265,
+    "name": "sticky-barb",
+    "effect": "Held: Damaged the holder for 1/8 its max HP.  When the holder is struck by a contact move, damages the attacker for 1/8 its max HP; if the attacker is not holding an item, it will take this item.",
+    "effect_th": "สร้างความเสียหายผู้ถือ 1/8 ของ HP สูงสุด เมื่อถูกท่าสัมผัส สร้างความเสียหายผู้โจมตี 1/8 ของ HP สูงสุด หากผู้โจมตีไม่ถือไอเท็มจะรับไอเท็มนี้ไป",
+    "category": "bad-held-items"
+  },
+  {
+    "id": 266,
+    "name": "power-bracer",
+    "effect": "Held: Decreases the holder's Speed by 50%.  Whenever the holder gains Attack effort from battle, increases that effort by 4; this applies before the PokéRUS doubling effect.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% เมื่อได้ค่าฝึกโจมตีจากการต่อสู้ เพิ่มค่าฝึกนั้นอีก 4 ก่อนเอฟเฟกต์ Pokérus",
+    "category": "effort-training"
+  },
+  {
+    "id": 267,
+    "name": "power-belt",
+    "effect": "Held: Decreases the holder's Speed by 50%.  Whenever the holder gains Defense effort from battle, increases that effort by 4; this applies before the PokéRUS doubling effect.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% เมื่อได้ค่าฝึกป้องกัน เพิ่มค่าฝึกนั้นอีก 4 ก่อนเอฟเฟกต์ Pokérus",
+    "category": "effort-training"
+  },
+  {
+    "id": 268,
+    "name": "power-lens",
+    "effect": "Held: Decreases the holder's Speed by 50%.  Whenever the holder gains Special Attack effort from battle, increases that effort by 4; this applies before the PokéRUS doubling effect.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% เมื่อได้ค่าฝึกพลังพิเศษโจมตี เพิ่มค่าฝึกนั้นอีก 4 ก่อนเอฟเฟกต์ Pokérus",
+    "category": "effort-training"
+  },
+  {
+    "id": 269,
+    "name": "power-band",
+    "effect": "Held: Decreases the holder's Speed by 50%.  Whenever the holder gains Special Defense effort from battle, increases that effort by 4; this applies before the PokéRUS doubling effect.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% เมื่อได้ค่าฝึกพลังพิเศษป้องกัน เพิ่มค่าฝึกนั้นอีก 4 ก่อนเอฟเฟกต์ Pokérus",
+    "category": "effort-training"
+  },
+  {
+    "id": 270,
+    "name": "power-anklet",
+    "effect": "Held: Decreases the holder's Speed by 50%.  Whenever the holder gains Speed effort from battle, increases that effort by 4; this applies before the PokéRUS doubling effect.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% เมื่อได้ค่าฝึกความเร็ว เพิ่มค่าฝึกนั้นอีก 4 ก่อนเอฟเฟกต์ Pokérus",
+    "category": "effort-training"
+  },
+  {
+    "id": 271,
+    "name": "power-weight",
+    "effect": "Held: Decreases the holder's Speed by 50%.  Whenever the holder gains HP effort from battle, increases that effort by 4; this applies before the PokéRUS doubling effect.",
+    "effect_th": "ลดความเร็วผู้ถือ 50% เมื่อได้ค่าฝึก HP เพิ่มค่าฝึกนั้นอีก 4 ก่อนเอฟเฟกต์ Pokérus",
+    "category": "effort-training"
+  },
+  {
     "id": 272,
     "name": "shed-shell",
     "effect": "Held: The holder is unaffected by any moves or abilities that would prevent it from actively leaving battle.",
@@ -802,8 +1487,183 @@
     "id": 273,
     "name": "big-root",
     "effect": "Held: HP restored from Absorb, Aqua Ring, Drain Punch, Dream Eater, Giga Drain, Ingrain, Leech Life, Leech Seed, and Mega Drain is increased by 30%.  Damage inflicted is not affected.",
-    "effect_th": "HP ที่ฟื้นฟูจากท่าแอบซอร์บ อควาริง เดรนพันช์ ดรีมอีทเตอร์ กิกาเดรน อินเกรน ลีชไลฟ์ ลีชซีด และเมกาเดรน เพิ่มขึ้น 30% ความเสียหายที่สร้างไม่มีผล",
+    "effect_th": "HP ที่ฟื้นฟูจากท่า Absorb , Aqua Ring, Drain Punch, Dream Eater, Giga Drain, Ingrain, Leech Life, Leech Seed, and Mega Drain เพิ่มขึ้น 30% ความเสียหายที่สร้างไม่มีผล",
     "category": "held-items"
+  },
+  {
+    "id": 197,
+    "name": "choice-band",
+    "effect": "Held in battle\n:   Holder has 1.5× its Attack.  When the holder attempts to use a move, all its other moves are disabled until it leaves battle or loses this item.\n\n    The restriction ends even if this item is swapped for another Choice item\nvia trick or switcheroo.",
+    "effect_th": "พกระหว่างต่อสู้ พลังโจมตี x1.5 เมื่อจะใช้ท่า ท่าอื่นจะถูกล็อกจนออกจากการต่อสู้หรือเสียไอเท็ม หากสลับกับไอเท็ม Choice อื่นผ่าน Trick หรือ Switcheroo ข้อจำกัดจะหายแต่จะถูกล็อกท่าถัดไปที่ใช้",
+    "category": "choice"
+  },
+  {
+    "id": 274,
+    "name": "choice-specs",
+    "effect": "Held: Increases the holder's Special Attack by 50%, but restricts it to the first move it uses until it leaves battle or loses this item.  If this item is swapped for another Choice item via Trick or Switcheroo, the holder's restriction is still lifted, but it will again be restricted to the next move it uses.\n(Quirk: If the holder is switched in by U-Turn and it also knows U-Turn, U-Turn becomes its restricted move.)",
+    "effect_th": "เพิ่มพลังพิเศษโจมตีผู้ถือ 50% แต่ใช้ได้แค่ท่าแรกที่ใช้จนออกจากการต่อสู้หรือเสียไอเท็ม หากสลับกับไอเท็ม Choice อื่นผ่าน Trick หรือ Switcheroo ข้อจำกัดจะหายแต่จะล็อกท่าถัดไป",
+    "category": "choice"
+  },
+  {
+    "id": 275,
+    "name": "flame-plate",
+    "effect": "Held: Increases the power of the holder's Fire moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Fire.",
+    "effect_th": "เพิ่มพลังท่าธาตุไฟ 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุไฟ",
+    "category": "plates"
+  },
+  {
+    "id": 276,
+    "name": "splash-plate",
+    "effect": "Held: Increases the power of the holder's Water moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Water.",
+    "effect_th": "เพิ่มพลังท่าธาตุน้ำ 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุน้ำ",
+    "category": "plates"
+  },
+  {
+    "id": 277,
+    "name": "zap-plate",
+    "effect": "Held: Increases the power of the holder's Electric moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Electric.",
+    "effect_th": "เพิ่มพลังท่าธาตุไฟฟ้า 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุไฟฟ้า",
+    "category": "plates"
+  },
+  {
+    "id": 278,
+    "name": "meadow-plate",
+    "effect": "Held: Increases the power of the holder's Grass moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Grass.",
+    "effect_th": "เพิ่มพลังท่าธาตุหญ้า 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุหญ้า",
+    "category": "plates"
+  },
+  {
+    "id": 279,
+    "name": "icicle-plate",
+    "effect": "Held: Increases the power of the holder's Ice moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Ice.",
+    "effect_th": "เพิ่มพลังท่าธาตุน้ำแข็ง 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุน้ำแข็ง",
+    "category": "plates"
+  },
+  {
+    "id": 280,
+    "name": "fist-plate",
+    "effect": "Held: Increases the power of the holder's Fighting moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Fighting.",
+    "effect_th": "เพิ่มพลังท่าธาตุต่อสู้ 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุต่อสู้",
+    "category": "plates"
+  },
+  {
+    "id": 281,
+    "name": "toxic-plate",
+    "effect": "Held: Increases the power of the holder's Poison moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Poison.",
+    "effect_th": "เพิ่มพลังท่าธาตุพิษ 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุพิษ",
+    "category": "plates"
+  },
+  {
+    "id": 282,
+    "name": "earth-plate",
+    "effect": "Held: Increases the power of the holder's Ground moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Ground.",
+    "effect_th": "เพิ่มพลังท่าธาตุดิน 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุดิน",
+    "category": "plates"
+  },
+  {
+    "id": 283,
+    "name": "sky-plate",
+    "effect": "Held: Increases the power of the holder's Flying moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Flying.",
+    "effect_th": "เพิ่มพลังท่าธาตุบิน 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุบิน",
+    "category": "plates"
+  },
+  {
+    "id": 284,
+    "name": "mind-plate",
+    "effect": "Held: Increases the power of the holder's Psychic moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Psychic.",
+    "effect_th": "เพิ่มพลังท่าธาตุพลังจิต 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุพลังจิต",
+    "category": "plates"
+  },
+  {
+    "id": 285,
+    "name": "insect-plate",
+    "effect": "Held: Increases the power of the holder's Bug moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Bug.",
+    "effect_th": "เพิ่มพลังท่าธาตุแมลง 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุแมลง",
+    "category": "plates"
+  },
+  {
+    "id": 286,
+    "name": "stone-plate",
+    "effect": "Held: Increases the power of the holder's Rock moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Rock.",
+    "effect_th": "เพิ่มพลังท่าธาตุหิน 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุหิน",
+    "category": "plates"
+  },
+  {
+    "id": 287,
+    "name": "spooky-plate",
+    "effect": "Held: Increases the power of the holder's Ghost moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Ghost.",
+    "effect_th": "เพิ่มพลังท่าธาตุผี 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุผี",
+    "category": "plates"
+  },
+  {
+    "id": 288,
+    "name": "draco-plate",
+    "effect": "Held: Increases the power of the holder's Dragon moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Dragon.",
+    "effect_th": "เพิ่มพลังท่าธาตุมังกร 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุมังกร",
+    "category": "plates"
+  },
+  {
+    "id": 289,
+    "name": "dread-plate",
+    "effect": "Held: Increases the power of the holder's Dark moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Dark.",
+    "effect_th": "เพิ่มพลังท่าธาตุมืด 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุมืด",
+    "category": "plates"
+  },
+  {
+    "id": 290,
+    "name": "iron-plate",
+    "effect": "Held: Increases the power of the holder's Steel moves by 20%.\nHeld by a Multitype Pokémon: Holder's type becomes Steel.",
+    "effect_th": "เพิ่มพลังท่าธาตุเหล็ก 20% หากผู้ถือมี Ability Multitype จะกลายเป็นธาตุเหล็ก",
+    "category": "plates"
+  },
+  {
+    "id": 291,
+    "name": "odd-incense",
+    "effect": "Held: Increases the power of the holder's Psychic moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุพลังจิต (Psychic) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 292,
+    "name": "rock-incense",
+    "effect": "Held: Increases the power of the holder's Rock moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุหิน (Rock) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 293,
+    "name": "full-incense",
+    "effect": "Held: The holder will go last within its move's priority bracket, regardless of Speed.  If multiple Pokémon within the same priority bracket are subject to this effect, the slower Pokémon will go first.  The holder will move after Pokémon with Stall.  If the holder has Stall, Stall is ignored.  This item ignores Trick Room.",
+    "effect_th": "ผู้ถือจะออกท่าทีหลังในระดับความสำคัญเดียวกันโดยไม่สนความเร็ว ไม่สน Trick Room (รายละเอียดตามกลไกเกม)",
+    "category": "bad-held-items"
+  },
+  {
+    "id": 294,
+    "name": "wave-incense",
+    "effect": "Held: Increases the power of the holder's Water moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุน้ำ (Water) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 295,
+    "name": "rose-incense",
+    "effect": "Held: Increases the power of the holder's Grass moves by 20%.",
+    "effect_th": "เพิ่มพลังท่าธาตุหญ้า (Grass) ของผู้ถือ 20%",
+    "category": "type-enhancement"
+  },
+  {
+    "id": 296,
+    "name": "luck-incense",
+    "effect": "Held: Doubles the money the trainer receives after an in-game trainer battle.  This effect cannot apply more than once to the same battle.",
+    "effect_th": "เงินรางวัลหลังชนะเทรนเนอร์ในเกมเป็นสองเท่า ใช้ได้ครั้งเดียวต่อการต่อสู้",
+    "category": "training"
+  },
+  {
+    "id": 297,
+    "name": "pure-incense",
+    "effect": "Held by lead Pokémon: Prevents wild battles with Pokémon that are lower level than the holder.",
+    "effect_th": "เมื่อโปเกมอนหัวทีมถือ จะไม่เจอโปเกมอนป่าที่เลเวลต่ำกว่าผู้ถือ",
+    "category": "training"
   },
   {
     "id": 298,
@@ -848,6 +1708,62 @@
     "category": "held-items"
   },
   {
+    "id": 442,
+    "name": "griseous-orb",
+    "effect": "Held by giratina\n:   Holder's dragon and ghost moves have 1.2× their base power.\n\n    Holder is in Origin Forme.\n\nThis item cannot be held by any Pokémon but Giratina.  When you enter the Union Room or connect to Wi-Fi, this item returns to your bag.",
+    "effect_th": "เมื่อ Giratina ถือ ท่ามังกรและผีมีพลังฐาน x1.2 และอยู่ร่างออริจิน มีเพียง Giratina เท่านั้นที่ถือได้",
+    "category": "species-specific"
+  },
+  {
+    "id": 449,
+    "name": "lure-ball",
+    "effect": "Used by trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n    If the wild Pokémon was encountered by fishing, the wild Pokémon's catch rate is 3× normal.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากพบจากการตกปลา อัตราจับ x3 ใช้ในศึกเทรนเนอร์ไม่ได้และบอลจะหาย",
+    "category": "apricorn-balls"
+  },
+  {
+    "id": 450,
+    "name": "level-ball",
+    "effect": "Used by trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n    If the trainer's Pokémon's level is higher than:\n\n    * four times the wild Pokémon's, the wild Pokémon's catch rate is 8× normal.\n    * than twice the wild Pokémon's, the wild Pokémon's catch rate is 4× normal.\n    * the wild Pokémon's, the wild Pokémon's catch rate is 2× normal.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากเลเวลโปเกมอนในทีมสูงกว่าป่า 4 เท่า อัตราจับ x8 สูงกว่า 2 เท่า x4 สูงกว่า x2 มิฉะนั้นตามปกติ ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "apricorn-balls"
+  },
+  {
+    "id": 451,
+    "name": "moon-ball",
+    "effect": "Used by trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n    If the wild Pokémon is a clefairy, nidoran m, nidoran f, jigglypuff, skitty, or any evolution thereof, the wild Pokémon has 4× its catch rate.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากเป็นสาย Clefairy, Nidoran♂/♀, Jigglypuff, Skitty หรือวิวัฒนาการ อัตราจับ x4 ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "apricorn-balls"
+  },
+  {
+    "id": 452,
+    "name": "heavy-ball",
+    "effect": "Used by a trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n    If the wild Pokémon weighs:\n\n    * 409.6 kg (903.0 lb) or more, its catch rate is 40 more than normal.\n    * 307.2 kg (677.3 lb) or more, its catch rate is 30 more than normal.\n    * 204.8 kg (451.5 lb) or more, its catch rate is 20 more than normal.\n    * less than 204.8 kg (451.5 lb), its catch rate is 20 less than normal.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า ปรับอัตราจับตามน้ำหนัก (หนักมากขึ้น หนักน้อยลงตามเกม) ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "apricorn-balls"
+  },
+  {
+    "id": 453,
+    "name": "fast-ball",
+    "effect": "Used by a trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n:   If the wild Pokémon's base speed is 100 or more, its catch rate is 4× normal.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากค่าความเร็วฐานของป่า ≥100 อัตราจับ x4 ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "apricorn-balls"
+  },
+  {
+    "id": 454,
+    "name": "friend-ball",
+    "effect": "Used by a trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n    If caught, the wild Pokémon's happiness starts at 200.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากจับสำเร็จความสุขเริ่มที่ 200 ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "apricorn-balls"
+  },
+  {
+    "id": 455,
+    "name": "love-ball",
+    "effect": "Used by a trainer in battle\n:   Attempts to catch a wild Pokémon.  If used in a trainer battle, nothing happens and the ball is lost.\n\n    If the trainer's Pokémon and wild Pokémon are of the same species but opposite genders, the wild Pokémon's catch rate is 8× normal.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากเป็นสายพันธุ์เดียวกันแต่เพศตรงข้ามกับโปเกมอนในทีม อัตราจับ x8 ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "apricorn-balls"
+  },
+  {
     "id": 456,
     "name": "park-ball",
     "effect": "Used by a trainer in battle\n:   Catches a wild Pokémon.\n\nThis item can only be used in pal park.",
@@ -857,9 +1773,44 @@
   {
     "id": 457,
     "name": "sport-ball",
-    "effect": "Used by a trainer in battle\n:   Attempts to catch a wild Pokémon.\n\n    The wild Pokémon's catch rate is 1.5× normal.",
-    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ 1.5×",
+    "effect": "Used by a trainer in battle\n:   Attempts to catch a wild Pokémon.\n\n    The wild Pokémon's catch rate is x1.5 normal.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า โดยมีอัตราการจับอยู่ที่ x1.5",
     "category": "standard-balls"
+  },
+  {
+    "id": 563,
+    "name": "douse-drive",
+    "effect": "Held by genesect\n:   Holder's buster is blue, and its techno blast is water-type.",
+    "effect_th": "เมื่อ Genesect ถือ ปืนเป็นสีน้ำเงิน และ Techno Blast เป็นธาตุน้ำ",
+    "category": "species-specific"
+  },
+  {
+    "id": 564,
+    "name": "shock-drive",
+    "effect": "Held by genesect\n:   Holder's buster is yellow, and its techno blast is electric-type.",
+    "effect_th": "เมื่อ Genesect ถือ ปืนเป็นสีเหลือง และ Techno Blast เป็นธาตุไฟฟ้า",
+    "category": "species-specific"
+  },
+  {
+    "id": 565,
+    "name": "burn-drive",
+    "effect": "Held by genesect\n:   Holder's buster is red, and its techno blast is fire-type.",
+    "effect_th": "เมื่อ Genesect ถือ ปืนเป็นสีแดง และ Techno Blast เป็นธาตุไฟ",
+    "category": "species-specific"
+  },
+  {
+    "id": 566,
+    "name": "chill-drive",
+    "effect": "Held by genesect\n:   Holder's buster is white, and its techno blast becomes ice-type.",
+    "effect_th": "เมื่อ Genesect ถือ ปืนเป็นสีขาว และ Techno Blast เป็นธาตุน้ำแข็ง",
+    "category": "species-specific"
+  },
+  {
+    "id": 567,
+    "name": "sweet-heart",
+    "effect": "Used on a friendly Pokémon\n:   Restores 20 HP.",
+    "effect_th": "ใช้กับโปเกมอนในทีม ฟื้นฟู HP 20",
+    "category": "healing"
   },
   {
     "id": 580,
@@ -871,15 +1822,15 @@
   {
     "id": 581,
     "name": "eviolite",
-    "effect": "Held by a Pokémon that is not fully evolved\n:   Holder has 1.5× Defense and Special Defense.",
-    "effect_th": "ถือโดยโปเกมอนที่ยังพัฒนาไม่สมบูรณ์\n:   พลังป้องกัน (Defense) และพลังป้องกันพิเศษ (Special Defense) ของผู้ถือเพิ่มเป็น 1.5×",
+    "effect": "Held by a Pokémon that is not fully evolved\n:   Holder has x1.5 Defense and Special Defense.",
+    "effect_th": "ถือโดยโปเกมอนที่ยังพัฒนาไม่สมบูรณ์\n:   พลังป้องกัน (Defense) และพลังป้องกันพิเศษ (Special Defense) ของผู้ถือเพิ่มเป็น x1.5",
     "category": "held-items"
   },
   {
     "id": 582,
     "name": "float-stone",
-    "effect": "Held\n:   Holder has 0.5× weight.",
-    "effect_th": "น้ำหนักของผู้ถือลดลงเหลือ 0.5×",
+    "effect": "Held\n:   Holder has x0.5 weight.",
+    "effect_th": "น้ำหนักของผู้ถือลดลงเหลือ x0.5",
     "category": "held-items"
   },
   {
@@ -893,7 +1844,7 @@
     "id": 584,
     "name": "air-balloon",
     "effect": "Held\n:   Holder is immune to ground-type moves, spikes, toxic spikes, and arena trap.\n\n    This effect does not apply during gravity or ingrain.\n\n    When the holder takes damage from a move, this item is consumed.",
-    "effect_th": "ผู้ถือมีการต้านทานต่อท่าธาตุดิน (Ground-type) สไปค์ (Spikes) ท็อกซิคสไปค์ (Toxic Spikes) และอารีน่าทราป (Arena Trap)\n\n    เอฟเฟกต์นี้ไม่ทำงานขณะอยู่ในสภาวะแรงโน้มถ่วง (Gravity) หรือรากฝัง (Ingrain)\n\n    เมื่อผู้ถือได้รับความเสียหายจากท่า ไอเท็มนี้จะถูกใช้และหายไป",
+    "effect_th": "ผู้ถือมีการต้านทานต่อท่าธาตุดิน (Ground-type) , Spikes , Toxic Spikes และ Arena Trap \n\n    เอฟเฟกต์นี้ไม่ทำงานขณะอยู่ในสภาวะแรงโน้มถ่วง (Gravity) หรือรากฝัง (Ingrain)\n\n    เมื่อผู้ถือได้รับความเสียหายจากท่า ไอเท็มนี้จะถูกใช้และหายไป",
     "category": "held-items"
   },
   {
@@ -939,11 +1890,305 @@
     "category": "held-items"
   },
   {
-    "id": 616,
-    "name": "pass-orb",
-    "effect": "Acts as currency to activate Pass Powers in the Entralink.",
-    "effect_th": "ใช้เป็นเงินตราเพื่อเปิดใช้งาน Pass Powers ในเอนทราลิงค์",
-    "category": "held-items"
+    "id": 591,
+    "name": "fire-gem",
+    "effect": "Held\n:   When the holder uses a damaging fire-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุไฟที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 592,
+    "name": "water-gem",
+    "effect": "Held\n:   When the holder uses a damaging water-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุน้ำที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 593,
+    "name": "electric-gem",
+    "effect": "Held\n:   When the holder uses a damaging electric-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุไฟฟ้าที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 594,
+    "name": "grass-gem",
+    "effect": "Held\n:   When the holder uses a damaging grass-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุหญ้าที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 595,
+    "name": "ice-gem",
+    "effect": "Held\n:   When the holder uses a damaging ice-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุน้ำแข็งที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 596,
+    "name": "fighting-gem",
+    "effect": "Held\n:   When the holder uses a damaging fighting-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุต่อสู้ที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 597,
+    "name": "poison-gem",
+    "effect": "Held\n:   When the holder uses a damaging poison-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุพิษที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 598,
+    "name": "ground-gem",
+    "effect": "Held\n:   When the holder uses a damaging ground-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุดินที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 599,
+    "name": "flying-gem",
+    "effect": "Held\n:   When the holder uses a damaging flying-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุบินที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 600,
+    "name": "psychic-gem",
+    "effect": "Held\n:   When the holder uses a damaging psychic-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุพลังจิตที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 601,
+    "name": "bug-gem",
+    "effect": "Held\n:   When the holder uses a damaging bug-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุแมลงที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 602,
+    "name": "rock-gem",
+    "effect": "Held\n:   When the holder uses a damaging rock-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุหินที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 603,
+    "name": "ghost-gem",
+    "effect": "Held\n:   When the holder uses a damaging ghost-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุผีที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 604,
+    "name": "dark-gem",
+    "effect": "Held\n:   When the holder uses a damaging dark-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุมืดที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 605,
+    "name": "steel-gem",
+    "effect": "Held\n:   When the holder uses a damaging steel-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุเหล็กที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
+  },
+  {
+    "id": 606,
+    "name": "health-wing",
+    "effect": "Used on a party Pokémon\n:   Increases the target's HP effort by 1.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึก HP 1",
+    "category": "vitamins"
+  },
+  {
+    "id": 607,
+    "name": "muscle-wing",
+    "effect": "Used on a party Pokémon\n:   Increases the target's Attack effort by 1.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกโจมตี 1",
+    "category": "vitamins"
+  },
+  {
+    "id": 608,
+    "name": "resist-wing",
+    "effect": "Used on a party Pokémon\n:   Increases the target's Defense effort by 1.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกป้องกัน 1",
+    "category": "vitamins"
+  },
+  {
+    "id": 609,
+    "name": "genius-wing",
+    "effect": "Used on a party Pokémon\n:   Increases the target's Special Attack effort by 1.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกพลังพิเศษโจมตี 1",
+    "category": "vitamins"
+  },
+  {
+    "id": 610,
+    "name": "clever-wing",
+    "effect": "Used on a party Pokémon\n:   Increases the target's Special Defense effort by 1.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกพลังพิเศษป้องกัน 1",
+    "category": "vitamins"
+  },
+  {
+    "id": 611,
+    "name": "swift-wing",
+    "effect": "Used on a party Pokémon\n:   Increases the target's Speed effort by 1.",
+    "effect_th": "ใช้กับโปเกมอนในทีม เพิ่มค่าฝึกความเร็ว 1",
+    "category": "vitamins"
+  },
+  {
+    "id": 617,
+    "name": "dream-ball",
+    "effect": "Can only be used in Entree Forest, to catch Pokémon encountered in the Dream World.\n\nUsed in battle\n:   Catches a wild Pokémon without fail.",
+    "effect_th": "ใช้ได้เฉพาะในป่าเอนทรีเพื่อจับโปเกมอนจากเวิลด์ฝัน ในการต่อสู้จับโปเกมอนป่าได้สำเร็จแน่นอน",
+    "category": "special-balls"
+  },
+  {
+    "id": 632,
+    "name": "casteliacone",
+    "effect": "Used on a party Pokémon\n:   Cures any status ailment and confusion.",
+    "effect_th": "ใช้กับโปเกมอนในทีม รักษาสถานะผิดปกติและสับสน",
+    "category": "status-cures"
+  },
+  {
+    "id": 633,
+    "name": "dire-hit-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's critical hit rate by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มอัตราคริติคอลฮิต 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 634,
+    "name": "x-speed-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Speed by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความเร็ว 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 635,
+    "name": "x-sp-atk-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Attack by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษโจมตี 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 636,
+    "name": "x-sp-def-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Defense by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษป้องกัน 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 637,
+    "name": "x-defense-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Defense by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังป้องกัน 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 638,
+    "name": "x-attack-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Attack by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังโจมตี 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 639,
+    "name": "x-accuracy-2",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's accuracy by two stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความแม่นยำ 2 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 640,
+    "name": "x-speed-3",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Speed by three stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความเร็ว 3 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 641,
+    "name": "x-sp-atk-3",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Attack by three stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษโจมตี 3 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 642,
+    "name": "x-sp-def-3",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Defense by three stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษป้องกัน 3 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 643,
+    "name": "x-defense-3",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Defense by three stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังป้องกัน 3 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 644,
+    "name": "x-attack-3",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Attack by three stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังโจมตี 3 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 645,
+    "name": "x-accuracy-3",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's accuracy by three stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความแม่นยำ 3 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 646,
+    "name": "x-speed-6",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Speed by six stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความเร็ว 6 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 647,
+    "name": "x-sp-atk-6",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Attack by six stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษโจมตี 6 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 648,
+    "name": "x-sp-def-6",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Special Defense by six stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังพิเศษป้องกัน 6 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 649,
+    "name": "x-defense-6",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Defense by six stages.\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังป้องกัน 6 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 650,
+    "name": "x-attack-6",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's Attack by six stages.\n\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มพลังโจมตี 6 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 651,
+    "name": "x-accuracy-6",
+    "effect": "Used on a party Pokémon in battle\n:   Raises the target's accuracy by six stages.\n\nThis item can only be obtained or used via the Wonder Launcher.",
+    "effect_th": "ใช้กับโปเกมอนในทีมระหว่างต่อสู้ เพิ่มความแม่นยำ 6 ระดับ (ได้จากหรือใช้ผ่าน Wonder Launcher เท่านั้น)",
+    "category": "miracle-shooter"
+  },
+  {
+    "id": 669,
+    "name": "normal-gem",
+    "effect": "Held\n:   When the holder uses a damaging normal-type move, the move has 1.5× power and this item is consumed.",
+    "effect_th": "เมื่อผู้ถือใช้ท่าโจมตีธาตุปกติที่สร้างความเสียหาย พลัง x1.5 แล้วไอเท็มหายไป",
+    "category": "jewels"
   },
   {
     "id": 682,
@@ -958,6 +2203,20 @@
     "effect": "Raises the holder's Special Defense to 1.5×.  Prevents the holder from selecting a status move.",
     "effect_th": "เพิ่มพลังป้องกันพิเศษ (Special Defense) ของผู้ถือเป็น 1.5× แต่ป้องกันไม่ให้ผู้ถือเลือกใช้ท่าสถานะ (Status Move)",
     "category": "held-items"
+  },
+  {
+    "id": 684,
+    "name": "pixie-plate",
+    "effect": "Held: Fairy-Type moves from holder do 20% more damage. Changes Arceus's and Judgment's type to Fairy.",
+    "effect_th": "ท่าเทพี (Fairy) ของผู้ถือแรงขึ้น 20% เปลี่ยน Arceus และ Judgment เป็นธาตุเทพี",
+    "category": "plates"
+  },
+  {
+    "id": 685,
+    "name": "ability-capsule",
+    "effect": "Switches a Pokémon between its two possible (non-Hidden) Abilities.",
+    "effect_th": "สลับความสามารถของโปเกมอนระหว่างสองแบบปกติ (ไม่รวม Hidden Ability)",
+    "category": "vitamins"
   },
   {
     "id": 686,
@@ -998,330 +2257,547 @@
     "id": 695,
     "name": "gengarite",
     "effect": "Held: Allows Gengar to Mega Evolve into Mega Gengar.",
-    "effect_th": "ช่วยให้เก็งการ์ (Gengar) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเก็งการ์ (Mega Gengar)",
+    "effect_th": "ช่วยให้ Gengar Mega Evolve เป็น Mega Gengar",
     "category": "mega-stones"
   },
   {
     "id": 696,
     "name": "gardevoirite",
     "effect": "Held: Allows Gardevoir to Mega Evolve into Mega Gardevoir.",
-    "effect_th": "ช่วยให้การ์เดอวอยร์ (Gardevoir) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าการ์เดอวอยร์ (Mega Gardevoir)",
+    "effect_th": "ช่วยให้ Gardevoir Mega Evolve เป็น Mega Gardevoir",
     "category": "mega-stones"
   },
   {
     "id": 697,
     "name": "ampharosite",
     "effect": "Held: Allows Ampharos to Mega Evolve into Mega Ampharos.",
-    "effect_th": "ช่วยให้แอมฟารอส (Ampharos) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าแอมฟารอส (Mega Ampharos)",
+    "effect_th": "ช่วยให้ Ampharos Mega Evolve เป็น Mega Ampharos",
     "category": "mega-stones"
   },
   {
     "id": 698,
     "name": "venusaurite",
     "effect": "Held: Allows Venusaur to Mega Evolve into Mega Venusaur.",
-    "effect_th": "ช่วยให้วีนัซอร์ (Venusaur) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าวีนัซอร์ (Mega Venusaur)",
+    "effect_th": "ช่วยให้ Venusaur Mega Evolve เป็น Mega Venusaur",
     "category": "mega-stones"
   },
   {
     "id": 699,
     "name": "charizardite-x",
     "effect": "Held: Allows Charizard to Mega Evolve into Mega Charizard X.",
-    "effect_th": "ช่วยให้ลิซาร์ดอน (Charizard) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลิซาร์ดอน X (Mega Charizard X)",
+    "effect_th": "ช่วยให้ Charizard Mega Evolve เป็น Mega Charizard X",
     "category": "mega-stones"
   },
   {
     "id": 700,
     "name": "blastoisinite",
     "effect": "Held: Allows Blastoise to Mega Evolve into Mega Blastoise.",
-    "effect_th": "ช่วยให้แบลสทอยส์ (Blastoise) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าแบลสทอยส์ (Mega Blastoise)",
+    "effect_th": "ช่วยให้ Blastoise Mega Evolve เป็น Mega Blastoise",
     "category": "mega-stones"
   },
   {
     "id": 701,
     "name": "mewtwonite-x",
     "effect": "Held: Allows Mewtwo to Mega Evolve into Mega Mewtwo X.",
-    "effect_th": "ช่วยให้มิวทู (Mewtwo) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ามิวทู X (Mega Mewtwo X)",
+    "effect_th": "ช่วยให้ Mewtwo Mega Evolve เป็น Mega Mewtwo X",
     "category": "mega-stones"
   },
   {
     "id": 702,
     "name": "mewtwonite-y",
     "effect": "Held: Allows Mewtwo to Mega Evolve into Mega Mewtwo Y.",
-    "effect_th": "ช่วยให้มิวทู (Mewtwo) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ามิวทู Y (Mega Mewtwo Y)",
+    "effect_th": "ช่วยให้ Mewtwo Mega Evolve เป็น Mega Mewtwo Y",
     "category": "mega-stones"
   },
   {
     "id": 703,
     "name": "blazikenite",
     "effect": "Held: Allows Blaziken to Mega Evolve into Mega Blaziken.",
-    "effect_th": "ช่วยให้เบลซิเคน (Blaziken) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเบลซิเคน (Mega Blaziken)",
+    "effect_th": "ช่วยให้ Blaziken Mega Evolve เป็น Mega Blaziken",
     "category": "mega-stones"
   },
   {
     "id": 704,
     "name": "medichamite",
     "effect": "Held: Allows Medicham to Mega Evolve into Mega Medicham.",
-    "effect_th": "ช่วยให้เมดิแชม (Medicham) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเมดิแชม (Mega Medicham)",
+    "effect_th": "ช่วยให้ Medicham Mega Evolve เป็น Mega Medicham",
     "category": "mega-stones"
   },
   {
     "id": 705,
     "name": "houndoominite",
     "effect": "Held: Allows Houndoom to Mega Evolve into Mega Houndoom.",
-    "effect_th": "ช่วยให้ฮันเดลม (Houndoom) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าฮันเดลม (Mega Houndoom)",
+    "effect_th": "ช่วยให้ Houndoom Mega Evolve เป็น Mega Houndoom",
     "category": "mega-stones"
   },
   {
     "id": 706,
     "name": "aggronite",
     "effect": "Held: Allows Aggron to Mega Evolve into Mega Aggron.",
-    "effect_th": "ช่วยให้อแกกรอน (Aggron) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าอแกกรอน (Mega Aggron)",
+    "effect_th": "ช่วยให้ Aggron Mega Evolve เป็น Mega Aggron",
     "category": "mega-stones"
   },
   {
     "id": 707,
     "name": "banettite",
     "effect": "Held: Allows Banette to Mega Evolve into Mega Banette.",
-    "effect_th": "ช่วยให้บาแนท (Banette) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าบาแนท (Mega Banette)",
+    "effect_th": "ช่วยให้ Banette Mega Evolve เป็น Mega Banette",
     "category": "mega-stones"
   },
   {
     "id": 708,
     "name": "tyranitarite",
     "effect": "Held: Allows Tyranitar to Mega Evolve into Mega Tyranitar.",
-    "effect_th": "ช่วยให้ไทรานิทาร์ (Tyranitar) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าไทรานิทาร์ (Mega Tyranitar)",
+    "effect_th": "ช่วยให้ Tyranitar Mega Evolve เป็น Mega Tyranitar",
     "category": "mega-stones"
   },
   {
     "id": 709,
     "name": "scizorite",
     "effect": "Held: Allows Scizor to Mega Evolve into Mega Scizor.",
-    "effect_th": "ช่วยให้ฮัซซามู (Scizor) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าฮัซซามู (Mega Scizor)",
+    "effect_th": "ช่วยให้ Scizor Mega Evolve เป็น Mega Scizor",
     "category": "mega-stones"
   },
   {
     "id": 710,
     "name": "pinsirite",
     "effect": "Held: Allows Pinsir to Mega Evolve into Mega Pinsir.",
-    "effect_th": "ช่วยให้คายิโลซ (Pinsir) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าคายิโลซ (Mega Pinsir)",
+    "effect_th": "ช่วยให้ Pinsir Mega Evolve เป็น Mega Pinsir",
     "category": "mega-stones"
   },
   {
     "id": 711,
     "name": "aerodactylite",
     "effect": "Held: Allows Aerodactyl to Mega Evolve into Mega Aerodactyl.",
-    "effect_th": "ช่วยให้แอโรแดกติล (Aerodactyl) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าแอโรแดกติล (Mega Aerodactyl)",
+    "effect_th": "ช่วยให้ Aerodactyl Mega Evolve เป็น Mega Aerodactyl",
     "category": "mega-stones"
   },
   {
     "id": 712,
     "name": "lucarionite",
     "effect": "Held: Allows Lucario to Mega Evolve into Mega Lucario.",
-    "effect_th": "ช่วยให้ลูคาริโอ (Lucario) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลูคาริโอ (Mega Lucario)",
+    "effect_th": "ช่วยให้ Lucario Mega Evolve เป็น Mega Lucario",
     "category": "mega-stones"
   },
   {
     "id": 713,
     "name": "abomasite",
     "effect": "Held: Allows Abomasnow to Mega Evolve into Mega Abomasnow.",
-    "effect_th": "ช่วยให้ยูคิโนะโอ (Abomasnow) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ายูคิโนะโอ (Mega Abomasnow)",
+    "effect_th": "ช่วยให้ Abomasnow Mega Evolve เป็น Mega Abomasnow",
     "category": "mega-stones"
   },
   {
     "id": 714,
     "name": "kangaskhanite",
     "effect": "Held: Allows Kangaskhan to Mega Evolve into Mega Kangaskhan.",
-    "effect_th": "ช่วยให้การูรา (Kangaskhan) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าการูรา (Mega Kangaskhan)",
+    "effect_th": "ช่วยให้ Kangaskhan Mega Evolve เป็น Mega Kangaskhan",
     "category": "mega-stones"
   },
   {
     "id": 715,
     "name": "gyaradosite",
     "effect": "Held: Allows Gyarados to Mega Evolve into Mega Gyarados.",
-    "effect_th": "ช่วยให้เกียราดอส (Gyarados) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเกียราดอส (Mega Gyarados)",
+    "effect_th": "ช่วยให้ Gyarados Mega Evolve เป็น Mega Gyarados",
     "category": "mega-stones"
   },
   {
     "id": 716,
     "name": "absolite",
     "effect": "Held: Allows Absol to Mega Evolve into Mega Absol.",
-    "effect_th": "ช่วยให้อับโซล (Absol) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าอับโซล (Mega Absol)",
+    "effect_th": "ช่วยให้ Absol Mega Evolve เป็น Mega Absol",
     "category": "mega-stones"
   },
   {
     "id": 717,
     "name": "charizardite-y",
     "effect": "Held: Allows Charizard to Mega Evolve into Mega Charizard Y.",
-    "effect_th": "ช่วยให้ลิซาร์ดอน (Charizard) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลิซาร์ดอน Y (Mega Charizard Y)",
+    "effect_th": "ช่วยให้ Charizard Mega Evolve เป็น Mega Charizard Y",
     "category": "mega-stones"
   },
   {
     "id": 718,
     "name": "alakazite",
     "effect": "Held: Allows Alakazam to Mega Evolve into Mega Alakazam.",
-    "effect_th": "ช่วยให้ฟู้ดิน (Alakazam) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าฟู้ดิน (Mega Alakazam)",
+    "effect_th": "ช่วยให้ Alakazam Mega Evolve เป็น Mega Alakazam",
     "category": "mega-stones"
   },
   {
     "id": 719,
     "name": "heracronite",
     "effect": "Held: Allows Heracross to Mega Evolve into Mega Heracross.",
-    "effect_th": "ช่วยให้เฮราครอส (Heracross) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเฮราครอส (Mega Heracross)",
+    "effect_th": "ช่วยให้ Heracross Mega Evolve เป็น Mega Heracross",
     "category": "mega-stones"
   },
   {
     "id": 720,
     "name": "mawilite",
     "effect": "Held: Allows Mawile to Mega Evolve into Mega Mawile.",
-    "effect_th": "ช่วยให้คุจิท (Mawile) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าคุจิท (Mega Mawile)",
+    "effect_th": "ช่วยให้ Mawile Mega Evolve เป็น Mega Mawile",
     "category": "mega-stones"
   },
   {
     "id": 721,
     "name": "manectite",
     "effect": "Held: Allows Manectric to Mega Evolve into Mega Manectric.",
-    "effect_th": "ช่วยให้ลิวเวล (Manectric) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลิวเวล (Mega Manectric)",
+    "effect_th": "ช่วยให้ Manectric Mega Evolve เป็น Mega Manectric",
     "category": "mega-stones"
   },
   {
     "id": 722,
     "name": "garchompite",
     "effect": "Held: Allows Garchomp to Mega Evolve into Mega Garchomp.",
-    "effect_th": "ช่วยให้กาบูริอาส (Garchomp) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ากาบูริอาส (Mega Garchomp)",
+    "effect_th": "ช่วยให้ Garchomp Mega Evolve เป็น Mega Garchomp",
     "category": "mega-stones"
   },
   {
     "id": 760,
     "name": "latiasite",
     "effect": "Held: Allows Latias to Mega Evolve into Mega Latias.",
-    "effect_th": "ช่วยให้ลาทิอัส (Latias) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลาทิอัส (Mega Latias)",
+    "effect_th": "ช่วยให้ Latias Mega Evolve เป็น Mega Latias",
     "category": "mega-stones"
   },
   {
     "id": 761,
     "name": "latiosite",
     "effect": "Held: Allows Latios to Mega Evolve into Mega Latios.",
-    "effect_th": "ช่วยให้ลาทิโอส (Latios) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลาทิโอส (Mega Latios)",
+    "effect_th": "ช่วยให้ Latios Mega Evolve เป็น Mega Latios",
     "category": "mega-stones"
   },
   {
     "id": 793,
     "name": "swampertite",
     "effect": "Held: Allows Swampert to Mega Evolve into Mega Swampert.",
-    "effect_th": "ช่วยให้ลากูลลูจ (Swampert) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าลากูลลูจ (Mega Swampert)",
+    "effect_th": "ช่วยให้ Swampert Mega Evolve เป็น Mega Swampert",
     "category": "mega-stones"
   },
   {
     "id": 794,
     "name": "sceptilite",
     "effect": "Held: Allows Sceptile to Mega Evolve into Mega Sceptile.",
-    "effect_th": "ช่วยให้จูไคน์ (Sceptile) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าจูไคน์ (Mega Sceptile)",
+    "effect_th": "ช่วยให้ Sceptile Mega Evolve เป็น Mega Sceptile",
     "category": "mega-stones"
   },
   {
     "id": 795,
     "name": "sablenite",
     "effect": "Held: Allows Sableye to Mega Evolve into Mega Sableye.",
-    "effect_th": "ช่วยให้ยามิรามิ (Sableye) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ายามิรามิ (Mega Sableye)",
+    "effect_th": "ช่วยให้ Sableye Mega Evolve เป็น Mega Sableye",
     "category": "mega-stones"
   },
   {
     "id": 796,
     "name": "altarianite",
     "effect": "Held: Allows Altaria to Mega Evolve into Mega Altaria.",
-    "effect_th": "ช่วยให้เท็ตเท็ตซึ (Altaria) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเท็ตเท็ตซึ (Mega Altaria)",
+    "effect_th": "ช่วยให้ Altaria Mega Evolve เป็น Mega Altaria",
     "category": "mega-stones"
   },
   {
     "id": 797,
     "name": "galladite",
     "effect": "Held: Allows Gallade to Mega Evolve into Mega Gallade.",
-    "effect_th": "ช่วยให้เอรูเซด (Gallade) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเอรูเซด (Mega Gallade)",
+    "effect_th": "ช่วยให้ Gallade Mega Evolve เป็น Mega Gallade",
     "category": "mega-stones"
   },
   {
     "id": 798,
     "name": "audinite",
     "effect": "Held: Allows Audino to Mega Evolve into Mega Audino.",
-    "effect_th": "ช่วยให้ทาบูนเนะ (Audino) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าทาบูนเนะ (Mega Audino)",
+    "effect_th": "ช่วยให้ Audino Mega Evolve เป็น Mega Audino",
     "category": "mega-stones"
   },
   {
     "id": 799,
     "name": "metagrossite",
     "effect": "Held: Allows Metagross to Mega Evolve into Mega Metagross.",
-    "effect_th": "ช่วยให้เมตากรอส (Metagross) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเมตากรอส (Mega Metagross)",
+    "effect_th": "ช่วยให้ Metagross Mega Evolve เป็น Mega Metagross",
     "category": "mega-stones"
   },
   {
     "id": 800,
     "name": "sharpedonite",
     "effect": "Held: Allows Sharpedo to Mega Evolve into Mega Sharpedo.",
-    "effect_th": "ช่วยให้ซามาเยอร์ (Sharpedo) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าซามาเยอร์ (Mega Sharpedo)",
+    "effect_th": "ช่วยให้ Sharpedo Mega Evolve เป็น Mega Sharpedo",
     "category": "mega-stones"
   },
   {
     "id": 801,
     "name": "slowbronite",
     "effect": "Held: Allows Slowbro to Mega Evolve into Mega Slowbro.",
-    "effect_th": "ช่วยให้ยาดราน (Slowbro) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ายาดราน (Mega Slowbro)",
+    "effect_th": "ช่วยให้ Slowbro Mega Evolve เป็น Mega Slowbro",
     "category": "mega-stones"
   },
   {
     "id": 802,
     "name": "steelixite",
     "effect": "Held: Allows Steelix to Mega Evolve into Mega Steelix.",
-    "effect_th": "ช่วยให้ฮากาเนะล (Steelix) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าฮากาเนะล (Mega Steelix)",
+    "effect_th": "ช่วยให้ Steelix Mega Evolve เป็น Mega Steelix",
     "category": "mega-stones"
   },
   {
     "id": 803,
     "name": "pidgeotite",
     "effect": "Held: Allows Pidgeot to Mega Evolve into Mega Pidgeot.",
-    "effect_th": "ช่วยให้พีเจ (Pidgeot) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าพีเจ (Mega Pidgeot)",
+    "effect_th": "ช่วยให้ Pidgeot Mega Evolve เป็น Mega Pidgeot",
     "category": "mega-stones"
   },
   {
     "id": 804,
     "name": "glalitite",
     "effect": "Held: Allows Glalie to Mega Evolve into Mega Glalie.",
-    "effect_th": "ช่วยให้ออนิว (Glalie) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ออนิว (Mega Glalie)",
+    "effect_th": "ช่วยให้ Glalie Mega Evolve เป็น Mega Glalie",
     "category": "mega-stones"
   },
   {
     "id": 805,
     "name": "diancite",
     "effect": "Held: Allows Diancie to Mega Evolve into Mega Diancie.",
-    "effect_th": "ช่วยให้เดียนเซีย (Diancie) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าเดียนเซีย (Mega Diancie)",
+    "effect_th": "ช่วยให้ Diancie Mega Evolve เป็น Mega Diancie",
     "category": "mega-stones"
   },
   {
     "id": 808,
     "name": "cameruptite",
     "effect": "Held: Allows Camerupt to Mega Evolve into Mega Camerupt.",
-    "effect_th": "ช่วยให้บาคูด (Camerupt) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าบาคูด (Mega Camerupt)",
+    "effect_th": "ช่วยให้ Camerupt Mega Evolve เป็น Mega Camerupt",
     "category": "mega-stones"
   },
   {
     "id": 809,
     "name": "lopunnite",
     "effect": "Held: Allows Lopunny to Mega Evolve into Mega Lopunny.",
-    "effect_th": "ช่วยให้มิมิโรป (Lopunny) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้ามิมิโรป (Mega Lopunny)",
+    "effect_th": "ช่วยให้ Lopunny Mega Evolve เป็น Mega Lopunny",
     "category": "mega-stones"
   },
   {
     "id": 810,
     "name": "salamencite",
     "effect": "Held: Allows Salamence to Mega Evolve into Mega Salamence.",
-    "effect_th": "ช่วยให้บูเมอร์ (Salamence) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าบูเมอร์ (Mega Salamence)",
+    "effect_th": "ช่วยให้ Salamence Mega Evolve เป็น Mega Salamence",
     "category": "mega-stones"
   },
   {
     "id": 811,
     "name": "beedrillite",
     "effect": "Held: Allows Beedrill to Mega Evolve into Mega Beedrill.",
-    "effect_th": "ช่วยให้สเปียร์ (Beedrill) เมก้าอีโวลฟ์ (Mega Evolve) เป็นเมก้าสเปียร์ (Mega Beedrill)",
+    "effect_th": "ช่วยให้ Beedrill Mega Evolve เป็น Mega Beedrill",
     "category": "mega-stones"
+  },
+  {
+    "id": 817,
+    "name": "normalium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Normal moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุปกติได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 818,
+    "name": "firium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Fire moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุไฟได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 819,
+    "name": "waterium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Water moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุน้ำได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 820,
+    "name": "electrium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Electric moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุไฟฟ้าได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 821,
+    "name": "grassium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Grass moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุหญ้าได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 822,
+    "name": "icium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Ice moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุน้ำแข็งได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 823,
+    "name": "fightinium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Fighting moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุต่อสู้ได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 824,
+    "name": "poisonium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Poison moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุพิษได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 825,
+    "name": "groundium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Ground moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุดินได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 826,
+    "name": "flyinium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Flying moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุบินได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 827,
+    "name": "psychium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Psychic moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุพลังจิตได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 828,
+    "name": "buginium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Bug moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุแมลงได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 829,
+    "name": "rockium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Rock moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุหินได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 830,
+    "name": "ghostium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Ghost moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุผีได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 831,
+    "name": "dragonium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Dragon moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุมังกรได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 832,
+    "name": "darkinium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Dark moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุมืดได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 833,
+    "name": "steelium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Steel moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุเหล็กได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 834,
+    "name": "fairium-z--held",
+    "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Fairy moves.",
+    "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุเทพีได้",
+    "category": "z-crystals"
+  },
+  {
+    "id": 835,
+    "name": "pikanium-z--held",
+    "effect": "Held: Allows pikachu to upgrade volt tackle into catastropika.",
+    "effect_th": "พกแล้วให้ Pikachu อัปเกรด Volt Tackle เป็น Catastropika",
+    "category": "z-crystals"
+  },
+  {
+    "id": 836,
+    "name": "bottle-cap",
+    "effect": "Trade to Mr. Hyper to set one of a Pokémon's genes to 31.",
+    "effect_th": "นำไปแลกกับคุณไฮเปอร์เพื่อตั้งค่า IV หนึ่งค่าเป็น 31",
+    "category": "loot"
+  },
+  {
+    "id": 837,
+    "name": "gold-bottle-cap",
+    "effect": "Trade to Mr. Hyper to set all of a Pokémon's genes to 31.",
+    "effect_th": "นำไปแลกกับคุณไฮเปอร์เพื่อตั้งค่า IV ทุกค่าเป็น 31",
+    "category": "loot"
+  },
+  {
+    "id": 839,
+    "name": "decidium-z--held",
+    "effect": "Held: Allows decidueye to upgrade spirit shackle into sinister arrow raid.",
+    "effect_th": "พกแล้วให้ Decidueye อัปเกรด Spirit Shackle เป็น Sinister Arrow Raid",
+    "category": "z-crystals"
+  },
+  {
+    "id": 840,
+    "name": "incinium-z--held",
+    "effect": "Held: Allows incineroar to upgrade darkest lariat into malicious moonsault.",
+    "effect_th": "พกแล้วให้ Incineroar อัปเกรด Darkest Lariat เป็น Malicious Moonsault",
+    "category": "z-crystals"
+  },
+  {
+    "id": 841,
+    "name": "primarium-z--held",
+    "effect": "Held: Allows primarina to upgrade sparkling aria into oceanic operetta.",
+    "effect_th": "พกแล้วให้ Primarina อัปเกรด Sparkling Aria เป็น Oceanic Operetta",
+    "category": "z-crystals"
+  },
+  {
+    "id": 842,
+    "name": "tapunium-z--held",
+    "effect": "Held: Allows tapu koko, tapu lele, tapu bulu, and tapu fini to upgrade natures madness into guardian of alola.",
+    "effect_th": "พกแล้วให้ Tapu Koko / Lele / Bulu / Fini อัปเกรด Nature's Madness เป็น Guardian of Alola",
+    "category": "z-crystals"
+  },
+  {
+    "id": 843,
+    "name": "marshadium-z--held",
+    "effect": "Held: Allows marshadow to upgrade spectral thief into soul stealing 7 star strike.",
+    "effect_th": "พกแล้วให้ Marshadow อัปเกรด Spectral Thief เป็น Soul-Stealing 7-Star Strike",
+    "category": "z-crystals"
+  },
+  {
+    "id": 844,
+    "name": "aloraichium-z--held",
+    "effect": "Held: Allows Alola raichu to upgrade thunderbolt into stoked sparksurfer.",
+    "effect_th": "พกแล้วให้ Raichu ร่างอโลลา อัปเกรด Thunderbolt เป็น Stoked Sparksurfer",
+    "category": "z-crystals"
+  },
+  {
+    "id": 845,
+    "name": "snorlium-z--held",
+    "effect": "Held: Allows snorlax to upgrade giga impact into pulverizing pancake.",
+    "effect_th": "พกแล้วให้ Snorlax อัปเกรด Giga Impact เป็น Pulverizing Pancake",
+    "category": "z-crystals"
+  },
+  {
+    "id": 846,
+    "name": "eevium-z--held",
+    "effect": "Held: Allows eevee to upgrade last resort into extreme evoboost.",
+    "effect_th": "พกแล้วให้ Eevee อัปเกรด Last Resort เป็น Extreme Evoboost",
+    "category": "z-crystals"
+  },
+  {
+    "id": 847,
+    "name": "mewnium-z--held",
+    "effect": "Held: Allows mew to upgrade psychic into genesis supernova.",
+    "effect_th": "พกแล้วให้ Mew อัปเกรด Psychic เป็น Genesis Supernova",
+    "category": "z-crystals"
+  },
+  {
+    "id": 877,
+    "name": "pikashunium-z--held",
+    "effect": "Held: Allows cap-wearing pikachu to upgrade thunderbolt into 10 000 000 volt thunderbolt.",
+    "effect_th": "พกแล้วให้ Pikachu ที่ใส่หมวก อัปเกรด Thunderbolt เป็น 10,000,000 Volt Thunderbolt",
+    "category": "z-crystals"
   },
   {
     "id": 883,
@@ -1334,14 +2810,49 @@
     "id": 885,
     "name": "ice-stone",
     "effect": "Used on a party Pokémon\n:   Evolves an Alola sandshrew into Alola sandslash or an Alola vulpix into Alola ninetales.",
-    "effect_th": "ช่วยให้ซันโด (Sandshrew) รูปร่างอโลลา พัฒนาเป็นซันโดพาน (Sandslash) รูปร่างอโลลา หรือโรคอน (Vulpix) รูปร่างอโลลา พัฒนาเป็นเคียวคอน (Ninetales) รูปร่างอโลลา",
+    "effect_th": "ช่วยให้ Alola Sandshrew พัฒนาเป็น Alola Sandslash หรือ Alola Vulpix พัฒนาเป็น Alola Ninetales",
     "category": "evolution"
+  },
+  {
+    "id": 887,
+    "name": "beast-ball",
+    "effect": "Used in battle\n:   Attempts to catch a wild Pokémon.  If the wild Pokémon is an Ultra Beast, this ball has a catch rate of 5×.  Otherwise, it has a catch rate of 0.1×.\n\n    If used in a trainer battle, nothing happens and the ball is lost.",
+    "effect_th": "โยนเพื่อจับโปเกมอนป่า หากเป็น Ultra Beast อัตราจับ x5 มิฉะนั้น x0.1 ใช้ในศึกเทรนเนอร์ไม่ได้",
+    "category": "special-balls"
+  },
+  {
+    "id": 889,
+    "name": "red-nectar",
+    "effect": "Changes Oricorio to Baile Style.  Single-use and cannot be used in battle.",
+    "effect_th": "เปลี่ยน Oricorio เป็นร่าง Baile ใช้ครั้งเดียว ใช้ในการต่อสู้ไม่ได้",
+    "category": "species-specific"
+  },
+  {
+    "id": 890,
+    "name": "yellow-nectar",
+    "effect": "Changes Oricorio to Pom-Pom Style.  Single-use and cannot be used in battle.",
+    "effect_th": "เปลี่ยน Oricorio เป็นร่าง Pom-Pom ใช้ครั้งเดียว ใช้ในการต่อสู้ไม่ได้",
+    "category": "species-specific"
+  },
+  {
+    "id": 891,
+    "name": "pink-nectar",
+    "effect": "Changes Oricorio to Pa'u Style.  Single-use and cannot be used in battle.",
+    "effect_th": "เปลี่ยน Oricorio เป็นร่าง Pa'u ใช้ครั้งเดียว ใช้ในการต่อสู้ไม่ได้",
+    "category": "species-specific"
+  },
+  {
+    "id": 892,
+    "name": "purple-nectar",
+    "effect": "Changes Oricorio to Sensu Style.  Single-use and cannot be used in battle.",
+    "effect_th": "เปลี่ยน Oricorio เป็นร่าง Sensu ใช้ครั้งเดียว ใช้ในการต่อสู้ไม่ได้",
+    "category": "species-specific"
   },
   {
     "id": 616,
     "name": "dusk-stone",
     "effect": "Used on a party Pokémon\n:   Evolves Murkrow into Honchkrow, Lampent into Chandelure, or Doublade into Aegislash.",
-    "effect_th": "ช่วยให้โครแบท (Murkrow) พัฒนาเป็นโครแบทคิง (Honchkrow), แลมเพนต์ (Lampent) พัฒนาเป็นแชนเดลูร์ (Chandelure) หรือโดว์เบลด (Doublade) พัฒนาเป็นเอจิสลาส (Aegislash)",
+    "effect_th": "ช่วยให้ Murkrow พัฒนาเป็น Honchkrow, Lampent พัฒนาเป็น Chandelure หรือ Doublade พัฒนาเป็น Aegislash",
     "category": "evolution"
   },
   {
@@ -1385,6 +2896,125 @@
     "effect": "Held: If the holder enters battle during Grassy Terrain, or if Grassy Terrain is activated while the holder is in battle, this item is consumed and the holder's Defense raises by one stage.",
     "effect_th": "หากผู้ถือเข้าต่อสู้ในสนามหญ้า (Grassy Terrain) หรือสนามหญ้าเปิดใช้งานขณะที่ผู้ถืออยู่ในการต่อสู้ ไอเท็มนี้จะถูกใช้และพลังป้องกัน (Defense) ของผู้ถือจะเพิ่มขึ้น 1 ระดับ",
     "category": "held-items"
+  },
+  {
+    "id": 902,
+    "name": "fighting-memory",
+    "effect": "Held: Changes Silvally to its Fighting form.  Changes Multi-Attack's type to Fighting.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างต่อสู้ และ Multi-Attack เป็นธาตุต่อสู้",
+    "category": "memories"
+  },
+  {
+    "id": 903,
+    "name": "flying-memory",
+    "effect": "Held: Changes Silvally to its Flying form.  Changes Multi-Attack's type to Flying.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างบิน และ Multi-Attack เป็นธาตุบิน",
+    "category": "memories"
+  },
+  {
+    "id": 904,
+    "name": "poison-memory",
+    "effect": "Held: Changes Silvally to its Poison form.  Changes Multi-Attack's type to Poison.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างพิษ และ Multi-Attack เป็นธาตุพิษ",
+    "category": "memories"
+  },
+  {
+    "id": 905,
+    "name": "ground-memory",
+    "effect": "Held: Changes Silvally to its Ground form.  Changes Multi-Attack's type to Ground.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างดิน และ Multi-Attack เป็นธาตุดิน",
+    "category": "memories"
+  },
+  {
+    "id": 906,
+    "name": "rock-memory",
+    "effect": "Held: Changes Silvally to its Rock form.  Changes Multi-Attack's type to Rock.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างหิน และ Multi-Attack เป็นธาตุหิน",
+    "category": "memories"
+  },
+  {
+    "id": 907,
+    "name": "bug-memory",
+    "effect": "Held: Changes Silvally to its Bug form.  Changes Multi-Attack's type to Bug.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างแมลง และ Multi-Attack เป็นธาตุแมลง",
+    "category": "memories"
+  },
+  {
+    "id": 908,
+    "name": "ghost-memory",
+    "effect": "Held: Changes Silvally to its Ghost form.  Changes Multi-Attack's type to Ghost.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างผี และ Multi-Attack เป็นธาตุผี",
+    "category": "memories"
+  },
+  {
+    "id": 909,
+    "name": "steel-memory",
+    "effect": "Held: Changes Silvally to its Steel form.  Changes Multi-Attack's type to Steel.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างเหล็ก และ Multi-Attack เป็นธาตุเหล็ก",
+    "category": "memories"
+  },
+  {
+    "id": 910,
+    "name": "fire-memory",
+    "effect": "Held: Changes Silvally to its Fire form.  Changes Multi-Attack's type to Fire.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างไฟ และ Multi-Attack เป็นธาตุไฟ",
+    "category": "memories"
+  },
+  {
+    "id": 911,
+    "name": "water-memory",
+    "effect": "Held: Changes Silvally to its Water form.  Changes Multi-Attack's type to Water.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างน้ำ และ Multi-Attack เป็นธาตุน้ำ",
+    "category": "memories"
+  },
+  {
+    "id": 912,
+    "name": "grass-memory",
+    "effect": "Held: Changes Silvally to its Grass form.  Changes Multi-Attack's type to Grass.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างหญ้า และ Multi-Attack เป็นธาตุหญ้า",
+    "category": "memories"
+  },
+  {
+    "id": 913,
+    "name": "electric-memory",
+    "effect": "Held: Changes Silvally to its Electric form.  Changes Multi-Attack's type to Electric.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างไฟฟ้า และ Multi-Attack เป็นธาตุไฟฟ้า",
+    "category": "memories"
+  },
+  {
+    "id": 914,
+    "name": "psychic-memory",
+    "effect": "Held: Changes Silvally to its Psychic form.  Changes Multi-Attack's type to Psychic.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างพลังจิต และ Multi-Attack เป็นธาตุพลังจิต",
+    "category": "memories"
+  },
+  {
+    "id": 915,
+    "name": "ice-memory",
+    "effect": "Held: Changes Silvally to its Ice form.  Changes Multi-Attack's type to Ice.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างน้ำแข็ง และ Multi-Attack เป็นธาตุน้ำแข็ง",
+    "category": "memories"
+  },
+  {
+    "id": 916,
+    "name": "dragon-memory",
+    "effect": "Held: Changes Silvally to its Dragon form.  Changes Multi-Attack's type to Dragon.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างมังกร และ Multi-Attack เป็นธาตุมังกร",
+    "category": "memories"
+  },
+  {
+    "id": 917,
+    "name": "dark-memory",
+    "effect": "Held: Changes Silvally to its Dark form.  Changes Multi-Attack's type to Dark.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างมืด และ Multi-Attack เป็นธาตุมืด",
+    "category": "memories"
+  },
+  {
+    "id": 918,
+    "name": "fairy-memory",
+    "effect": "Held: Changes Silvally to its Fairy form.  Changes Multi-Attack's type to Fairy.",
+    "effect_th": "พกแล้ว Silvally เปลี่ยนเป็นร่างเทพี และ Multi-Attack เป็นธาตุเทพี",
+    "category": "memories"
   },
   {
     "id": 1167,
@@ -1481,14 +3111,14 @@
     "id": 1180,
     "name": "room-service",
     "effect": "Held: If Trick Room is active, this item is consumed and the holder's Speed is lowered by one stage.",
-    "effect_th": "หากทริครูม (Trick Room) เปิดใช้งานอยู่ ไอเท็มนี้จะถูกใช้และความเร็ว (Speed) ของผู้ถือจะลดลง 1 ระดับ",
+    "effect_th": "หาก Trick Room เปิดใช้งานอยู่ ไอเท็มนี้จะถูกใช้และความเร็ว (Speed) ของผู้ถือจะลดลง 1 ระดับ",
     "category": "held-items"
   },
   {
     "id": 1181,
     "name": "utility-umbrella",
     "effect": "Held: The holder is immune to the effects of weather conditions (Rain, Sun, Hail, Sandstorm) but not the weather itself.",
-    "effect_th": "ผู้ถือมีภูมิคุ้มกันต่อผลกระทบของสภาพอากาศ (ฝน แดดจ้า ลูกเห็บ พายุทราย) แต่ไม่ใช่สภาพอากาศเอง",
+    "effect_th": "ผู้ถือมีภูมิคุ้มกันต่อผลกระทบของสภาพอากาศ (Rain, Sun, Hail, Sandstorm) แต่ไม่ใช่สภาพอากาศเอง",
     "category": "held-items"
   },
   {
@@ -1537,28 +3167,28 @@
     "id": 1699,
     "name": "mirror-herb",
     "effect": "Held: When an opponent raises a stat stage, this item is consumed and the holder copies that stat stage increase.",
-    "effect_th": "เมื่อฝ่ายตรงข้ามเพิ่มระดับสถานะใดๆ ไอเท็มนี้จะถูกใช้และผู้ถือจะคัดลับการเพิ่มระดับสถานะนั้น",
+    "effect_th": "เมื่อฝ่ายตรงข้ามเพิ่มระดับสถานะใดๆ ไอเท็มนี้จะถูกใช้และผู้ถือจะคัดลอกการเพิ่มระดับสถานะนั้น",
     "category": "held-items"
   },
   {
     "id": 1700,
     "name": "punching-glove",
     "effect": "Held: The holder's punching moves deal 10% more damage and do not make contact with the target.",
-    "effect_th": "ท่าต่อย (Punching moves) ของผู้ถือสร้างความเสียหายเพิ่มขึ้น 10% และไม่สัมผัสเป้าหมาย",
+    "effect_th": "ท่าต่อย (Punching moves) ของผู้ถือสร้างความเสียหายเพิ่มขึ้น 10% และไม่สัมผัสกับเป้าหมาย",
     "category": "held-items"
   },
   {
     "id": 1701,
     "name": "covert-cloak",
     "effect": "Held: The holder is immune to the additional effects of moves used by opponents.",
-    "effect_th": "ผู้ถือมีภูมิคุ้มกันต่อเอฟเฟกต์เพิ่มเติมของท่าที่ฝ่ายตรงข้ามใช้",
+    "effect_th": "ผู้ถือมีภูมิคุ้มกันต่อเอฟเฟกต์เพิ่มเติมของท่าที่ฝ่ายตรงข้ามใช้งาน",
     "category": "held-items"
   },
   {
     "id": 1702,
     "name": "loaded-dice",
     "effect": "Held: The holder's multistrike moves (e.g., Triple Kick, Bullet Seed) always hit the maximum number of possible strikes.",
-    "effect_th": "ท่าหลายฮิต (Multistrike moves) ของผู้ถือจะฮิตจำนวนสูงสุดที่เป็นไปได้เสมอ",
+    "effect_th": "ท่าหลายฮิต (Multistrike moves) ของผู้ถือจะโจมตีจำนวนสูงสุดที่เป็นไปได้เสมอ",
     "category": "held-items"
   },
   {
@@ -1572,21 +3202,21 @@
     "id": 2106,
     "name": "wellspring-mask",
     "effect": "Held by Ogerpon: Changes Ogerpon's form to Wellspring Mask (Water-type). Teal Mask moves become Hydro Steam.",
-    "effect_th": "ถือโดยโอเกอร์ปอน (Ogerpon): เปลี่ยนรูปแบบโอเกอร์ปอนเป็นเวลสปริงมาสก์ (Water-type) ท่า Teal Mask กลายเป็น Hydro Steam",
+    "effect_th": "ถือโดย Ogerpon: เปลี่ยนรูปแบบ Ogerpon เป็น Wellspring Mask (Water-type) ท่า Teal Mask กลายเป็น Hydro Steam",
     "category": "held-items"
   },
   {
     "id": 2107,
     "name": "hearthflame-mask",
     "effect": "Held by Ogerpon: Changes Ogerpon's form to Hearthflame Mask (Fire-type). Teal Mask moves become Burning Bulwark.",
-    "effect_th": "ถือโดยโอเกอร์ปอน (Ogerpon): เปลี่ยนรูปแบบโอเกอร์ปอนเป็นเฮิร์ธเฟลมมาสก์ (Fire-type) ท่า Teal Mask กลายเป็น Burning Bulwark",
+    "effect_th": "ถือโดย Ogerpon: เปลี่ยนรูปแบบ Ogerpon เป็น Hearthflame Mask (Fire-type) ท่า Teal Mask กลายเป็น Burning Bulwark",
     "category": "held-items"
   },
   {
     "id": 2108,
     "name": "cornerstone-mask",
     "effect": "Held by Ogerpon: Changes Ogerpon's form to Cornerstone Mask (Rock-type). Teal Mask moves become Stone Axe.",
-    "effect_th": "ถือโดยโอเกอร์ปอน (Ogerpon): เปลี่ยนรูปแบบโอเกอร์ปอนเป็นคอร์เนอร์สโตนมาสก์ (Rock-type) ท่า Teal Mask กลายเป็น Stone Axe",
+    "effect_th": "ถือโดย Ogerpon: เปลี่ยนรูปแบบ Ogerpon เป็น Cornerstone Mask (Rock-type) ท่า Teal Mask กลายเป็น Stone Axe",
     "category": "held-items"
   },
   {

@@ -6,7 +6,7 @@
     "power": 40,
     "accuracy": 100,
     "pp": 35,
-    "description_en": "Pounds with fore­ legs or tail.",
+    "description_en": "Pounds with fore-legs or tail.",
     "description_th": "ฟาดเป้าหมายด้วยขาหน้าหรือหาง",
     "damage_class": "physical"
   },
@@ -17,7 +17,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 25,
-    "description_en": "Has a high criti­ cal hit ratio.",
+    "description_en": "Has a high critical hit ratio.",
     "description_th": "มีโอกาส 12.5% ที่จะติดคริติคอลสูง",
     "damage_class": "physical"
   },
@@ -116,7 +116,7 @@
     "power": 55,
     "accuracy": 100,
     "pp": 30,
-    "description_en": "Grips with power­ ful pincers.",
+    "description_en": "Grips with powerful pincers.",
     "description_th": "ใช้ก้ามอันทรงพลังหนีบเป้าหมายอย่างแรง",
     "damage_class": "physical"
   },
@@ -149,7 +149,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "A dance that in­ creases ATTACK.",
+    "description_en": "A dance that increases attack.",
     "description_th": "เต้นรำเพื่อเพิ่มพลังโจมตี (Attack) ของตนเอง 2 ระดับ",
     "damage_class": "status"
   },
@@ -1150,7 +1150,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 5,
-    "description_en": "Recovers up to half the user’s maximum HP.",
+    "description_en": "Recovers up to half the user's maximum HP.",
     "description_th": "รักษาบาดแผลเพื่อฟื้นฟู HP ของตนเองครึ่งหนึ่งจาก HP สูงสุด",
     "damage_class": "status"
   },
@@ -1161,7 +1161,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 30,
-    "description_en": "Stiffens the body’s  muscles to raise DEFENSE.",
+    "description_en": "Stiffens the body's  muscles to raise DEFENSE.",
     "description_th": "เกร็งกล้ามเนื้อให้แข็งดั่งหินเพื่อเพิ่มพลังป้องกัน (Defense) ของตนเอง",
     "damage_class": "status"
   },
@@ -1843,7 +1843,7 @@
     "power": 60,
     "accuracy": 100,
     "pp": 25,
-    "description_en": "While attacking, it may steal the foe’s held item.",
+    "description_en": "While attacking, it may steal the foe's held item.",
     "description_th": "โจมตีและแอบขโมยไอเทมที่เป้าหมายถืออยู่มาเป็นของตนเอง",
     "damage_class": "physical"
   },
@@ -2613,7 +2613,7 @@
     "power": 100,
     "accuracy": 80,
     "pp": 5,
-    "description_en": "Has a high criti­ cal hit ratio.",
+    "description_en": "Has a high critical hit ratio.",
     "description_th": "พุ่งสับไขว้สองมือ มีโอกาส 12.5% ที่จะติดคริติคอลสูง",
     "damage_class": "physical"
   },
@@ -2877,7 +2877,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user faints and lowers the foe’s abilities.",
+    "description_en": "The user faints and lowers the foe's abilities.",
     "description_th": "ทิ้งทวนก่อนสลบ ผู้ใช้จะหมดสภาพ (Faint) ทันที แลกกับการลดพลังโจมตี (Attack และ Sp. Atk) ของเป้าหมายลง 2 ระดับ",
     "damage_class": "status"
   },
@@ -2888,7 +2888,7 @@
     "power": 70,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "Boosts ATTACK when burned, paralyzed, or poisoned.",
+    "description_en": "Boosts attack when burned, paralyzed, or poisoned.",
     "description_th": "ลูกฮึด พลังโจมตีของท่านี้จะเพิ่มเป็น 2 เท่า หากผู้ใช้กำลังติดสถานะพิษ อัมพาต หรือเผาไหม้",
     "damage_class": "physical"
   },
@@ -2965,7 +2965,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "A move that boosts the power of the ally’s attack in a Double Battle. ",
+    "description_en": "A move that boosts the power of the ally's attack in a Double Battle. ",
     "description_th": "ให้ความช่วยเหลือ เพิ่มความรุนแรงให้กับท่าโจมตีของโปเกมอนฝ่ายเดียวกัน (ใช้ในการต่อสู้แบบคู่)",
     "damage_class": "status"
   },
@@ -3009,7 +3009,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "Attacks randomly with one of the partner’s moves.",
+    "description_en": "Attacks randomly with one of the partner's moves.",
     "description_th": "ขอความช่วยเหลือ สุ่มใช้ท่าโจมตีใดท่าหนึ่งของโปเกมอนตัวอื่นในปาร์ตี้ของเรา",
     "damage_class": "status"
   },
@@ -3020,7 +3020,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "Lays roots that restore HP. The user can’t switch out.",
+    "description_en": "Lays roots that restore HP. The user can't switch out.",
     "description_th": "หยั่งรากลงดินเพื่อฟื้นฟู HP ทุกเทิร์น แต่ผู้ใช้จะไม่สามารถเปลี่ยนตัวออกหรือหนีได้",
     "damage_class": "status"
   },
@@ -3097,7 +3097,7 @@
     "power": 65,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "Knocks down the foe’s held item to prevent its use.",
+    "description_en": "Knocks down the foe's held item to prevent its use.",
     "description_th": "ปัดของหลุดมือ ทำความเสียหายและทำให้เป้าหมายสูญเสียไอเทมที่ถืออยู่ (ใช้งานไม่ได้อีกเลยในการต่อสู้นั้น)",
     "damage_class": "physical"
   },
@@ -3108,7 +3108,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "Gains power if the user’s HP is lower than the foe’s HP.",
+    "description_en": "Gains power if the user's HP is lower than the foe's HP.",
     "description_th": "โจมตีแบบสู้ยิบตา ลด HP ของเป้าหมายให้ลงมาเท่ากับ HP ปัจจุบันของผู้ใช้พอดี",
     "damage_class": "physical"
   },
@@ -3119,7 +3119,7 @@
     "power": 150,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The higher the user’s HP, the more damage caused.",
+    "description_en": "The higher the user's HP, the more damage caused.",
     "description_th": "ระเบิดภูเขาไฟ ยิ่งผู้ใช้มี HP เหลือมากเท่าไหร่ ท่านี้ก็จะยิ่งรุนแรงมากขึ้นเท่านั้น",
     "damage_class": "special"
   },
@@ -3218,7 +3218,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "Alters the POKéMON’s type depending on the location.",
+    "description_en": "Alters the POKéMON's type depending on the location.",
     "description_th": "พรางตัว เปลี่ยนประเภท (Type) ของตนเองให้กลมกลืนไปตามสภาพแวดล้อมที่กำลังต่อสู้",
     "damage_class": "status"
   },
@@ -3416,7 +3416,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The move’s type and power change with the weather.",
+    "description_en": "The move's type and power change with the weather.",
     "description_th": "ยิงลูกบอลสภาพอากาศ ประเภทธาตุและความรุนแรงของท่านี้จะเปลี่ยนไปตามสภาพอากาศในขณะนั้น",
     "damage_class": "special"
   },
@@ -3438,7 +3438,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "Feigns crying to sharply lower the foe’s SP. DEF.",
+    "description_en": "Feigns crying to sharply lower the foe's SP. DEF.",
     "description_th": "บีบน้ำตาแกล้งร้องไห้ เพื่อลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมายลง 2 ระดับ",
     "damage_class": "status"
   },
@@ -3471,7 +3471,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 40,
-    "description_en": "Negates the foe’s efforts to heighten evasiveness.",
+    "description_en": "Negates the foe's efforts to heighten evasiveness.",
     "description_th": "ดมกลิ่นสะกดรอย ทำให้เป้าหมายธาตุผีสามารถถูกโจมตีด้วยท่าปกติและต่อสู้ได้ และเพิกเฉยต่อการเพิ่มค่าหลบหลีกของเป้าหมาย",
     "damage_class": "status"
   },
@@ -3548,7 +3548,7 @@
     "power": 150,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "Inflicts more damage if the user’s HP is high.",
+    "description_en": "Inflicts more damage if the user's HP is high.",
     "description_th": "พ่นน้ำพุลูกใหญ่ ยิ่งผู้ใช้มี HP เหลือมากเท่าไหร่ ท่านี้ก็จะยิ่งรุนแรงมากขึ้นเท่านั้น",
     "damage_class": "special"
   },
@@ -3669,7 +3669,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "Hardens the body’s surface to sharply raise DEFENSE.",
+    "description_en": "Hardens the body's surface to sharply raise DEFENSE.",
     "description_th": "เสริมผิวหนังให้แข็งแกร่งดั่งเหล็กกล้า เพื่อเพิ่มพลังป้องกัน (Defense) ของตนเอง 2 ระดับ",
     "damage_class": "status"
   },
@@ -3680,7 +3680,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 5,
-    "description_en": "Blocks the foe’s way to prevent escape.",
+    "description_en": "Blocks the foe's way to prevent escape.",
     "description_th": "ขวางทางเป้าหมายไว้ ป้องกันไม่ให้เป้าหมายหลบหนีหรือเปลี่ยนตัวได้",
     "damage_class": "status"
   },
@@ -3900,7 +3900,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 5,
-    "description_en": "The user lands and rests its body. It restores the user’s HP by up to half of its max HP.",
+    "description_en": "The user lands and rests its body. It restores the user's HP by up to half of its max HP.",
     "description_th": "บินลงมาเกาะพักผ่อน ฟื้นฟู HP ของตนเองครึ่งหนึ่งจาก HP สูงสุด (เทิร์นนั้นจะสูญเสียสถานะธาตุบินชั่วคราว)",
     "damage_class": "status"
   },
@@ -3944,7 +3944,7 @@
     "power": 100,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user swings and hits with its strong and heavy fist. It lowers the user’s Speed, however.",
+    "description_en": "The user swings and hits with its strong and heavy fist. It lowers the user's Speed, however.",
     "description_th": "เหวี่ยงท่อนแขนอันหนักหน่วงทุบโจมตี แต่จะทำให้ความเร็ว (Speed) ของผู้ใช้ลดลง",
     "damage_class": "physical"
   },
@@ -3977,7 +3977,7 @@
     "power": 65,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "If the foe’s HP is down to about half, this attack will hit with double the power.",
+    "description_en": "If the foe's HP is down to about half, this attack will hit with double the power.",
     "description_th": "สาดน้ำเกลือ หากเป้าหมายมี HP เหลือครึ่งหนึ่งหรือต่ำกว่า ท่านี้จะรุนแรงขึ้นเป็น 2 เท่า",
     "damage_class": "special"
   },
@@ -4065,7 +4065,7 @@
     "power": 120,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user fights the foe in close without guarding itself. It also cuts the user’s Defense and Sp. Def.",
+    "description_en": "The user fights the foe in close without guarding itself. It also cuts the user's Defense and Sp. Def.",
     "description_th": "คลุกวงในโจมตีอย่างรุนแรงโดยไม่สนการป้องกันตัว ทำให้พลังป้องกัน (Defense) และพลังป้องกันพิเศษ (Sp. Def) ของผู้ใช้ลดลง",
     "damage_class": "physical"
   },
@@ -4087,7 +4087,7 @@
     "power": 60,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "If the foe has already taken some damage in the same turn, this attack’s power is doubled.",
+    "description_en": "If the foe has already taken some damage in the same turn, this attack's power is doubled.",
     "description_th": "ซ้ำเติม หากเป้าหมายได้รับความเสียหายไปแล้วในเทิร์นเดียวกันนี้ ท่านี้จะมีความรุนแรงเพิ่มเป็น 2 เท่า",
     "damage_class": "physical"
   },
@@ -4153,7 +4153,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user powerfully wrings the foe. The more HP the foe has, the greater this attack’s power.",
+    "description_en": "The user powerfully wrings the foe. The more HP the foe has, the greater this attack's power.",
     "description_th": "บีบรัดอย่างแรง ยิ่งเป้าหมายมี HP เหลือมากเท่าไหร่ ท่านี้ก็จะยิ่งรุนแรงมากขึ้นเท่านั้น",
     "damage_class": "special"
   },
@@ -4175,7 +4175,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user hurls up its stomach acids on the foe. The fluid eliminates the effect of the foe’s ability.",
+    "description_en": "The user hurls up its stomach acids on the foe. The fluid eliminates the effect of the foe's ability.",
     "description_th": "พ่นกรดในกระเพาะใส่เป้าหมาย ทำให้ความสามารถ (Ability) ของเป้าหมายถูกลบและไร้ผลไป",
     "damage_class": "status"
   },
@@ -4197,7 +4197,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user tries to cut ahead of the foe to steal and use the foe’s intended move with greater power.",
+    "description_en": "The user tries to cut ahead of the foe to steal and use the foe's intended move with greater power.",
     "description_th": "ชิงลงมือก่อน ขโมยท่าโจมตีที่เป้าหมายกำลังจะใช้มาใช้เอง โดยพลังโจมตีจะแรงขึ้น 1.5 เท่า (ได้ผลเมื่อผู้ใช้เร็วกว่าเท่านั้น)",
     "damage_class": "status"
   },
@@ -4241,7 +4241,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "This attack’s power increases the more the foe has powered up with stat changes. ",
+    "description_en": "This attack's power increases the more the foe has powered up with stat changes. ",
     "description_th": "ลงทัณฑ์ ท่านี้จะยิ่งรุนแรงมากขึ้นตามระดับค่าสถานะ (บัฟ) ทั้งหมดที่เป้าหมายได้เพิ่มพลังเอาไว้",
     "damage_class": "physical"
   },
@@ -4285,7 +4285,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user lays a trap of poison spikes at the foe’s feet. They poison foes that switch into battle.",
+    "description_en": "The user lays a trap of poison spikes at the foe's feet. They poison foes that switch into battle.",
     "description_th": "โรยหนามพิษลงบนพื้นสนามของฝ่ายตรงข้าม ทำให้โปเกมอนที่ถูกเปลี่ยนตัวลงมาใหม่ติดสถานะพิษ",
     "damage_class": "status"
   },
@@ -4450,7 +4450,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user vibrates its wings to generate a damaging sound wave. It may also lower the foe’s Sp. Def stat.",
+    "description_en": "The user vibrates its wings to generate a damaging sound wave. It may also lower the foe's Sp. Def stat.",
     "description_th": "สั่นปีกเพื่อสร้างคลื่นเสียงทำลายล้าง มีโอกาส 10% ที่จะลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4461,7 +4461,7 @@
     "power": 85,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The foe is attacked with a shock wave generated by the user’s gaping mouth. ",
+    "description_en": "The foe is attacked with a shock wave generated by the user's gaping mouth. ",
     "description_th": "อ้าปากคำรามเพื่อปล่อยคลื่นกระแทกโจมตีเป้าหมาย",
     "damage_class": "special"
   },
@@ -4494,7 +4494,7 @@
     "power": 75,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "An energy-draining punch. The user’s HP is restored by half the damage taken by the target.",
+    "description_en": "An energy-draining punch. The user's HP is restored by half the damage taken by the target.",
     "description_th": "หมัดดูดพลัง จะฟื้นฟู HP ให้ผู้ใช้ครึ่งหนึ่งของความเสียหายที่ทำได้",
     "damage_class": "physical"
   },
@@ -4516,7 +4516,7 @@
     "power": 120,
     "accuracy": 70,
     "pp": 5,
-    "description_en": "The user heightens its mental focus and unleashes its power. It may also lower the target’s Sp. Def.",
+    "description_en": "The user heightens its mental focus and unleashes its power. It may also lower the target's Sp. Def.",
     "description_th": "รวบรวมสมาธิขั้นสูงแล้วปลดปล่อยลูกพลังออกไป มีโอกาส 10% ที่จะลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4527,7 +4527,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user draws power from nature and fires it at the foe. It may also lower the target’s Sp. Def.",
+    "description_en": "The user draws power from nature and fires it at the foe. It may also lower the target's Sp. Def.",
     "description_th": "รวบรวมพลังงานจากธรรมชาติมาอัดเป็นลูกบอลแล้วยิงโจมตี มีโอกาส 10% ที่จะลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4549,7 +4549,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user makes the ground under the foe erupt with power. It may also lower the target’s Sp. Def.",
+    "description_en": "The user makes the ground under the foe erupt with power. It may also lower the target's Sp. Def.",
     "description_th": "ระเบิดพลังจากใต้ดินใต้เท้าของเป้าหมาย มีโอกาส 10% ที่จะลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4582,7 +4582,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user stimulates its brain by thinking bad thoughts. It sharply raises the user’s Sp. Atk.",
+    "description_en": "The user stimulates its brain by thinking bad thoughts. It sharply raises the user's Sp. Atk.",
     "description_th": "คิดแผนการชั่วร้ายเพื่อกระตุ้นสมอง เพิ่มพลังโจมตีพิเศษ (Sp. Atk) ของตนเอง 2 ระดับ",
     "damage_class": "status"
   },
@@ -4681,7 +4681,7 @@
     "power": 65,
     "accuracy": 85,
     "pp": 10,
-    "description_en": "The user launches a hard-packed mud ball to attack. It may also lower the target’s accuracy.",
+    "description_en": "The user launches a hard-packed mud ball to attack. It may also lower the target's accuracy.",
     "description_th": "ยิงลูกบอลโคลนอัดแข็งเข้าใส่เป้าหมาย มีโอกาส 10% ที่จะลดความแม่นยำ (Accuracy) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4714,7 +4714,7 @@
     "power": 65,
     "accuracy": 85,
     "pp": 10,
-    "description_en": "The user looses a flash of energy from its polished body. It may also lower the target’s accuracy.",
+    "description_en": "The user looses a flash of energy from its polished body. It may also lower the target's accuracy.",
     "description_th": "ยิงแสงสะท้อนระยิบระยับจากร่างกายเข้าโจมตี มีโอกาส 10% ที่จะลดความแม่นยำ (Accuracy) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4725,7 +4725,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user gathers all its light energy and releases it at once. It may also lower the foe’s Sp. Def stat.",
+    "description_en": "The user gathers all its light energy and releases it at once. It may also lower the foe's Sp. Def stat.",
     "description_th": "รวบรวมพลังงานแสงทั้งหมดแล้วยิงออกไปรวดเดียว มีโอกาส 10% ที่จะลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -4747,7 +4747,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "Obstacles are moved, reducing the foe’s evasion stat. It can also be used to clear deep fog, etc.",
+    "description_en": "Obstacles are moved, reducing the foe's evasion stat. It can also be used to clear deep fog, etc.",
     "description_th": "พัดลมแรงพัดเป่าหมอกและสิ่งกีดขวาง (เช่น Spikes, Reflect) ทิ้งไป และลดค่าความหลบหลีก (Evasiveness) ของเป้าหมาย",
     "damage_class": "status"
   },
@@ -4769,7 +4769,7 @@
     "power": 130,
     "accuracy": 90,
     "pp": 5,
-    "description_en": "Comets are summoned down from the sky. The attack’s recoil sharply reduces the user’s Sp. Atk stat.",
+    "description_en": "Comets are summoned down from the sky. The attack's recoil sharply reduces the user's Sp. Atk stat.",
     "description_th": "เรียกอุกกาบาตดาวตกถล่มใส่เป้าหมาย แต่หลังจากใช้ พลังโจมตีพิเศษ (Sp. Atk) ของผู้ใช้จะลดลง 2 ระดับ",
     "damage_class": "special"
   },
@@ -4802,7 +4802,7 @@
     "power": 130,
     "accuracy": 90,
     "pp": 5,
-    "description_en": "A storm of sharp leaves is whipped up. The attack’s recoil sharply reduces the user’s Sp. Atk stat.",
+    "description_en": "A storm of sharp leaves is whipped up. The attack's recoil sharply reduces the user's Sp. Atk stat.",
     "description_th": "พัดกระหน่ำด้วยพายุใบไม้แหลมคม แต่หลังจากใช้ พลังโจมตีพิเศษ (Sp. Atk) ของผู้ใช้จะลดลง 2 ระดับ",
     "damage_class": "special"
   },
@@ -4956,7 +4956,7 @@
     "power": 50,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user fires a concentrated bundle of electricity. It may also raise the user’s Sp. Atk stat.",
+    "description_en": "The user fires a concentrated bundle of electricity. It may also raise the user's Sp. Atk stat.",
     "description_th": "ยิงลำแสงอัดประจุไฟฟ้า มีโอกาส 70% ที่จะสูงที่จะเพิ่มพลังโจมตีพิเศษ (Sp. Atk) ของตนเอง",
     "damage_class": "special"
   },
@@ -5110,7 +5110,7 @@
     "power": 120,
     "accuracy": 85,
     "pp": 5,
-    "description_en": "The user generates a shock wave from within its body. It may also lower the target’s Sp. Def.",
+    "description_en": "The user generates a shock wave from within its body. It may also lower the target's Sp. Def.",
     "description_th": "ปลดปล่อยคลื่นกระแทกจากภายในร่างกาย มีโอกาส 10% ที่จะสูงที่จะลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมายลง 2 ระดับ",
     "damage_class": "special"
   },
@@ -5121,7 +5121,7 @@
     "power": 60,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user creates a gust of repulsive wind. It may also raise all the user’s stats at once.",
+    "description_en": "The user creates a gust of repulsive wind. It may also raise all the user's stats at once.",
     "description_th": "พัดลมแห่งความตายที่น่าขนลุกเข้าใส่เป้าหมาย มีโอกาส 10% ที่จะเพิ่มค่าสถานะทั้งหมดของตนเอง",
     "damage_class": "special"
   },
@@ -5165,7 +5165,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user employs its psychic power to average its Defense and Sp. Def stats with those of its target’s.",
+    "description_en": "The user employs its psychic power to average its Defense and Sp. Def stats with those of its target's.",
     "description_th": "นำค่าพลังป้องกัน (Defense) และพลังป้องกันพิเศษ (Sp. Def) ของตนเองไปรวมกับเป้าหมาย แล้วหารเฉลี่ยให้เท่าๆ กัน",
     "damage_class": "status"
   },
@@ -5176,7 +5176,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user employs its psychic power to average its Attack and Sp. Atk stats with those of the target’s.",
+    "description_en": "The user employs its psychic power to average its Attack and Sp. Atk stats with those of the target's.",
     "description_th": "นำค่าพลังโจมตี (Attack) และพลังโจมตีพิเศษ (Sp. Atk) ของตนเองไปรวมกับเป้าหมาย แล้วหารเฉลี่ยให้เท่าๆ กัน",
     "damage_class": "status"
   },
@@ -5187,7 +5187,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user creates a bizarre area in which Pokémon’s Defense and Sp. Def stats are swapped for five turns.",
+    "description_en": "The user creates a bizarre area in which Pokémon's Defense and Sp. Def stats are swapped for five turns.",
     "description_th": "สร้างพื้นที่มหัศจรรย์ สลับค่าพลังป้องกัน (Defense) กับพลังป้องกันพิเศษ (Sp. Def) ของโปเกมอนทุกตัวบนสนาม เป็นเวลา 5 เทิร์น",
     "damage_class": "status"
   },
@@ -5253,7 +5253,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user creates a bizarre area in which Pokémon’s held items lose their effects for five turns.",
+    "description_en": "The user creates a bizarre area in which Pokémon's held items lose their effects for five turns.",
     "description_th": "สร้างห้องเวทมนตร์ปิดกั้น ไอเทมสวมใส่ของโปเกมอนทุกตัวบนสนามจะไร้ผล เป็นเวลา 5 เทิร์น",
     "damage_class": "status"
   },
@@ -5308,7 +5308,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user lightly performs a beautiful, mystic dance. It boosts the user’s Sp. Atk, Sp. Def, and Speed stats.",
+    "description_en": "The user lightly performs a beautiful, mystic dance. It boosts the user's Sp. Atk, Sp. Def, and Speed stats.",
     "description_th": "ระบำผีเสื้อ ร่ายรำอย่างงดงามเพื่อเพิ่มพลังโจมตีพิเศษ (Sp. Atk), พลังป้องกันพิเศษ (Sp. Def), และความเร็ว (Speed) ของตนเอง",
     "damage_class": "status"
   },
@@ -5352,7 +5352,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user shoots a torrent of water at the target and changes the target’s type to Water.",
+    "description_en": "The user shoots a torrent of water at the target and changes the target's type to Water.",
     "description_th": "สาดน้ำจนเปียกโชก เปลี่ยนประเภทธาตุ (Type) ของเป้าหมายให้กลายเป็นธาตุน้ำล้วน",
     "damage_class": "status"
   },
@@ -5363,7 +5363,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user cloaks itself with flame and attacks. Building up more power, it raises the user’s Speed stat.",
+    "description_en": "The user cloaks itself with flame and attacks. Building up more power, it raises the user's Speed stat.",
     "description_th": "คลุมตัวด้วยเปลวเพลิงแล้วพุ่งชน เพิ่มความเร็ว (Speed) ของตนเองหลังจากโจมตี",
     "damage_class": "physical"
   },
@@ -5385,7 +5385,7 @@
     "power": 65,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user attacks the target’s legs swiftly, reducing the target’s Speed stat.",
+    "description_en": "The user attacks the target's legs swiftly, reducing the target's Speed stat.",
     "description_th": "เตะตัดขาเป้าหมายอย่างรวดเร็ว ทำความเสียหายและลดความเร็ว (Speed) ของเป้าหมายลง",
     "damage_class": "physical"
   },
@@ -5396,7 +5396,7 @@
     "power": 40,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user spits fluid that works to melt the target. This harshly reduces the target’s Sp. Def stat.",
+    "description_en": "The user spits fluid that works to melt the target. This harshly reduces the target's Sp. Def stat.",
     "description_th": "พ่นกรดที่สามารถละลายเป้าหมายได้ ทำความเสียหายและลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมายลง 2 ระดับ",
     "damage_class": "special"
   },
@@ -5407,7 +5407,7 @@
     "power": 95,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user turns the target’s power against it. The higher the target’s Attack stat, the greater the damage.",
+    "description_en": "The user turns the target's power against it. The higher the target's Attack stat, the greater the damage.",
     "description_th": "ยืมดาบฆ่าคน ท่านี้จะคำนวณความเสียหายโดยใช้ค่าพลังโจมตี (Attack) ของเป้าหมายแทนที่จะเป็นของผู้ใช้",
     "damage_class": "physical"
   },
@@ -5418,7 +5418,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user’s mysterious psychic wave changes the target’s Ability to Simple.",
+    "description_en": "The user's mysterious psychic wave changes the target's Ability to Simple.",
     "description_th": "ยิงคลื่นพลังจิตลึกลับ เปลี่ยนความสามารถ (Ability) ของเป้าหมายให้กลายเป็น Simple",
     "damage_class": "status"
   },
@@ -5429,7 +5429,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user dances with an odd rhythm that compels the target to mimic it, making the target’s Ability the same as the user’s.",
+    "description_en": "The user dances with an odd rhythm that compels the target to mimic it, making the target's Ability the same as the user's.",
     "description_th": "เต้นจังหวะแปลกๆ ชวนให้ทำตาม เปลี่ยนความสามารถ (Ability) ของเป้าหมายให้เหมือนกับของผู้ใช้",
     "damage_class": "status"
   },
@@ -5473,7 +5473,7 @@
     "power": 70,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "Looking for an opening, the user strikes continually. The target’s stat changes don’t affect this attack’s damage.",
+    "description_en": "Looking for an opening, the user strikes continually. The target's stat changes don't affect this attack's damage.",
     "description_th": "เล็งหาช่องโหว่แล้วโจมตี ท่านี้จะเพิกเฉยต่อการเพิ่มขึ้นของพลังป้องกัน (Defense) และค่าหลบหลีกของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -5495,7 +5495,7 @@
     "power": 20,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks the target with stored power. The more the user’s stats are raised, the greater the damage.",
+    "description_en": "The user attacks the target with stored power. The more the user's stats are raised, the greater the damage.",
     "description_th": "ปลดปล่อยพลังที่กักเก็บไว้ ยิ่งผู้ใช้มีบัฟเพิ่มค่าสถานะมากเท่าไหร่ ท่านี้ก็จะยิ่งรุนแรงมากขึ้นแบบก้าวกระโดด",
     "damage_class": "special"
   },
@@ -5550,7 +5550,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user emits a healing pulse which restores the target’s HP by up to half of its max HP.",
+    "description_en": "The user emits a healing pulse which restores the target's HP by up to half of its max HP.",
     "description_th": "ปล่อยคลื่นพลังรักษา ฟื้นฟู HP ให้กับเป้าหมาย (หรือเพื่อนร่วมทีม) ครึ่งหนึ่งจาก HP สูงสุด",
     "damage_class": "status"
   },
@@ -5638,7 +5638,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "The user reflects the target’s type, making it the same type as the target.",
+    "description_en": "The user reflects the target's type, making it the same type as the target.",
     "description_th": "สะท้อนคุณสมบัติ เปลี่ยนประเภทธาตุ (Type) ของตนเองให้เหมือนกับประเภทธาตุของเป้าหมาย",
     "damage_class": "status"
   },
@@ -5649,7 +5649,7 @@
     "power": 70,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user gets revenge for a fainted ally. If an ally fainted in the previous turn, this attack’s damage increases.",
+    "description_en": "The user gets revenge for a fainted ally. If an ally fainted in the previous turn, this attack's damage increases.",
     "description_th": "ล้างแค้น ท่านี้จะรุนแรงขึ้นเป็น 2 เท่า หากในเทิร์นก่อนหน้ามีเพื่อนร่วมทีมถูกโจมตีจนหมดสภาพ (Faint)",
     "damage_class": "physical"
   },
@@ -5660,7 +5660,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user risks everything to attack its target. The user faints but does damage equal to the user’s HP.",
+    "description_en": "The user risks everything to attack its target. The user faints but does damage equal to the user's HP.",
     "description_th": "ทุ่มสุดตัว ผู้ใช้จะหมดสภาพ (Faint) ทันที แลกกับการสร้างความเสียหายให้เป้าหมายเท่ากับ HP ปัจจุบันของผู้ใช้",
     "damage_class": "special"
   },
@@ -5671,7 +5671,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "The user passes its held item to the target when the target isn’t holding an item.",
+    "description_en": "The user passes its held item to the target when the target isn't holding an item.",
     "description_th": "มอบให้ หากเป้าหมายไม่ได้ถือไอเทมใดๆ ผู้ใช้จะมอบไอเทมที่ตนเองถืออยู่ให้กับเป้าหมาย",
     "damage_class": "status"
   },
@@ -5737,7 +5737,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "While resisting, the user attacks the opposing Pokémon. The targets’ Sp. Atk stat is reduced.",
+    "description_en": "While resisting, the user attacks the opposing Pokémon. The targets' Sp. Atk stat is reduced.",
     "description_th": "ดิ้นรนต่อต้านพร้อมปลดปล่อยคลื่นพลัง ทำความเสียหายและลดพลังโจมตีพิเศษ (Sp. Atk) ของฝ่ายตรงข้ามทั้งหมด",
     "damage_class": "special"
   },
@@ -5748,7 +5748,7 @@
     "power": 60,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user stomps down on the ground and attacks everything in the area. Hit Pokémon’s Speed stat is reduced.",
+    "description_en": "The user stomps down on the ground and attacks everything in the area. Hit Pokémon's Speed stat is reduced.",
     "description_th": "กระทืบพื้นอย่างแรงเกิดคลื่นสั่นสะเทือน ทำความเสียหายและลดความเร็ว (Speed) ของโปเกมอนทุกตัวรอบข้าง",
     "damage_class": "physical"
   },
@@ -5792,7 +5792,7 @@
     "power": 55,
     "accuracy": 95,
     "pp": 15,
-    "description_en": "The user captures and attacks opposing Pokémon by using an electric net. It reduces the targets’ Speed stat.",
+    "description_en": "The user captures and attacks opposing Pokémon by using an electric net. It reduces the targets' Speed stat.",
     "description_th": "เหวี่ยงตาข่ายไฟฟ้าเข้าดักจับฝ่ายตรงข้าม ทำความเสียหายและลดความเร็ว (Speed) ของศัตรูลง",
     "damage_class": "special"
   },
@@ -5847,7 +5847,7 @@
     "power": 75,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user drains the target’s energy with its horns. The user’s HP is restored by half the damage taken by the target.",
+    "description_en": "The user drains the target's energy with its horns. The user's HP is restored by half the damage taken by the target.",
     "description_th": "ใช้เขาแทงเพื่อดูดซับพลังชีวิต จะฟื้นฟู HP ให้ผู้ใช้ครึ่งหนึ่งของความเสียหายที่ทำได้",
     "damage_class": "physical"
   },
@@ -5858,7 +5858,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user attacks by slicing with its long horns. The target’s stat changes don’t affect this attack’s damage.",
+    "description_en": "The user attacks by slicing with its long horns. The target's stat changes don't affect this attack's damage.",
     "description_th": "ฟันด้วยดาบศักดิ์สิทธิ์ ท่านี้จะเพิกเฉยต่อการเพิ่มพลังป้องกัน (Defense) และค่าหลบหลีกของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -5869,7 +5869,7 @@
     "power": 75,
     "accuracy": 95,
     "pp": 10,
-    "description_en": "The user cuts its target with sharp shells. This attack may also lower the target’s Defense stat.",
+    "description_en": "The user cuts its target with sharp shells. This attack may also lower the target's Defense stat.",
     "description_th": "ฟาดฟันด้วยเปลือกหอยที่คมกริบ มีโอกาส 10% ที่จะลดพลังป้องกัน (Defense) ของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -5891,7 +5891,7 @@
     "power": 65,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user attacks its target by encircling it in sharp leaves. This attack may also lower the target’s accuracy.",
+    "description_en": "The user attacks its target by encircling it in sharp leaves. This attack may also lower the target's accuracy.",
     "description_th": "สร้างพายุทอร์นาโดใบไม้พัดกระหน่ำใส่เป้าหมาย มีโอกาส 10% ที่จะลดความแม่นยำ (Accuracy) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -5913,7 +5913,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user protects itself by wrapping its body in soft cotton, drastically raising the user’s Defense stat.",
+    "description_en": "The user protects itself by wrapping its body in soft cotton, drastically raising the user's Defense stat.",
     "description_th": "ห่อหุ้มร่างกายด้วยปุยฝ้ายหนานุ่ม เพิ่มพลังป้องกัน (Defense) ของตนเองขึ้นอย่างมหาศาล (ทีละ 3 ระดับ)",
     "damage_class": "status"
   },
@@ -5924,7 +5924,7 @@
     "power": 85,
     "accuracy": 95,
     "pp": 10,
-    "description_en": "The user lets loose a pitch-black shock wave at its target. It may also lower the target’s accuracy.",
+    "description_en": "The user lets loose a pitch-black shock wave at its target. It may also lower the target's accuracy.",
     "description_th": "ปลดปล่อยคลื่นกระแทกแห่งความมืดมิดเข้าใส่ มีโอกาส 10% ที่จะลดความแม่นยำ (Accuracy) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -6034,7 +6034,7 @@
     "power": 65,
     "accuracy": 95,
     "pp": 10,
-    "description_en": "The user attacks by blowing freezing cold air at opposing Pokémon. This attack reduces the targets’ Speed stat.",
+    "description_en": "The user attacks by blowing freezing cold air at opposing Pokémon. This attack reduces the targets' Speed stat.",
     "description_th": "พ่นไอเย็นยะเยือกจับขั้วหัวใจเข้าโจมตีฝั่งตรงข้ามทั้งหมด ทำความเสียหายและลดความเร็ว (Speed) ลง",
     "damage_class": "special"
   },
@@ -6067,7 +6067,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "Cloaked in flames, the user dances and flaps its wings. It may also raise the user’s Sp. Atk stat.",
+    "description_en": "Cloaked in flames, the user dances and flaps its wings. It may also raise the user's Sp. Atk stat.",
     "description_th": "ร่ายรำในชุดคลุมเพลิงแล้วกระพือปีกโจมตี มีโอกาส 50% ที่จะเพิ่มพลังโจมตีพิเศษ (Sp. Atk) ของตนเอง",
     "damage_class": "special"
   },
@@ -6100,7 +6100,7 @@
     "power": 55,
     "accuracy": 95,
     "pp": 15,
-    "description_en": "The user yells as if it is ranting about something, making the target’s Sp. Atk stat decrease.",
+    "description_en": "The user yells as if it is ranting about something, making the target's Sp. Atk stat decrease.",
     "description_th": "ขู่คำรามด่าทอใส่ฝั่งตรงข้าม ทำความเสียหายและลดพลังโจมตีพิเศษ (Sp. Atk) ของฝั่งตรงข้ามทั้งหมด",
     "damage_class": "special"
   },
@@ -6122,7 +6122,7 @@
     "power": 180,
     "accuracy": 95,
     "pp": 5,
-    "description_en": "With a hot flame on its forehead, the user hurls itself at its target. It lowers the user’s Defense, Sp. Def, and Speed stats.",
+    "description_en": "With a hot flame on its forehead, the user hurls itself at its target. It lowers the user's Defense, Sp. Def, and Speed stats.",
     "description_th": "ปลดปล่อยเปลวไฟรูปตัว V ที่หน้าผากแล้วพุ่งชนเต็มกำลัง แต่หลังจากโจมตี พลังป้องกัน (Defense, Sp. Def) และความเร็ว (Speed) ของผู้ใช้จะลดลง",
     "damage_class": "physical"
   },
@@ -6210,7 +6210,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 25,
-    "description_en": "When the user knocks out a target with this move, the user’s Attack stat rises sharply.",
+    "description_en": "When the user knocks out a target with this move, the user's Attack stat rises sharply.",
     "description_th": "ปลิดชีพด้วยเหล็กใน หากผู้ใช้ใช้ท่านี้โจมตีจนเป้าหมายหมดสภาพ (Faint) พลังโจมตี (Attack) ของผู้ใช้จะเพิ่มขึ้นอย่างมหาศาล (ทีละ 3 ระดับ)",
     "damage_class": "physical"
   },
@@ -6232,7 +6232,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user takes the target trick-or-treating. This adds Ghost type to the target’s type.",
+    "description_en": "The user takes the target trick-or-treating. This adds Ghost type to the target's type.",
     "description_th": "หลอกหรือเลี้ยง เพิ่มประเภทผี (Ghost) เข้าไปเป็นประเภทธาตุเสริมให้กับเป้าหมาย",
     "damage_class": "status"
   },
@@ -6265,7 +6265,7 @@
     "power": 65,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user attacks everything around it. The user’s HP is restored by half the damage taken by those hit.",
+    "description_en": "The user attacks everything around it. The user's HP is restored by half the damage taken by those hit.",
     "description_th": "ปล่อยคลื่นไฟฟ้าเป็นวงกว้างโจมตีทุกตัวรอบข้าง จะฟื้นฟู HP ให้ผู้ใช้ครึ่งหนึ่งของความเสียหายรวมที่ทำได้",
     "damage_class": "special"
   },
@@ -6320,7 +6320,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "With a parting threat, the user lowers the target’s Attack and Sp. Atk stats. Then it switches with a party Pokémon.",
+    "description_en": "With a parting threat, the user lowers the target's Attack and Sp. Atk stats. Then it switches with a party Pokémon.",
     "description_th": "ด่าทอทิ้งท้าย ลดพลังโจมตี (Attack และ Sp. Atk) ของเป้าหมายลง แล้วผู้ใช้จะสลับตัวกับโปเกมอนตัวอื่นในปาร์ตี้ทันที",
     "damage_class": "status"
   },
@@ -6342,7 +6342,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user steals the target’s energy with a kiss. The user’s HP is restored by over half of the damage taken by the target.",
+    "description_en": "The user steals the target's energy with a kiss. The user's HP is restored by over half of the damage taken by the target.",
     "description_th": "จุมพิตดูดพลัง จะฟื้นฟู HP ให้ผู้ใช้เป็นจำนวน 75% ของความเสียหายที่ทำได้",
     "damage_class": "special"
   },
@@ -6375,7 +6375,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user turns the ground under everyone’s feet to grass for five turns. This restores the HP of Pokémon on the ground a little every turn.",
+    "description_en": "The user turns the ground under everyone's feet to grass for five turns. This restores the HP of Pokémon on the ground a little every turn.",
     "description_th": "เปลี่ยนสนามเป็นทุ่งหญ้า 5 เทิร์น เพิ่มพลังท่าหญ้า 50% และฟื้นฟู HP ให้โปเกมอนที่เหยียบพื้นเล็กน้อยเมื่อจบทุกเทิร์น (ลดความแรงท่า Earthquake/Magnitude/Bulldoze ลงครึ่งหนึ่ง)",
     "damage_class": "status"
   },
@@ -6386,7 +6386,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user covers the ground under everyone’s feet with mist for five turns. This protects Pokémon on the ground from status conditions.",
+    "description_en": "The user covers the ground under everyone's feet with mist for five turns. This protects Pokémon on the ground from status conditions.",
     "description_th": "เปลี่ยนสนามเป็นหมอกแฟรี่ 5 เทิร์น โปเกมอนที่เหยียบพื้นจะไม่ติดสถานะผิดปกติ และความเสียหายจากท่ามังกรจะลดลงครึ่งหนึ่ง",
     "damage_class": "status"
   },
@@ -6397,7 +6397,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "If the target is electrified before it uses a move during that turn, the target’s move becomes Electric type.",
+    "description_en": "If the target is electrified before it uses a move during that turn, the target's move becomes Electric type.",
     "description_th": "ช็อตไฟฟ้า หากใช้ท่านี้ได้ก่อนที่เป้าหมายจะออกท่า ท่าที่เป้าหมายใช้ในเทิร์นนั้นจะถูกเปลี่ยนให้กลายเป็นประเภทไฟฟ้า (Electric)",
     "damage_class": "status"
   },
@@ -6408,7 +6408,7 @@
     "power": 90,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user plays rough with the target and attacks it. This may also lower the target’s Attack stat.",
+    "description_en": "The user plays rough with the target and attacks it. This may also lower the target's Attack stat.",
     "description_th": "เล่นแรงหยอกล้อเป้าหมายจนบอบช้ำ มีโอกาส 10% ที่จะลดพลังโจมตี (Attack) ของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -6430,7 +6430,7 @@
     "power": 95,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "Borrowing the power of the moon, the user attacks the target. This may also lower the target’s Sp. Atk stat.",
+    "description_en": "Borrowing the power of the moon, the user attacks the target. This may also lower the target's Sp. Atk stat.",
     "description_th": "รวบรวมพลังจากดวงจันทร์แล้วยิงระเบิดแสง มีโอกาส 10% ที่จะลดพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมาย",
     "damage_class": "special"
   },
@@ -6474,7 +6474,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user and the target become friends, and the target loses its will to fight. This lowers the target’s Attack stat.",
+    "description_en": "The user and the target become friends, and the target loses its will to fight. This lowers the target's Attack stat.",
     "description_th": "ผูกมิตรทำตัวเป็นมิตร ทำให้เป้าหมายใจอ่อนและลดพลังโจมตี (Attack) ของเป้าหมายลง (ทะลุการป้องกันด้วยท่ากางโล่ได้)",
     "damage_class": "status"
   },
@@ -6485,7 +6485,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user tells the target a secret, and the target loses its ability to concentrate. This lowers the target’s Sp. Atk stat.",
+    "description_en": "The user tells the target a secret, and the target loses its ability to concentrate. This lowers the target's Sp. Atk stat.",
     "description_th": "กระซิบความลับให้ฟัง ทำให้เป้าหมายเสียสมาธิและลดพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมายลง (ทะลุการป้องกันด้วยท่ากางโล่ได้)",
     "damage_class": "status"
   },
@@ -6496,7 +6496,7 @@
     "power": 100,
     "accuracy": 95,
     "pp": 5,
-    "description_en": "The user whips up a storm of diamonds to damage opposing Pokémon. This may also raise the user’s Defense stat.",
+    "description_en": "The user whips up a storm of diamonds to damage opposing Pokémon. This may also raise the user's Defense stat.",
     "description_th": "พายุเพชรพัดกระหน่ำใส่ฝั่งตรงข้ามทั้งหมด มีโอกาส 50% ที่จะสูงที่จะเพิ่มพลังป้องกัน (Defense) ของตนเอง 2 ระดับ",
     "damage_class": "physical"
   },
@@ -6540,7 +6540,7 @@
     "power": 75,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks by breathing a special, hot fire. This also lowers the target’s Sp. Atk stat.",
+    "description_en": "The user attacks by breathing a special, hot fire. This also lowers the target's Sp. Atk stat.",
     "description_th": "พ่นไฟเวทมนตร์แห่งภูตพรายเข้าโจมตี และจะลดพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมายลงเสมอ",
     "damage_class": "special"
   },
@@ -6573,7 +6573,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user’s body generates an eerie impulse. Exposing the target to it harshly lowers the target’s Sp. Atk stat.",
+    "description_en": "The user's body generates an eerie impulse. Exposing the target to it harshly lowers the target's Sp. Atk stat.",
     "description_th": "ปล่อยคลื่นความถี่ประหลาด ลดพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมายลง 2 ระดับ",
     "damage_class": "status"
   },
@@ -6639,7 +6639,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user electrifies the ground under everyone’s feet for five turns. Pokémon on the ground no longer fall asleep.",
+    "description_en": "The user electrifies the ground under everyone's feet for five turns. Pokémon on the ground no longer fall asleep.",
     "description_th": "เปลี่ยนสนามเป็นพื้นที่สายฟ้า 5 เทิร์น เพิ่มพลังท่าประเภทไฟฟ้า และโปเกมอนที่เหยียบพื้นจะไม่ติดสถานะหลับ",
     "damage_class": "status"
   },
@@ -6716,7 +6716,7 @@
     "power": 20,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The target is infested and attacked for four to five turns. The target can’t flee during this time.",
+    "description_en": "The target is infested and attacked for four to five turns. The target can't flee during this time.",
     "description_th": "ปล่อยฝูงแมลงรุมกัดกินเป้าหมาย ทำความเสียหายต่อเนื่อง 4-5 เทิร์น และเป้าหมายจะไม่สามารถหลบหนีหรือเปลี่ยนตัวได้",
     "damage_class": "special"
   },
@@ -6727,7 +6727,7 @@
     "power": 40,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "Striking opponents over and over makes the user’s fists harder. Hitting a target raises the Attack stat.",
+    "description_en": "Striking opponents over and over makes the user's fists harder. Hitting a target raises the Attack stat.",
     "description_th": "ชกโจมตีอย่างต่อเนื่อง ยิ่งโจมตีโดนเป้าหมาย พลังโจมตี (Attack) ของผู้ใช้ก็จะยิ่งเพิ่มขึ้น",
     "damage_class": "physical"
   },
@@ -6738,7 +6738,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user absorbs its target’s HP. The user’s HP is restored by over half of the damage taken by the target.",
+    "description_en": "The user absorbs its target's HP. The user's HP is restored by over half of the damage taken by the target.",
     "description_th": "ปีกแห่งความพินาศ ดูดกลืนพลังชีวิต จะฟื้นฟู HP ให้ผู้ใช้เป็นจำนวน 75% ของความเสียหายที่ทำได้",
     "damage_class": "special"
   },
@@ -6760,7 +6760,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks with a wave that crawls along the ground. Those hit can’t flee from battle.",
+    "description_en": "The user attacks with a wave that crawls along the ground. Those hit can't flee from battle.",
     "description_th": "สร้างคลื่นกระแทกพันระลอกไปตามพื้นดิน โปเกมอนที่ถูกโจมตีจะไม่สามารถหลบหนีหรือเปลี่ยนตัวได้",
     "damage_class": "physical"
   },
@@ -6826,7 +6826,7 @@
     "power": 100,
     "accuracy": 0,
     "pp": 5,
-    "description_en": "Using its many arms, the user unleashes a barrage of attacks that ignore the effects of moves like Protect and Detect. This attack lowers the user’s Defense.",
+    "description_en": "Using its many arms, the user unleashes a barrage of attacks that ignore the effects of moves like Protect and Detect. This attack lowers the user's Defense.",
     "description_th": "ระดมหมัดโจมตีทะลวงมิติ ท่านี้จะทำความเสียหายทะลุการกางโล่ (Protect/Detect) ได้เสมอ แต่จะทำให้พลังป้องกัน (Defense) ของตนเองลดลง",
     "damage_class": "physical"
   },
@@ -6991,7 +6991,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 1,
-    "description_en": "Deep-seated grudges summoned by the user’s Z-Power trap the target. The power varies, depending on the original move.",
+    "description_en": "Deep-seated grudges summoned by the user's Z-Power trap the target. The power varies, depending on the original move.",
     "description_th": "[Z-Move] รวบรวมความอาฆาตแค้นด้วย Z-Power แล้วขังเป้าหมายไว้ในฝันร้ายตลอกกาล (ท่ากายภาพ) ความรุนแรงจะเปลี่ยนไปตามท่าพื้นฐาน",
     "damage_class": "physical"
   },
@@ -7277,7 +7277,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks while simultaneously stitching the target’s shadow to the ground to prevent the target from escaping.",
+    "description_en": "The user attacks while simultaneously stitching the target's shadow to the ground to prevent the target from escaping.",
     "description_th": "ยิงลูกศรวิญญาณตรึงเงาของเป้าหมายติดไว้กับพื้น ทำให้เป้าหมายไม่สามารถเปลี่ยนตัวหรือหนีได้",
     "damage_class": "physical"
   },
@@ -7288,7 +7288,7 @@
     "power": 85,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user swings both arms and hits the target. The target’s stat changes don’t affect this attack’s damage.",
+    "description_en": "The user swings both arms and hits the target. The target's stat changes don't affect this attack's damage.",
     "description_th": "หมุนตัวควงสว่านเหวี่ยงแขนฟาด ท่านี้จะเพิกเฉยต่อการบัฟเพิ่มพลังป้องกัน (Defense/Sp.Def) และค่าหลบหลีกของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -7310,7 +7310,7 @@
     "power": 100,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user swings and hits with its strong, heavy fist. It lowers the user’s Speed, however.",
+    "description_en": "The user swings and hits with its strong, heavy fist. It lowers the user's Speed, however.",
     "description_th": "แกว่งหมัดน้ำแข็งอันหนักหน่วงทุบโจมตี แต่จะทำให้ความเร็ว (Speed) ของผู้ใช้ลดลง",
     "damage_class": "physical"
   },
@@ -7321,7 +7321,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user restores the target’s HP by up to half of its max HP. It restores more HP when the terrain is grass.",
+    "description_en": "The user restores the target's HP by up to half of its max HP. It restores more HP when the terrain is grass.",
     "description_th": "ฮีลลิ่งดอกไม้ ฟื้นฟู HP ให้เป้าหมายครึ่งหนึ่ง และจะฟื้นฟูได้มากขึ้นหากสู้กันบนทุ่งหญ้า (Grassy Terrain)",
     "damage_class": "status"
   },
@@ -7343,7 +7343,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user restores its HP by the same amount as the target’s Attack stat. It also lowers the target’s Attack stat.",
+    "description_en": "The user restores its HP by the same amount as the target's Attack stat. It also lowers the target's Attack stat.",
     "description_th": "ดูดซับกำลัง ฟื้นฟู HP ของตนเองให้เท่ากับค่าสเตตัสพลังโจมตี (Attack) ของเป้าหมาย และลดพลังโจมตีของเป้าหมายลง 1 ระดับ",
     "damage_class": "status"
   },
@@ -7354,7 +7354,7 @@
     "power": 125,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "In this two-turn attack, the user gathers light and fills a blade with the light’s energy, attacking the target on the next turn.",
+    "description_en": "In this two-turn attack, the user gathers light and fills a blade with the light's energy, attacking the target on the next turn.",
     "description_th": "เทิร์นแรก: รวบรวมพลังงานแสงอาทิตย์อาบใบดาบ, เทิร์นที่สอง: ฟันโจมตีเป้าหมายอย่างรุนแรง (ไม่ต้องชาร์จถ้าแดดจ้า)",
     "damage_class": "physical"
   },
@@ -7387,7 +7387,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user shoots poisonous threads to poison the target and lower the target’s Speed stat.",
+    "description_en": "The user shoots poisonous threads to poison the target and lower the target's Speed stat.",
     "description_th": "พ่นเส้นใยพิษใส่เป้าหมาย ทำให้ติดสถานะพิษและลดความเร็ว (Speed) ของเป้าหมายลง 2 ระดับ",
     "damage_class": "status"
   },
@@ -7420,7 +7420,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user attacks the target’s throat, and the resultant suffering prevents the target from using moves that emit sound for two turns.",
+    "description_en": "The user attacks the target's throat, and the resultant suffering prevents the target from using moves that emit sound for two turns.",
     "description_th": "สับลูกกระเดือก ทำความเสียหายและทำให้เป้าหมายไม่สามารถใช้ท่าที่อาศัยเสียงร้อง (Sound-based moves) ได้เป็นเวลา 2 เทิร์น",
     "damage_class": "physical"
   },
@@ -7464,7 +7464,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user makes a lunge at the target, attacking with full force. This also lowers the target’s Attack stat.",
+    "description_en": "The user makes a lunge at the target, attacking with full force. This also lowers the target's Attack stat.",
     "description_th": "พุ่งตัวเข้าจู่โจมเป้าหมายอย่างเต็มกำลัง และลดพลังโจมตี (Attack) ของเป้าหมายลง",
     "damage_class": "physical"
   },
@@ -7475,7 +7475,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user strikes the target with a burning lash. This also lowers the target’s Defense stat.",
+    "description_en": "The user strikes the target with a burning lash. This also lowers the target's Defense stat.",
     "description_th": "ฟาดเป้าหมายด้วยแส้เปลวเพลิง และลดพลังป้องกัน (Defense) ของเป้าหมายลง",
     "damage_class": "physical"
   },
@@ -7486,7 +7486,7 @@
     "power": 20,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user boasts its strength and attacks the target. The more the user’s stats are raised, the greater the move’s power.",
+    "description_en": "The user boasts its strength and attacks the target. The more the user's stats are raised, the greater the move's power.",
     "description_th": "เบ่งพลังโจมตี ยิ่งผู้ใช้มีบัฟเพิ่มค่าสถานะมากเท่าไหร่ ท่านี้ก็จะยิ่งรุนแรงมากขึ้นแบบก้าวกระโดด",
     "damage_class": "physical"
   },
@@ -7530,7 +7530,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user heals the target’s status condition. If the move succeeds, it also restores the user’s own HP.",
+    "description_en": "The user heals the target's status condition. If the move succeeds, it also restores the user's own HP.",
     "description_th": "ชำระล้างสถานะผิดปกติให้เป้าหมาย หากชำระล้างสำเร็จ ผู้ใช้จะได้รับการฟื้นฟู HP ให้ตนเองด้วย",
     "damage_class": "status"
   },
@@ -7541,7 +7541,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user attacks the target by dancing very hard. The user’s type determines the type of this move.",
+    "description_en": "The user attacks the target by dancing very hard. The user's type determines the type of this move.",
     "description_th": "ระบำจุติ โจมตีด้วยการเต้นรำอย่างรุนแรง ประเภทธาตุของท่านี้จะเปลี่ยนไปตามประเภทธาตุหลักของผู้ใช้",
     "damage_class": "special"
   },
@@ -7552,7 +7552,7 @@
     "power": 100,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "If the Pokémon the user has inflicted damage on have already used their moves, this move eliminates the effect of the target’s Ability.",
+    "description_en": "If the Pokémon the user has inflicted damage on have already used their moves, this move eliminates the effect of the target's Ability.",
     "description_th": "ปล่อยลำแสงทะลวงแก่น หากเป้าหมายใช้ท่าไปแล้วในเทิร์นนี้ จะลบความสามารถ (Ability) ของเป้าหมายทิ้งไป",
     "damage_class": "special"
   },
@@ -7563,7 +7563,7 @@
     "power": 70,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user lands an intense kick of tropical origins on the target. This also lowers the target’s Attack stat.",
+    "description_en": "The user lands an intense kick of tropical origins on the target. This also lowers the target's Attack stat.",
     "description_th": "กระโดดเตะด้วยพลังสไตล์เขตร้อน ทำความเสียหายและลดพลังโจมตี (Attack) ของเป้าหมายลง",
     "damage_class": "physical"
   },
@@ -7574,7 +7574,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "The user instructs the target to use the target’s last move again.",
+    "description_en": "The user instructs the target to use the target's last move again.",
     "description_th": "ออกคำสั่ง บังคับให้เป้าหมายใช้ท่าล่าสุดที่เพิ่งใช้ไปซ้ำอีกครั้งทันทีในเทิร์นนี้",
     "damage_class": "status"
   },
@@ -7585,7 +7585,7 @@
     "power": 100,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user first heats up its beak, and then it attacks the target. Making direct contact with the Pokémon while it’s heating up its beak results in a burn.",
+    "description_en": "The user first heats up its beak, and then it attacks the target. Making direct contact with the Pokémon while it's heating up its beak results in a burn.",
     "description_th": "รวบรวมความร้อนที่จงอยปากแล้วยิงโจมตี (หากมีใครใช้ท่าโจมตีสัมผัสตัวผู้ใช้ในขณะที่กำลังรวบรวมความร้อน จะติดสถานะเผาไหม้ทันที)",
     "damage_class": "physical"
   },
@@ -7596,7 +7596,7 @@
     "power": 110,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user rubs the scales on its entire body and makes a huge noise to attack the opposing Pokémon. The user’s Defense stat goes down after the attack.",
+    "description_en": "The user rubs the scales on its entire body and makes a huge noise to attack the opposing Pokémon. The user's Defense stat goes down after the attack.",
     "description_th": "ถูเกล็ดทั่วร่างสร้างเสียงกัมปนาทโจมตีฝ่ายตรงข้าม แต่จะทำให้พลังป้องกัน (Defense) ของผู้ใช้ลดลง",
     "damage_class": "special"
   },
@@ -7673,7 +7673,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 1,
-    "description_en": "The user, the Land Spirit Pokémon, obtains Alola’s energy using its Z-Power and attacks the target with full force. This reduces the target’s HP greatly.",
+    "description_en": "The user, the Land Spirit Pokémon, obtains Alola's energy using its Z-Power and attacks the target with full force. This reduces the target's HP greatly.",
     "description_th": "[ท่าไม้ตาย Z ของผู้พิทักษ์เกาะ] ดึง Z-Power ของอโลลามาสร้างร่างยักษ์ทุบเป้าหมาย ลด HP ของเป้าหมายลง 75% จาก HP ปัจจุบัน",
     "damage_class": "special"
   },
@@ -7750,7 +7750,7 @@
     "power": 130,
     "accuracy": 90,
     "pp": 5,
-    "description_en": "The user unleashes a strong beam. The attack’s recoil harshly lowers the user’s Sp. Atk stat.",
+    "description_en": "The user unleashes a strong beam. The attack's recoil harshly lowers the user's Sp. Atk stat.",
     "description_th": "ยิงปืนใหญ่พลังงานแสงที่งดงามและรุนแรง แต่หลังจากใช้ พลังโจมตีพิเศษ (Sp. Atk) ของผู้ใช้จะลดลง 2 ระดับ",
     "damage_class": "special"
   },
@@ -7772,7 +7772,7 @@
     "power": 75,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "Driven by frustration, the user attacks the target. If the user’s previous move has failed, the power of this move doubles.",
+    "description_en": "Driven by frustration, the user attacks the target. If the user's previous move has failed, the power of this move doubles.",
     "description_th": "กระทืบเท้ากระทืบดินระบายความโกรธ ท่านี้จะรุนแรงขึ้นเป็น 2 เท่าหากท่าโจมตีในเทิร์นก่อนหน้าของผู้ใช้ล้มเหลว (พลาดเป้าหรือกดใช้ไม่ได้)",
     "damage_class": "physical"
   },
@@ -7783,7 +7783,7 @@
     "power": 85,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks by beating the target with a bone that contains a spirit. This may also lower the target’s Defense stat.",
+    "description_en": "The user attacks by beating the target with a bone that contains a spirit. This may also lower the target's Defense stat.",
     "description_th": "ฟาดเป้าหมายด้วยกระดูกที่สิงสถิตด้วยดวงวิญญาณ มีโอกาส 10% ที่จะลดพลังป้องกัน (Defense) ของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -7805,7 +7805,7 @@
     "power": 85,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user slams into the target using a full-force blast of water. This may also lower the target’s Defense stat.",
+    "description_en": "The user slams into the target using a full-force blast of water. This may also lower the target's Defense stat.",
     "description_th": "พุ่งกระแทกเป้าหมายด้วยพลังคลื่นน้ำเต็มกำลัง มีโอกาส 10% ที่จะลดพลังป้องกัน (Defense) ของเป้าหมาย",
     "damage_class": "physical"
   },
@@ -7816,7 +7816,7 @@
     "power": 160,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user shoots powerful lasers using the power of a prism. The user can’t move on the next turn.",
+    "description_en": "The user shoots powerful lasers using the power of a prism. The user can't move on the next turn.",
     "description_th": "ยิงเลเซอร์ทรงพลังผ่านปริซึมแสง แต่หลังจากใช้ท่านี้ ผู้ใช้จะต้องหยุดพักในเทิร์นถัดไป",
     "damage_class": "special"
   },
@@ -7827,7 +7827,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user hides in the target’s shadow, steals the target’s stat boosts, and then attacks.",
+    "description_en": "The user hides in the target's shadow, steals the target's stat boosts, and then attacks.",
     "description_th": "ซ่อนตัวในเงาแล้วขโมยบัฟการเปลี่ยนแปลงค่าสถานะเชิงบวกทั้งหมดของเป้าหมายมาเป็นของตนเอง ก่อนจะลงมือโจมตี",
     "damage_class": "physical"
   },
@@ -7860,7 +7860,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target’s Attack and Sp. Atk stats.",
+    "description_en": "The user gets teary eyed to make the target lose its combative spirit. This lowers the target's Attack and Sp. Atk stats.",
     "description_th": "บีบน้ำตาน่าสงสารเพื่อทำให้เป้าหมายใจอ่อน ลดทั้งพลังโจมตี (Attack) และพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมาย",
     "damage_class": "status"
   },
@@ -7882,7 +7882,7 @@
     "power": 0,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user hits the target with the force of nature. It halves the target’s HP.",
+    "description_en": "The user hits the target with the force of nature. It halves the target's HP.",
     "description_th": "ความพิโรธของธรรมชาติ โจมตีและลด HP ของเป้าหมายลงครึ่งหนึ่งจาก HP ปัจจุบันที่เป้าหมายมีอยู่",
     "damage_class": "special"
   },
@@ -7893,7 +7893,7 @@
     "power": 120,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "Cloaking itself in high energy, the user slams into the target. The memory held determines the move’s type.",
+    "description_en": "Cloaking itself in high energy, the user slams into the target. The memory held determines the move's type.",
     "description_th": "ห่อหุ้มร่างกายด้วยพลังงานขั้นสูงแล้วพุ่งชนเป้าหมาย ประเภทธาตุ (Type) ของท่านี้จะเปลี่ยนไปตาม Memory ที่ผู้ใช้ถืออยู่",
     "damage_class": "physical"
   },
@@ -7948,7 +7948,7 @@
     "power": 200,
     "accuracy": 0,
     "pp": 1,
-    "description_en": "This attack inflicts Attack or Sp. Atk damage— whichever stat is higher for the user, Necrozma.  This move ignores the target’s Ability.",
+    "description_en": "This attack inflicts Attack or Sp. Atk damage— whichever stat is higher for the user, Necrozma.  This move ignores the target's Ability.",
     "description_th": "[ท่าไม้ตาย Z ของ Necrozma] ปล่อยแสงเผาผลาญนภา ท่านี้โจมตีทะลุ Ability ของเป้าหมาย และจะคำนวณความรุนแรงจาก Attack หรือ Sp. Atk ที่สูงกว่าของผู้ใช้",
     "damage_class": "special"
   },
@@ -7959,7 +7959,7 @@
     "power": 200,
     "accuracy": 0,
     "pp": 1,
-    "description_en": "After obtaining Z-Power, the user, Solgaleo, attacks the target with full force. This move can ignore the effect of the target’s Ability.",
+    "description_en": "After obtaining Z-Power, the user, Solgaleo, attacks the target with full force. This move can ignore the effect of the target's Ability.",
     "description_th": "[ท่าไม้ตาย Z ของ Solgaleo] พุ่งชนด้วยพลังสุริยะทะลวงขีดสุด ท่านี้จะโจมตีทะลุความสามารถ (Ability) ของเป้าหมายที่ขัดขวางการโจมตีได้",
     "damage_class": "physical"
   },
@@ -7970,7 +7970,7 @@
     "power": 200,
     "accuracy": 0,
     "pp": 1,
-    "description_en": "After obtaining Z-Power, the user, Lunala, attacks the target with full force. This move can ignore the effect of the target’s Ability.",
+    "description_en": "After obtaining Z-Power, the user, Lunala, attacks the target with full force. This move can ignore the effect of the target's Ability.",
     "description_th": "[ท่าไม้ตาย Z ของ Lunala] ยิงลำแสงจันทราทำลายล้าง ท่านี้จะโจมตีทะลุความสามารถ (Ability) ของเป้าหมายที่ขัดขวางการโจมตีได้",
     "damage_class": "special"
   },
@@ -8003,7 +8003,7 @@
     "power": 185,
     "accuracy": 0,
     "pp": 1,
-    "description_en": "After obtaining Z-Power, the user, Kommo-o, attacks the opposing Pokémon with full force. This move boosts the user’s stats.",
+    "description_en": "After obtaining Z-Power, the user, Kommo-o, attacks the opposing Pokémon with full force. This move boosts the user's stats.",
     "description_th": "[ท่าไม้ตาย Z ของ Kommo-o] ร้องคำรามพร้อมปล่อยคลื่นเสียงโจมตีศัตรูทั้งหมด และเพิ่มค่าสเตตัสทุกอย่างของตนเองขึ้น 1 ระดับ",
     "damage_class": "special"
   },
@@ -8047,7 +8047,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The more Pikachu loves its Trainer, the greater the move’s power. It never misses.",
+    "description_en": "The more Pikachu loves its Trainer, the greater the move's power. It never misses.",
     "description_th": "กระโดดชาร์จไฟฟ้าใส่เป้าหมาย ท่านี้ไม่พลาดเป้าแน่นอน และยิ่งปิกาจูมีความผูกพัน (Happiness) กับเทรนเนอร์มาก ท่านี้ยิ่งรุนแรง",
     "damage_class": "special"
   },
@@ -8091,7 +8091,7 @@
     "power": 80,
     "accuracy": 95,
     "pp": 15,
-    "description_en": "The user bombards the target with telekinetic force. A wondrous wall of light is put up to weaken the power of the opposing Pokémon’s special moves.",
+    "description_en": "The user bombards the target with telekinetic force. A wondrous wall of light is put up to weaken the power of the opposing Pokémon's special moves.",
     "description_th": "โจมตีด้วยพลังจิตส่องประกาย และจะกางกำแพง Light Screen อัตโนมัติ (ลดความเสียหายจากท่าเวทลงครึ่งหนึ่งเป็นเวลา 5 เทิร์น)",
     "damage_class": "special"
   },
@@ -8102,7 +8102,7 @@
     "power": 80,
     "accuracy": 95,
     "pp": 15,
-    "description_en": "The user acts bad and attacks the target. A wondrous wall of light is put up to weaken the power of the opposing Pokémon’s physical moves.",
+    "description_en": "The user acts bad and attacks the target. A wondrous wall of light is put up to weaken the power of the opposing Pokémon's physical moves.",
     "description_th": "โจมตีด้วยการกลั่นแกล้งอย่างร้ายกาจ และจะกางกำแพง Reflect อัตโนมัติ (ลดความเสียหายจากท่ากายภาพลงครึ่งหนึ่งเป็นเวลา 5 เทิร์น)",
     "damage_class": "special"
   },
@@ -8113,7 +8113,7 @@
     "power": 100,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user grows a gigantic stalk that scatters seeds to attack the target. The seeds drain the target’s HP every turn.",
+    "description_en": "The user grows a gigantic stalk that scatters seeds to attack the target. The seeds drain the target's HP every turn.",
     "description_th": "ปลูกต้นไม้ยักษ์ปล่อยเมล็ดโจมตีเป้าหมาย และจะฝัง Leech Seed อัตโนมัติ (ดูด HP เป้าหมายมาฟื้นฟูให้ตัวเองทุกเทิร์น)",
     "damage_class": "physical"
   },
@@ -8135,7 +8135,7 @@
     "power": 120,
     "accuracy": 85,
     "pp": 5,
-    "description_en": "The user attacks the target by wrapping it with a whirlwind of an overpowering scent. This also heals all status conditions of the user’s party.",
+    "description_en": "The user attacks the target by wrapping it with a whirlwind of an overpowering scent. This also heals all status conditions of the user's party.",
     "description_th": "โจมตีด้วยพายุหมุนที่มีกลิ่นหอมหวลรุนแรง และจะรักษาสถานะผิดปกติทั้งหมดให้กับโปเกมอนทุกตัวในปาร์ตี้ของผู้ใช้",
     "damage_class": "special"
   },
@@ -8146,7 +8146,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 20,
-    "description_en": "The more Eevee loves its Trainer, the greater the move’s power. It never misses.",
+    "description_en": "The more Eevee loves its Trainer, the greater the move's power. It never misses.",
     "description_th": "พุ่งกระแทกใส่เป้าหมาย ท่านี้ไม่พลาดเป้าแน่นอน และยิ่งอีวุยมีความผูกพัน (Happiness) กับเทรนเนอร์มาก ท่านี้ยิ่งรุนแรง",
     "damage_class": "physical"
   },
@@ -8190,7 +8190,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user ignores the effects of opposing Pokémon’s moves and Abilities that draw in moves, allowing this move to hit the chosen target.",
+    "description_en": "The user ignores the effects of opposing Pokémon's moves and Abilities that draw in moves, allowing this move to hit the chosen target.",
     "description_th": "ยิงกระสุนน้ำสังหาร ท่านี้จะเพิกเฉยต่อท่าดึงดูดเป้าหมาย (Follow Me, Rage Powder) และ Ability ดึงดูด (Storm Drain, Water Absorb)",
     "damage_class": "special"
   },
@@ -8223,7 +8223,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 5,
-    "description_en": "This move raises all the user’s stats but prevents the user from switching out or fleeing.",
+    "description_en": "This move raises all the user's stats but prevents the user from switching out or fleeing.",
     "description_th": "ประกาศสู้ตาย เพิ่มสเตตัสทุกอย่าง (Attack, Defense, Sp. Atk, Sp. Def, Speed) ขึ้น 1 ระดับ แต่ผู้ใช้จะไม่สามารถเปลี่ยนตัวหรือหนีได้อีกเลย",
     "damage_class": "status"
   },
@@ -8234,7 +8234,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user pours sticky tar over the target, lowering the target’s Speed stat. The target becomes weaker to Fire-type moves.",
+    "description_en": "The user pours sticky tar over the target, lowering the target's Speed stat. The target becomes weaker to Fire-type moves.",
     "description_th": "สาดน้ำมันดินเหนียวหนืดใส่เป้าหมาย ลดความเร็ว (Speed) และทำให้เป้าหมายได้รับความเสียหายจากท่าธาตุไฟ (Fire) แรงขึ้น 2 เท่า",
     "damage_class": "status"
   },
@@ -8278,7 +8278,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user locks the target in and prevents it from fleeing. This move also lowers the target’s Defense and Sp. Def every turn.",
+    "description_en": "The user locks the target in and prevents it from fleeing. This move also lowers the target's Defense and Sp. Def every turn.",
     "description_th": "รัดแน่นแบบปลาหมึก เป้าหมายจะไม่สามารถหนีหรือเปลี่ยนตัวได้ และจะถูกลดพลังป้องกัน (Defense และ Sp. Def) ลงเรื่อยๆ ทุกเทิร์น",
     "damage_class": "status"
   },
@@ -8333,7 +8333,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Bug-type attack Dynamax Pokémon use. This lowers the target’s Sp. Atk stat.",
+    "description_en": "This is a Bug-type attack Dynamax Pokémon use. This lowers the target's Sp. Atk stat.",
     "description_th": "[Max Move ธาตุแมลง] โจมตีอย่างรุนแรง และจะลดพลังโจมตีพิเศษ (Sp. Atk) ของศัตรูทั้งหมดที่อยู่ฝั่งตรงข้ามลง",
     "damage_class": "physical"
   },
@@ -8355,7 +8355,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Normal-type attack Dynamax Pokémon use. This lowers the target’s Speed stat.",
+    "description_en": "This is a Normal-type attack Dynamax Pokémon use. This lowers the target's Speed stat.",
     "description_th": "[Max Move ธาตุปกติ] โจมตีอย่างรุนแรง และจะลดความเร็ว (Speed) ของศัตรูทั้งหมดที่อยู่ฝั่งตรงข้ามลง",
     "damage_class": "physical"
   },
@@ -8366,7 +8366,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Fighting-type attack Dynamax Pokémon use. This raises ally Pokémon’s Attack stats.",
+    "description_en": "This is a Fighting-type attack Dynamax Pokémon use. This raises ally Pokémon's Attack stats.",
     "description_th": "[Max Move ธาตุต่อสู้] โจมตีอย่างรุนแรง และจะเพิ่มพลังโจมตี (Attack) ให้กับโปเกมอนฝั่งเราทั้งหมดบนสนาม",
     "damage_class": "physical"
   },
@@ -8377,7 +8377,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Ghost-type attack Dynamax Pokémon use. This lowers the target’s Defense stat.",
+    "description_en": "This is a Ghost-type attack Dynamax Pokémon use. This lowers the target's Defense stat.",
     "description_th": "[Max Move ธาตุผี] โจมตีอย่างรุนแรง และจะลดพลังป้องกัน (Defense) ของศัตรูทั้งหมดที่อยู่ฝั่งตรงข้ามลง",
     "damage_class": "physical"
   },
@@ -8399,7 +8399,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Poison-type attack Dynamax Pokémon use. This raises ally Pokémon’s Sp. Atk stats.",
+    "description_en": "This is a Poison-type attack Dynamax Pokémon use. This raises ally Pokémon's Sp. Atk stats.",
     "description_th": "[Max Move ธาตุพิษ] โจมตีอย่างรุนแรง และจะเพิ่มพลังโจมตีพิเศษ (Sp. Atk) ให้กับโปเกมอนฝั่งเราทั้งหมดบนสนาม",
     "damage_class": "physical"
   },
@@ -8421,7 +8421,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Flying-type attack Dynamax Pokémon use. This raises ally Pokémon’s Speed stats.",
+    "description_en": "This is a Flying-type attack Dynamax Pokémon use. This raises ally Pokémon's Speed stats.",
     "description_th": "[Max Move ธาตุบิน] โจมตีอย่างรุนแรง และจะเพิ่มความเร็ว (Speed) ให้กับโปเกมอนฝั่งเราทั้งหมดบนสนาม",
     "damage_class": "physical"
   },
@@ -8443,7 +8443,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Dragon-type attack Dynamax Pokémon use. This lowers the target’s Attack stat.",
+    "description_en": "This is a Dragon-type attack Dynamax Pokémon use. This lowers the target's Attack stat.",
     "description_th": "[Max Move ธาตุมังกร] โจมตีอย่างรุนแรง และจะลดพลังโจมตี (Attack) ของศัตรูทั้งหมดที่อยู่ฝั่งตรงข้ามลง",
     "damage_class": "physical"
   },
@@ -8476,7 +8476,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Ground-type attack Dynamax Pokémon use. This raises ally Pokémon’s Sp. Def stats.",
+    "description_en": "This is a Ground-type attack Dynamax Pokémon use. This raises ally Pokémon's Sp. Def stats.",
     "description_th": "[Max Move ธาตุดิน] โจมตีอย่างรุนแรง และจะเพิ่มพลังป้องกันพิเศษ (Sp. Def) ให้กับโปเกมอนฝั่งเราทั้งหมดบนสนาม",
     "damage_class": "physical"
   },
@@ -8487,7 +8487,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Dark-type attack Dynamax Pokémon use. This lowers the target’s Sp. Def stat.",
+    "description_en": "This is a Dark-type attack Dynamax Pokémon use. This lowers the target's Sp. Def stat.",
     "description_th": "[Max Move ธาตุมืด] โจมตีอย่างรุนแรง และจะลดพลังป้องกันพิเศษ (Sp. Def) ของศัตรูทั้งหมดที่อยู่ฝั่งตรงข้ามลง",
     "damage_class": "physical"
   },
@@ -8509,7 +8509,7 @@
     "power": 10,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "This is a Steel-type attack Dynamax Pokémon use. This raises ally Pokémon’s Defense stats.",
+    "description_en": "This is a Steel-type attack Dynamax Pokémon use. This raises ally Pokémon's Defense stats.",
     "description_th": "[Max Move ธาตุเหล็ก] โจมตีอย่างรุนแรง และจะเพิ่มพลังป้องกัน (Defense) ให้กับโปเกมอนฝั่งเราทั้งหมดบนสนาม",
     "damage_class": "physical"
   },
@@ -8531,7 +8531,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks by slamming its body into the target. The higher the user’s Defense, the more damage it can inflict on the target.",
+    "description_en": "The user attacks by slamming its body into the target. The higher the user's Defense, the more damage it can inflict on the target.",
     "description_th": "กระแทกร่างกายเข้าใส่เป้าหมาย ท่านี้จะคำนวณความรุนแรงโดยใช้ค่าสเตตัส 'พลังป้องกัน' (Defense) ของผู้ใช้แทนพลังโจมตี (Attack)",
     "damage_class": "physical"
   },
@@ -8542,7 +8542,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "The user sharply raises the target’s Attack and Sp. Atk stats by decorating the target.",
+    "description_en": "The user sharply raises the target's Attack and Sp. Atk stats by decorating the target.",
     "description_th": "ประดับประดาตกแต่งเค้ก เพิ่มพลังโจมตี (Attack) และพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมายขึ้น 2 ระดับ",
     "damage_class": "status"
   },
@@ -8553,7 +8553,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user plays its drum, controlling the drum’s roots to attack the target. This also lowers the target’s Speed stat.",
+    "description_en": "The user plays its drum, controlling the drum's roots to attack the target. This also lowers the target's Speed stat.",
     "description_th": "รัวกลองไม้เรียกรากไม้ขึ้นมาฟาดเป้าหมาย ทำความเสียหายและลดความเร็ว (Speed) ของเป้าหมายลง",
     "damage_class": "physical"
   },
@@ -8608,7 +8608,7 @@
     "power": 110,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move’s type changes depending on the user’s form.",
+    "description_en": "Morpeko attacks and raises its Speed with the energy stored in its cheeks. This move's type changes depending on the user's form.",
     "description_th": "มอร์เปโกะหมุนกงล้อพลังงานโจมตีและเพิ่มความเร็ว (Speed) 1 ระดับ ประเภทธาตุของท่าจะสลับระหว่างไฟฟ้าหรือความมืด ขึ้นอยู่กับฟอร์มของมอร์เปโกะ",
     "damage_class": "physical"
   },
@@ -8652,7 +8652,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks the target with an acidic liquid created from tart apples. This also lowers the target’s Sp. Def stat.",
+    "description_en": "The user attacks the target with an acidic liquid created from tart apples. This also lowers the target's Sp. Def stat.",
     "description_th": "พ่นน้ำแอปเปิลที่มีฤทธิ์เป็นกรดใส่เป้าหมาย ทำความเสียหายและลดพลังป้องกันพิเศษ (Sp. Def) ของเป้าหมายลงเสมอ",
     "damage_class": "special"
   },
@@ -8663,7 +8663,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user inflicts damage by dropping an apple from high above. This also lowers the target’s Defense stat.",
+    "description_en": "The user inflicts damage by dropping an apple from high above. This also lowers the target's Defense stat.",
     "description_th": "ทิ้งแอปเปิลแรงโน้มถ่วงจากที่สูงใส่เป้าหมาย ทำความเสียหายและลดพลังป้องกัน (Defense) ของเป้าหมายลงเสมอ",
     "damage_class": "physical"
   },
@@ -8674,7 +8674,7 @@
     "power": 75,
     "accuracy": 100,
     "pp": 15,
-    "description_en": "The user attacks the target with so much force that it could break the target’s spirit. This also lowers the target’s Sp. Atk stat.",
+    "description_en": "The user attacks the target with so much force that it could break the target's spirit. This also lowers the target's Sp. Atk stat.",
     "description_th": "พุ่งโจมตีอย่างรุนแรงจนบั่นทอนจิตวิญญาณ ทำความเสียหายและลดพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมายลงเสมอ",
     "damage_class": "physical"
   },
@@ -8707,7 +8707,7 @@
     "power": 0,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession. Direct contact harshly lowers the attacker’s Defense stat.",
+    "description_en": "This move enables the user to protect itself from all attacks. Its chance of failing rises if it is used in succession. Direct contact harshly lowers the attacker's Defense stat.",
     "description_th": "กางท่าขัดขวาง ป้องกันการโจมตีทั้งหมดในเทิร์นนี้ หากศัตรูใช้ท่าสัมผัสตัว พลังป้องกัน (Defense) ของศัตรูจะลดลง 2 ระดับ (โอกาสสำเร็จลดลงหากใช้ติดกัน)",
     "damage_class": "status"
   },
@@ -8729,7 +8729,7 @@
     "power": 150,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user attacks wildly with its thick leek. The user can’t move on the next turn, because the force of this move makes it stagger.",
+    "description_en": "The user attacks wildly with its thick leek. The user can't move on the next turn, because the force of this move makes it stagger.",
     "description_th": "ใช้ต้นหอมยักษ์พุ่งกระแทกเป้าหมายดุจอุกกาบาต แต่หลังจากใช้ท่านี้ ผู้ใช้จะต้องหยุดพักในเทิร์นถัดไป",
     "damage_class": "physical"
   },
@@ -8740,7 +8740,7 @@
     "power": 160,
     "accuracy": 90,
     "pp": 5,
-    "description_en": "This is Eternatus’s most powerful attack in its original form. The user can’t move on the next turn.",
+    "description_en": "This is Eternatus's most powerful attack in its original form. The user can't move on the next turn.",
     "description_th": "ยิงลำแสงนิรันดร์ทำลายล้าง ท่าโจมตีสุดแกร่งของมุเก็นไดนา (Eternatus) แต่หลังจากใช้ ผู้ใช้จะต้องหยุดพักในเทิร์นถัดไป",
     "damage_class": "special"
   },
@@ -8762,7 +8762,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user attacks the target with its psychic power. This move’s power goes up and damages all opposing Pokémon on Psychic Terrain.",
+    "description_en": "The user attacks the target with its psychic power. This move's power goes up and damages all opposing Pokémon on Psychic Terrain.",
     "description_th": "ขยายอาณาเขตพลังจิต หากใช้อยู่บนพื้นที่พลังจิต (Psychic Terrain) ท่าจะรุนแรงขึ้น 1.5 เท่า และจะโจมตีโดนศัตรูฝั่งตรงข้ามทั้งหมดพร้อมกัน",
     "damage_class": "special"
   },
@@ -8773,7 +8773,7 @@
     "power": 130,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user attacks while destroying the terrain. This move fails when the ground hasn’t turned into a terrain.",
+    "description_en": "The user attacks while destroying the terrain. This move fails when the ground hasn't turned into a terrain.",
     "description_th": "กลิ้งทับทำลายล้าง โจมตีและทำลายผลของ Terrain ทิ้ง ท่านี้จะใช้ได้ก็ต่อเมื่อมี Terrain ถูกกางอยู่บนสนามเท่านั้น",
     "damage_class": "physical"
   },
@@ -8784,7 +8784,7 @@
     "power": 25,
     "accuracy": 90,
     "pp": 20,
-    "description_en": "The user attacks by shooting scales two to five times in a row. This move boosts the user’s Speed stat but lowers its Defense stat.",
+    "description_en": "The user attacks by shooting scales two to five times in a row. This move boosts the user's Speed stat but lowers its Defense stat.",
     "description_th": "ยิงเกล็ดมังกรโจมตีต่อเนื่อง 2-5 ครั้ง หลังจากนั้นความเร็ว (Speed) ของผู้ใช้จะเพิ่มขึ้น แต่พลังป้องกัน (Defense) จะลดลง",
     "damage_class": "physical"
   },
@@ -8817,7 +8817,7 @@
     "power": 100,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user attacks everything around it and faints upon using this move. This move’s power is increased on Misty Terrain.",
+    "description_en": "The user attacks everything around it and faints upon using this move. This move's power is increased on Misty Terrain.",
     "description_th": "ระเบิดหมอกแฟรี่ โจมตีทุกตัวรอบข้างอย่างรุนแรง แต่ผู้ใช้จะหมดสภาพ (Faint) ทันที ท่านี้จะรุนแรงขึ้น 1.5 เท่าหากใช้อยู่บนพื้นที่หมอก (Misty Terrain)",
     "damage_class": "special"
   },
@@ -8839,7 +8839,7 @@
     "power": 70,
     "accuracy": 100,
     "pp": 20,
-    "description_en": "The user attacks with electric voltage rising from the ground. This move’s power doubles when the target is on Electric Terrain.",
+    "description_en": "The user attacks with electric voltage rising from the ground. This move's power doubles when the target is on Electric Terrain.",
     "description_th": "กระแสไฟฟ้าชงัดจากพื้นดิน ท่านี้จะมีความรุนแรงเพิ่มเป็น 2 เท่าหากเป้าหมายกำลังยืนอยู่บนพื้นที่สายฟ้า (Electric Terrain)",
     "damage_class": "special"
   },
@@ -8850,7 +8850,7 @@
     "power": 50,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user utilizes the power of the terrain to attack. This move’s type and power changes depending on the terrain when it’s used.",
+    "description_en": "The user utilizes the power of the terrain to attack. This move's type and power changes depending on the terrain when it's used.",
     "description_th": "ยิงคลื่นพลังงานสนามรบ ท่านี้จะรุนแรงขึ้นเป็น 2 เท่า และประเภทธาตุ (Type) จะเปลี่ยนไปตาม Terrain ที่ถูกกางอยู่บนสนามในขณะนั้น",
     "damage_class": "special"
   },
@@ -8861,7 +8861,7 @@
     "power": 70,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user skitters behind the target to attack. This also lowers the target’s Sp. Atk stat.",
+    "description_en": "The user skitters behind the target to attack. This also lowers the target's Sp. Atk stat.",
     "description_th": "กระโดดไต่ไถลอ้อมไปฟาดจากด้านหลัง ทำความเสียหายและลดพลังโจมตีพิเศษ (Sp. Atk) ของเป้าหมายลง",
     "damage_class": "physical"
   },
@@ -8883,7 +8883,7 @@
     "power": 75,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user lashes out to vent its frustration toward the target. If the user’s stats were lowered during this turn, the power of this move is doubled.",
+    "description_en": "The user lashes out to vent its frustration toward the target. If the user's stats were lowered during this turn, the power of this move is doubled.",
     "description_th": "ระเบิดอารมณ์คลุ้มคลั่ง ท่านี้จะมีความรุนแรงเพิ่มเป็น 2 เท่า หากในเทิร์นนี้ผู้ใช้ถูกลดค่าสเตตัส (ดีบัฟ) ไปแล้ว",
     "damage_class": "physical"
   },
@@ -8894,7 +8894,7 @@
     "power": 110,
     "accuracy": 90,
     "pp": 5,
-    "description_en": "The user attacks the target by controlling the target’s item. The move fails if the target doesn’t have an item.",
+    "description_en": "The user attacks the target by controlling the target's item. The move fails if the target doesn't have an item.",
     "description_th": "วิญญาณหลอกหลอน ใช้พลังจิตควบคุมไอเทมที่เป้าหมายถืออยู่ให้หันไปทำร้ายเจ้าของ (ท่านี้จะล้มเหลวหากเป้าหมายไม่ได้ถือไอเทมใดๆ)",
     "damage_class": "physical"
   },
@@ -9015,7 +9015,7 @@
     "power": 150,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "Converting its life-force into power, the user attacks opposing Pokémon. The lower the user’s HP, the lower the move’s power.",
+    "description_en": "Converting its life-force into power, the user attacks opposing Pokémon. The lower the user's HP, the lower the move's power.",
     "description_th": "ระเบิดพลังงานมังกรจากพลังชีวิต โจมตีฝ่ายตรงข้ามทั้งหมด ยิ่งผู้ใช้มี HP เหลือมากเท่าไหร่ ท่านี้ก็จะยิ่งรุนแรงมากขึ้นเท่านั้น",
     "damage_class": "special"
   },
@@ -9048,7 +9048,7 @@
     "power": 90,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user overwhelms the target with lightning-like movement before delivering a kick. This also lowers the target’s Defense stat.",
+    "description_en": "The user overwhelms the target with lightning-like movement before delivering a kick. This also lowers the target's Defense stat.",
     "description_th": "เคลื่อนไหวพริบตาดั่งอสนีบาตแล้วพุ่งเตะ ทำความเสียหายและลดพลังป้องกัน (Defense) ของเป้าหมายลงเสมอ",
     "damage_class": "physical"
   },
@@ -9081,7 +9081,7 @@
     "power": 80,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user attacks with its tremendous psychic power. This also removes 3 PP from the target’s last move.",
+    "description_en": "The user attacks with its tremendous psychic power. This also removes 3 PP from the target's last move.",
     "description_th": "ร่ายมนตร์ดำพลังจิต ทำความเสียหายและดูดลด PP จากท่าล่าสุดที่เป้าหมายเพิ่งใช้ไปจำนวน 3 หน่วย",
     "damage_class": "special"
   },
@@ -9103,7 +9103,7 @@
     "power": 70,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "Cloaking itself in psychic energy, the user slams into the target. This may also raise the user’s defensive stats.",
+    "description_en": "Cloaking itself in psychic energy, the user slams into the target. This may also raise the user's defensive stats.",
     "description_th": "ห่อหุ้มตัวด้วยพลังจิตกางเป็นโล่แล้วพุ่งชน เพิ่มพลังป้องกัน (Defense) ของตนเอง",
     "damage_class": "physical"
   },
@@ -9136,7 +9136,7 @@
     "power": 100,
     "accuracy": 80,
     "pp": 5,
-    "description_en": "The user attacks by wrapping the target in fierce winds brimming with love and hate. This move’s additional effects depend on the user’s form.",
+    "description_en": "The user attacks by wrapping the target in fierce winds brimming with love and hate. This move's additional effects depend on the user's form.",
     "description_th": "พายุวสันตฤดู โจมตีศัตรูทั้งหมด หากผู้ใช้อยู่ในร่าง Incarnate มีโอกาส 30% ที่จะลด Attack ศัตรู / หากอยู่ในร่าง Therian มีโอกาสเพิ่มพลังท่าของตนเอง",
     "damage_class": "special"
   },
@@ -9169,7 +9169,7 @@
     "power": 120,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user and raises the user’s action speed.",
+    "description_en": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user and raises the user's action speed.",
     "description_th": "หุ้มตัวด้วยมวลน้ำแล้วพุ่งชนสุดแรง ผู้ใช้จะได้รับความเสียหายสะท้อนกลับ (Recoil) อย่างหนักด้วย",
     "damage_class": "physical"
   },
@@ -9202,7 +9202,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user performs a dance to usher in victory. This raises the user’s offensive and defensive stats and increases the damage dealt by the user’s moves by 50 percent.",
+    "description_en": "The user performs a dance to usher in victory. This raises the user's offensive and defensive stats and increases the damage dealt by the user's moves by 50 percent.",
     "description_th": "ระบำฉลองชัยชนะ ร่ายรำเพื่อเพิ่มพลังโจมตี (Attack), พลังป้องกัน (Defense), และความเร็ว (Speed) ของตนเองขึ้นอย่างละ 1 ระดับ",
     "damage_class": "status"
   },
@@ -9213,7 +9213,7 @@
     "power": 120,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user smashes into the target in a full-body tackle. This also lowers the user’s defensive stats.",
+    "description_en": "The user smashes into the target in a full-body tackle. This also lowers the user's defensive stats.",
     "description_th": "พุ่งชนอย่างไม่คิดชีวิต แต่หลังจากโจมตี พลังป้องกัน (Defense และ Sp. Def) ของผู้ใช้จะลดลงอย่างละ 1 ระดับ",
     "damage_class": "physical"
   },
@@ -9224,7 +9224,7 @@
     "power": 60,
     "accuracy": 100,
     "pp": 10,
-    "description_en": "The user launches countless toxic barbs to inflict damage. This may also poison the target. This move’s power is doubled if the target has a status condition.",
+    "description_en": "The user launches countless toxic barbs to inflict damage. This may also poison the target. This move's power is doubled if the target has a status condition.",
     "description_th": "สาดหนามพิษห่าใหญ่ มีโอกาส 30% ที่จะทำให้เป้าหมายติดพิษ ท่านี้จะรุนแรงขึ้นเป็น 2 เท่าหากเป้าหมายกำลังติดสถานะพิษอยู่",
     "damage_class": "physical"
   },
@@ -9455,7 +9455,7 @@
     "power": 20,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user’s fellows gather in droves to perform a combo attack that hits the target one to ten times in a row.",
+    "description_en": "The user's fellows gather in droves to perform a combo attack that hits the target one to ten times in a row.",
     "description_th": "ระเบิดประชากรหนู เรียกฝูงหนูมารุมทำร้ายเป้าหมาย โจมตีต่อเนื่องได้สูงสุดถึง 10 ครั้งติดต่อกัน (คำนวณความแม่นยำทุกครั้งที่ตี)",
     "damage_class": "physical"
   },
@@ -9477,7 +9477,7 @@
     "power": 120,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user throws its entire body into a reckless charge. After this move is used, attacks on the user cannot miss and will inflict double damage until the user’s next turn.",
+    "description_en": "The user throws its entire body into a reckless charge. After this move is used, attacks on the user cannot miss and will inflict double damage until the user's next turn.",
     "description_th": "พุ่งดาบใหญ่ทะลวงเป้าหมาย แต่หลังจากใช้ท่านี้ จนกว่าจะถึงเทิร์นถัดไปของผู้ใช้ การโจมตีทุกอย่างที่เล็งมาที่ผู้ใช้จะโดนเสมอและแรงขึ้น 2 เท่า",
     "damage_class": "physical"
   },
@@ -9642,7 +9642,7 @@
     "power": 1,
     "accuracy": 90,
     "pp": 10,
-    "description_en": "The user summons a ruinous disaster. This cuts the target’s HP in half.",
+    "description_en": "The user summons a ruinous disaster. This cuts the target's HP in half.",
     "description_th": "ภัยพิบัติแห่งความพินาศ โจมตีและลด HP ของเป้าหมายลงครึ่งหนึ่งจาก HP ปัจจุบันที่เป้าหมายมีอยู่ (เหมือนท่า Super Fang)",
     "damage_class": "special"
   },
@@ -9653,7 +9653,7 @@
     "power": 100,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user transforms and crashes to the ground, causing a massive prehistoric explosion. This move's power is boosted more than usual if it’s a supereffective hit.",
+    "description_en": "The user transforms and crashes to the ground, causing a massive prehistoric explosion. This move's power is boosted more than usual if it's a supereffective hit.",
     "description_th": "พุ่งชนทะลวงวิถี ท่านี้จะทำความเสียหายเพิ่มขึ้นมากกว่าปกติ (คูณ 1.33 เท่า) หากโจมตีโดนธาตุที่เป้าหมายแพ้ทาง (Super Effective)",
     "damage_class": "physical"
   },
@@ -9697,7 +9697,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 10,
-    "description_en": "The user tidies up and removes the effects of Spikes, Stealth Rock, Sticky Web, Toxic Spikes, and Substitute. This also boosts the user’s Attack and Speed stats.",
+    "description_en": "The user tidies up and removes the effects of Spikes, Stealth Rock, Sticky Web, Toxic Spikes, and Substitute. This also boosts the user's Attack and Speed stats.",
     "description_th": "ทำความสะอาด ปัดเป่ากับดักบนสนามทุกชนิด (และลบ Substitute ของเป้าหมายทิ้ง) พร้อมเพิ่มพลังโจมตี (Attack) และความเร็ว (Speed) ของตนเอง",
     "damage_class": "status"
   },
@@ -9785,7 +9785,7 @@
     "power": 120,
     "accuracy": 100,
     "pp": 5,
-    "description_en": "The user shoots its own armor out as blazing projectiles. This also lowers the user’s Defense and Sp. Def stats.",
+    "description_en": "The user shoots its own armor out as blazing projectiles. This also lowers the user's Defense and Sp. Def stats.",
     "description_th": "ยิงเกราะเพลิงตัวเองเป็นปืนใหญ่ทะลวงเป้าหมาย แต่หลังจากโจมตี พลังป้องกัน (Defense และ Sp. Def) ของผู้ใช้จะลดลง",
     "damage_class": "special"
   },
@@ -10038,7 +10038,7 @@
     "power": 0,
     "accuracy": 0,
     "pp": 15,
-    "description_en": "The user raises its allies’ morale with a draconic cry so that their future attacks have a heightened chance of landing critical hits. This rouses Dragon types more.",
+    "description_en": "The user raises its allies' morale with a draconic cry so that their future attacks have a heightened chance of landing critical hits. This rouses Dragon types more.",
     "description_th": "คำรามปลุกใจมังกร เพิ่มโอกาสติดคริติคอลให้เพื่อนร่วมทีม 1 ระดับ (แต่ถ้าเพื่อนร่วมทีมเป็นธาตุมังกร จะเพิ่มโอกาสติดคริติคอลให้ 2 ระดับ)",
     "damage_class": "status"
   },
