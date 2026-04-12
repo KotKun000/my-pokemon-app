@@ -3,9 +3,92 @@ import itemsData from '../data/items.json';
 
 const ITEMS_PER_PAGE = 40;
 
+/** กลุ่มตัวกรอง — slug ตรงกับ field `category` ใน items.json */
+const ITEM_FILTER_GROUPS = [
+  {
+    id: 'pokeball',
+    label: 'Pokeball',
+    slugs: ['apricorn-balls', 'special-balls', 'standard-balls'],
+  },
+  {
+    id: 'held-item',
+    label: 'Held Item',
+    slugs: [
+      'bad-held-items',
+      'choice',
+      'held-items',
+      'type-enhancement',
+    ],
+  },
+  {
+    id: 'berry',
+    label: 'Berry',
+    slugs: [
+      'baking-only',
+      'effort-drop',
+      'in-a-pinch',
+      'medicine',
+      'other',
+      'picky-healing',
+      'type-protection',
+    ],
+  },
+  {
+    id: 'ev-training',
+    label: 'EV Training',
+    slugs: ['effort-drop', 'effort-training', 'loot', 'vitamins'],
+  },
+  {
+    id: 'evolution',
+    label: 'Evolution',
+    slugs: ['evolution'],
+  },
+  {
+    id: 'medicine',
+    label: 'Medicine',
+    slugs: ['flutes', 'healing', 'medicine', 'pp-recovery', 'revival', 'status-cures'],
+  },
+  {
+    id: 'gems',
+    label: 'Gems',
+    slugs: ['jewels'],
+  },
+  {
+    id: 'mega-stones',
+    label: 'Mega Stones',
+    slugs: ['mega-stones'],
+  },
+  {
+    id: 'z-crystals',
+    label: 'Z Crystals',
+    slugs: ['z-crystals'],
+  },
+  {
+    id: 'memories',
+    label: 'Memories',
+    slugs: ['memories'],
+  },
+  {
+    id: 'plates',
+    label: 'Plates',
+    slugs: ['plates'],
+  },
+  {
+    id: 'stat-boosts',
+    label: 'Stat Boosts',
+    slugs: ['stat-boosts'],
+  },
+];
+
+const ITEM_COVERED_CATEGORIES = new Set(
+  ITEM_FILTER_GROUPS.flatMap((g) => g.slugs)
+);
+
 function ItemTab() {
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState('');
+  /** '' = ทั้งหมด | id ของ ITEM_FILTER_GROUPS | 'other' = หมวดที่ไม่อยู่ในกลุ่มใดเลย */
+  const [groupFilter, setGroupFilter] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [page, setPage] = useState(1);
@@ -38,17 +121,26 @@ function ItemTab() {
   }, []);
 
   const filteredItems = useMemo(() => {
+    let list = items;
+    if (groupFilter === 'other') {
+      list = list.filter((item) => !ITEM_COVERED_CATEGORIES.has(item.category || 'unknown'));
+    } else if (groupFilter) {
+      const group = ITEM_FILTER_GROUPS.find((g) => g.id === groupFilter);
+      const allow = group ? new Set(group.slugs) : null;
+      if (allow) {
+        list = list.filter((item) => allow.has(item.category || 'unknown'));
+      }
+    }
     const keyword = query.trim().toLowerCase();
-    if (!keyword) return items;
-
-    return items.filter(
-      (item) => item.name?.toLowerCase().includes(keyword) || false
-    );
-  }, [items, query]);
+    if (keyword) {
+      list = list.filter((item) => item.name?.toLowerCase().includes(keyword) || false);
+    }
+    return list;
+  }, [items, query, groupFilter]);
 
   useEffect(() => {
     setPage(1);
-  }, [query, items.length]);
+  }, [query, groupFilter, items.length]);
 
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / ITEMS_PER_PAGE));
 
@@ -81,11 +173,48 @@ function ItemTab() {
         />
       </section>
 
+      {!loading && !error && (
+        <nav
+          className="moves-method-filter item-category-filter"
+          aria-label="กรองไอเทมตามกลุ่ม"
+        >
+          <button
+            type="button"
+            className={`moves-method-btn ${groupFilter === '' ? 'active' : ''}`}
+            onClick={() => setGroupFilter('')}
+          >
+            ทั้งหมด
+          </button>
+          {ITEM_FILTER_GROUPS.map((g) => (
+            <button
+              key={g.id}
+              type="button"
+              className={`moves-method-btn ${groupFilter === g.id ? 'active' : ''}`}
+              onClick={() => setGroupFilter(g.id)}
+            >
+              {g.label}
+            </button>
+          ))}
+          <button
+            type="button"
+            className={`moves-method-btn ${groupFilter === 'other' ? 'active' : ''}`}
+            onClick={() => setGroupFilter('other')}
+            title="ทุกอย่างที่ยังไม่ได้ถูกกรอง (category ไม่อยู่ในกลุ่มด้านบน)"
+          >
+            Other
+          </button>
+        </nav>
+      )}
+
       {loading && <p className="status-message">กำลังโหลดข้อมูลไอเทม...</p>}
       {error && <p className="status-message">{error}</p>}
 
       {!loading && !error && filteredItems.length === 0 && (
-        <p className="status-message">ไม่พบไอเทมที่ตรงกับคำค้น `{query}`</p>
+        <p className="status-message">
+          {items.length === 0
+            ? 'ไม่มีข้อมูลไอเทม'
+            : 'ไม่พบไอเทมที่ตรงกับคำค้นหรือหมวดที่เลือก'}
+        </p>
       )}
 
       {!loading && !error && filteredItems.length > 0 && (

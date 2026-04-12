@@ -2584,133 +2584,133 @@
   },
   {
     "id": 817,
-    "name": "normalium-z--held",
+    "name": "normalium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Normal moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุปกติได้",
     "category": "z-crystals"
   },
   {
     "id": 818,
-    "name": "firium-z--held",
+    "name": "firium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Fire moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุไฟได้",
     "category": "z-crystals"
   },
   {
     "id": 819,
-    "name": "waterium-z--held",
+    "name": "waterium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Water moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุน้ำได้",
     "category": "z-crystals"
   },
   {
     "id": 820,
-    "name": "electrium-z--held",
+    "name": "electrium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Electric moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุไฟฟ้าได้",
     "category": "z-crystals"
   },
   {
     "id": 821,
-    "name": "grassium-z--held",
+    "name": "grassium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Grass moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุหญ้าได้",
     "category": "z-crystals"
   },
   {
     "id": 822,
-    "name": "icium-z--held",
+    "name": "icium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Ice moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุน้ำแข็งได้",
     "category": "z-crystals"
   },
   {
     "id": 823,
-    "name": "fightinium-z--held",
+    "name": "fightinium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Fighting moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุต่อสู้ได้",
     "category": "z-crystals"
   },
   {
     "id": 824,
-    "name": "poisonium-z--held",
+    "name": "poisonium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Poison moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุพิษได้",
     "category": "z-crystals"
   },
   {
     "id": 825,
-    "name": "groundium-z--held",
+    "name": "groundium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Ground moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุดินได้",
     "category": "z-crystals"
   },
   {
     "id": 826,
-    "name": "flyinium-z--held",
+    "name": "flyinium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Flying moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุบินได้",
     "category": "z-crystals"
   },
   {
     "id": 827,
-    "name": "psychium-z--held",
+    "name": "psychium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Psychic moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุพลังจิตได้",
     "category": "z-crystals"
   },
   {
     "id": 828,
-    "name": "buginium-z--held",
+    "name": "buginium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Bug moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุแมลงได้",
     "category": "z-crystals"
   },
   {
     "id": 829,
-    "name": "rockium-z--held",
+    "name": "rockium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Rock moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุหินได้",
     "category": "z-crystals"
   },
   {
     "id": 830,
-    "name": "ghostium-z--held",
+    "name": "ghostium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Ghost moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุผีได้",
     "category": "z-crystals"
   },
   {
     "id": 831,
-    "name": "dragonium-z--held",
+    "name": "dragonium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Dragon moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุมังกรได้",
     "category": "z-crystals"
   },
   {
     "id": 832,
-    "name": "darkinium-z--held",
+    "name": "darkinium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Dark moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุมืดได้",
     "category": "z-crystals"
   },
   {
     "id": 833,
-    "name": "steelium-z--held",
+    "name": "steelium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Steel moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุเหล็กได้",
     "category": "z-crystals"
   },
   {
     "id": 834,
-    "name": "fairium-z--held",
+    "name": "fairium-z",
     "effect": "Held: Allows a Pokémon to use the Z-move equivalents of its Fairy moves.",
     "effect_th": "พกแล้วใช้ Z-Move ร่วมกับท่าธาตุเทพีได้",
     "category": "z-crystals"
   },
   {
     "id": 835,
-    "name": "pikanium-z--held",
+    "name": "pikanium-z",
     "effect": "Held: Allows pikachu to upgrade volt tackle into catastropika.",
     "effect_th": "พกแล้วให้ Pikachu อัปเกรด Volt Tackle เป็น Catastropika",
     "category": "z-crystals"
@@ -2731,70 +2731,70 @@
   },
   {
     "id": 839,
-    "name": "decidium-z--held",
+    "name": "decidium-z",
     "effect": "Held: Allows decidueye to upgrade spirit shackle into sinister arrow raid.",
     "effect_th": "พกแล้วให้ Decidueye อัปเกรด Spirit Shackle เป็น Sinister Arrow Raid",
     "category": "z-crystals"
   },
   {
     "id": 840,
-    "name": "incinium-z--held",
+    "name": "incinium-z",
     "effect": "Held: Allows incineroar to upgrade darkest lariat into malicious moonsault.",
     "effect_th": "พกแล้วให้ Incineroar อัปเกรด Darkest Lariat เป็น Malicious Moonsault",
     "category": "z-crystals"
   },
   {
     "id": 841,
-    "name": "primarium-z--held",
+    "name": "primarium-z",
     "effect": "Held: Allows primarina to upgrade sparkling aria into oceanic operetta.",
     "effect_th": "พกแล้วให้ Primarina อัปเกรด Sparkling Aria เป็น Oceanic Operetta",
     "category": "z-crystals"
   },
   {
     "id": 842,
-    "name": "tapunium-z--held",
+    "name": "tapunium-z",
     "effect": "Held: Allows tapu koko, tapu lele, tapu bulu, and tapu fini to upgrade natures madness into guardian of alola.",
     "effect_th": "พกแล้วให้ Tapu Koko / Lele / Bulu / Fini อัปเกรด Nature's Madness เป็น Guardian of Alola",
     "category": "z-crystals"
   },
   {
     "id": 843,
-    "name": "marshadium-z--held",
+    "name": "marshadium-z",
     "effect": "Held: Allows marshadow to upgrade spectral thief into soul stealing 7 star strike.",
     "effect_th": "พกแล้วให้ Marshadow อัปเกรด Spectral Thief เป็น Soul-Stealing 7-Star Strike",
     "category": "z-crystals"
   },
   {
     "id": 844,
-    "name": "aloraichium-z--held",
+    "name": "aloraichium-z",
     "effect": "Held: Allows Alola raichu to upgrade thunderbolt into stoked sparksurfer.",
     "effect_th": "พกแล้วให้ Raichu ร่างอโลลา อัปเกรด Thunderbolt เป็น Stoked Sparksurfer",
     "category": "z-crystals"
   },
   {
     "id": 845,
-    "name": "snorlium-z--held",
+    "name": "snorlium-z",
     "effect": "Held: Allows snorlax to upgrade giga impact into pulverizing pancake.",
     "effect_th": "พกแล้วให้ Snorlax อัปเกรด Giga Impact เป็น Pulverizing Pancake",
     "category": "z-crystals"
   },
   {
     "id": 846,
-    "name": "eevium-z--held",
+    "name": "eevium-z",
     "effect": "Held: Allows eevee to upgrade last resort into extreme evoboost.",
     "effect_th": "พกแล้วให้ Eevee อัปเกรด Last Resort เป็น Extreme Evoboost",
     "category": "z-crystals"
   },
   {
     "id": 847,
-    "name": "mewnium-z--held",
+    "name": "mewnium-z",
     "effect": "Held: Allows mew to upgrade psychic into genesis supernova.",
     "effect_th": "พกแล้วให้ Mew อัปเกรด Psychic เป็น Genesis Supernova",
     "category": "z-crystals"
   },
   {
     "id": 877,
-    "name": "pikashunium-z--held",
+    "name": "pikashunium-z",
     "effect": "Held: Allows cap-wearing pikachu to upgrade thunderbolt into 10 000 000 volt thunderbolt.",
     "effect_th": "พกแล้วให้ Pikachu ที่ใส่หมวก อัปเกรด Thunderbolt เป็น 10,000,000 Volt Thunderbolt",
     "category": "z-crystals"
