@@ -1,0 +1,78 @@
+{
+  "lead": [
+    "ทุกท่ามีค่า Priority เป็นจำนวนเต็ม: ค่ายิ่งสูง ท่านั้นจะถูกใข้งานก่อนจะไปเปรียบเทียบกับ Speed (อาจมีข้อยกเว้นจาก Ability เช่น Stall, Triage หรือไอเทมเช่น Quick Claw, Lagging Tail)"
+  ],
+  "tableCaption": "ตารางอ้างอิง Priority กับท่า (Moves)",
+  "footnotes": [
+    {}
+  ],
+  "rows": [
+    {
+      "priority": 5,
+      "accent": "#22C55E",
+      "movesText": "Helping Hand"
+    },
+    {
+      "priority": 4,
+      "accent": "#3B82F6",
+      "movesText": "Baneful Bunker, Burning Bulwark, Detect, Endure, King's Shield, Obstruct, Protect, Spiky Shield, Silk Trap"
+    },
+    {
+      "priority": 3,
+      "accent": "#EAB308",
+      "movesText": "Fake Out, Quick Guard, Upper Hand, Wide Guard"
+    },
+    {
+      "priority": 2,
+      "accent": "#F97316",
+      "movesText": "Ally Switch, Extreme Speed, Feint, First Impression, Follow Me, Rage Powder"
+    },
+    {
+      "priority": 1,
+      "accent": "#EF4444",
+      "movesText": "Accelerock, Aqua Jet, Baby-Doll Eyes, Bullet Punch, Grassy Glide, Ice Shard, Jet Punch, Mach Punch, Quick Attack, Shadow Sneak, Sucker Punch, Thunderclap, Vacuum Wave, Water Shuriken"
+    },
+    {
+      "priority": 0,
+      "accent": "#64748B",
+      "movesText": "All other moves"
+    },
+    {
+      "priority": -1,
+      "accent": "#94A3B8",
+      "movesText": "None",
+      "muted": true
+    },
+    {
+      "priority": -2,
+      "accent": "#94A3B8",
+      "movesText": "None",
+      "muted": true
+    },
+    {
+      "priority": -3,
+      "accent": "#A16207",
+      "movesText": "Beak Blast, Focus Punch, Shell Trap"
+    },
+    {
+      "priority": -4,
+      "accent": "#0D9488",
+      "movesText": "Avalanche"
+    },
+    {
+      "priority": -5,
+      "accent": "#DC2626",
+      "movesText": "Counter, Mirror Coat"
+    },
+    {
+      "priority": -6,
+      "accent": "#475569",
+      "movesText": "Circle Throw, Dragon Tail, Roar, Whirlwind, Teleport"
+    },
+    {
+      "priority": -7,
+      "accent": "#7C3AED",
+      "movesText": "Trick Room"
+    }
+  ]
+}
