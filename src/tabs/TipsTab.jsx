@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import battleStatusData from '../data/battleStatus_th.json';
 import battleTerrainData from '../data/battleTerrain_th.json';
 import battleWeatherData from '../data/battleWeather_th.json';
+import movePriorityData from '../data/movePriority_th.json';
+import movesData from '../data/moves_th.json';
 import { loadTypeCards, typeLabelEn } from '../utils/typeMatchups';
 import { TYPE_COLORS } from '../utils/typeColors';
 import { getBattleStatusIconUrl } from '../utils/statusIcons';
@@ -9,12 +11,45 @@ import { getBattleTerrainIconUrl } from '../utils/terrainIcons';
 import { getBattleWeatherIconUrl } from '../utils/weatherIcons';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
+const PRIORITY_MOVES_INDEX = Object.fromEntries(movesData.map((m) => [m.name, m]));
+
+const MOVE_ICON_BASE = import.meta.env.BASE_URL || '/';
+
+function getDamageClassIconUrl(damageClass) {
+  const iconMap = {
+    physical: `${MOVE_ICON_BASE}MoveClassIcon/move-physical.png`,
+    special: `${MOVE_ICON_BASE}MoveClassIcon/move-special.png`,
+    status: `${MOVE_ICON_BASE}MoveClassIcon/move-status.png`,
+  };
+  return iconMap[damageClass] || iconMap.status;
+}
+
+/** แปลงชื่อท่าแบบที่แสดงในตาราง (เช่น King's Shield) เป็น slug ใน moves_th.json */
+function displayNameToMoveSlug(display) {
+  return display
+    .trim()
+    .toLowerCase()
+    .replace(/'/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
+
+function parsePriorityMoveSegment(segment) {
+  const trimmed = segment.trim();
+  const footnoteMatch = trimmed.match(/^(.*)\[([a-z])\]$/i);
+  const baseLabel = footnoteMatch ? footnoteMatch[1].trim() : trimmed;
+  const footnoteMark = footnoteMatch ? footnoteMatch[2].toLowerCase() : null;
+  const slug = displayNameToMoveSlug(baseLabel);
+  return { baseLabel, footnoteMark, slug };
+}
+
 const TIPS_SUB_TABS = [
   { key: 'types', label: 'การแพ้ชนะของประเภทต่างๆ' },
   { key: 'statusNonVolatile', label: 'สถานะถาวร' },
-  { key: 'statusVolatile', label: 'สถานะชั่วคราว)' },
+  { key: 'statusVolatile', label: 'สถานะชั่วคราว' },
   { key: 'weather', label: 'สภาพอากาศ' },
   { key: 'terrain', label: 'Terrain' },
+  { key: 'priority', label: 'Priority' },
 ];
 
 function TypeIcon({ type, className = 'tips-chip-icon' }) {
@@ -271,6 +306,150 @@ function TerrainSubPanel() {
   );
 }
 
+function formatMovePriority(p) {
+  return p > 0 ? `+${p}` : `${p}`;
+}
+
+function PriorityMoveRow({ segment, muted }) {
+  const { baseLabel, footnoteMark, slug } = parsePriorityMoveSegment(segment);
+  const isPlainLabel = baseLabel === 'All other moves' || baseLabel === 'None';
+
+  if (isPlainLabel) {
+    return (
+      <li
+        className={`move-list-item tips-priority-move-item${muted ? ' tips-priority-move-item--muted' : ''}`}
+      >
+        <span
+          className="move-list-name tips-priority-move-name-only"
+          style={{ color: muted ? '#94a3b8' : '#1e293b' }}
+        >
+          {baseLabel}
+        </span>
+      </li>
+    );
+  }
+
+  const info = PRIORITY_MOVES_INDEX[slug];
+  const displayName = info?.name ? info.name.replace(/-/g, ' ') : baseLabel;
+
+  return (
+    <li
+      className={`move-list-item tips-priority-move-item${muted ? ' tips-priority-move-item--muted' : ''}`}
+    >
+      {info?.type && (
+        <img
+          src={getTypeIconUrl(info.type)}
+          alt={info.type}
+          className="move-list-type-icon"
+          style={{ borderColor: TYPE_COLORS[info.type] || '#94a3b8' }}
+          loading="lazy"
+          decoding="async"
+          onError={(event) => {
+            event.currentTarget.onerror = null;
+            event.currentTarget.src = getFallbackTypeIconUrl(info.type);
+          }}
+        />
+      )}
+      <span
+        className="move-list-name"
+        style={{ color: info?.type ? TYPE_COLORS[info.type] : '#1e293b' }}
+      >
+        {displayName}
+        {footnoteMark ? (
+          <sup className="tips-priority-move-footnote-mark">{footnoteMark}</sup>
+        ) : null}
+      </span>
+      {info?.damage_class && (
+        <img
+          src={getDamageClassIconUrl(info.damage_class)}
+          alt={info.damage_class}
+          className="move-list-damage-icon"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+    </li>
+  );
+}
+
+function PriorityMovesList({ movesText, muted }) {
+  if (!movesText) {
+    return null;
+  }
+  const segments = movesText.split(',').map((s) => s.trim()).filter(Boolean);
+  return (
+    <ul className="moves-list tips-priority-moves-list" aria-label="รายการท่า">
+      {segments.map((seg, i) => (
+        <PriorityMoveRow key={`${seg}-${i}`} segment={seg} muted={muted} />
+      ))}
+    </ul>
+  );
+}
+
+function PrioritySubPanel() {
+  const lead = movePriorityData.lead || [];
+  const rows = movePriorityData.rows || [];
+  const footnotes = movePriorityData.footnotes || [];
+  const caption = movePriorityData.tableCaption || 'ตาราง Priority';
+
+  return (
+    <section className="pokemon-detail-section tips-priority-section">
+      <div className="tips-priority-intro">
+        {lead.map((text, index) => (
+          <p key={index} className="tips-priority-lead">
+            {text}
+          </p>
+        ))}
+      </div>
+
+      <div className="tips-priority-table-scroll">
+        <table className="tips-priority-table tips-priority-table--reference">
+          <caption className="tips-priority-table-caption">{caption}</caption>
+          <thead>
+            <tr>
+              <th scope="col">Priority</th>
+              <th scope="col">Moves</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => {
+              const accent = row.accent || '#64748b';
+              const muted = row.muted;
+              return (
+                <tr
+                  key={row.priority}
+                  className={`tips-priority-table-row${muted ? ' tips-priority-table-row--muted' : ''}`}
+                  style={{ '--tips-row-accent': accent }}
+                >
+                  <td className="tips-priority-table-cell tips-priority-table-cell--num">
+                    <span className="tips-priority-table-num">{formatMovePriority(row.priority)}</span>
+                  </td>
+                  <td
+                    className={`tips-priority-table-cell tips-priority-table-cell--movesPlain${muted ? ' tips-priority-moves--muted' : ''}`}
+                  >
+                    <PriorityMovesList movesText={row.movesText || ''} muted={muted} />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {footnotes.length > 0 && (
+        <ul className="tips-priority-footnotes" aria-label="หมายเหตุท้ายตาราง">
+          {footnotes.map((fn) => (
+            <li key={fn.mark} className="tips-priority-footnote-line">
+              <sup className="tips-priority-footnote-sup">{fn.mark}</sup>
+              <span>{fn.textTh}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
+
 function TypesSubPanel({ cards, loading, error }) {
   return (
     <>
@@ -351,6 +530,7 @@ function TipsTab() {
           {activeSub === 'statusVolatile' && <StatusSubPanel category="volatile" />}
           {activeSub === 'weather' && <WeatherSubPanel />}
           {activeSub === 'terrain' && <TerrainSubPanel />}
+          {activeSub === 'priority' && <PrioritySubPanel />}
         </div>
       </div>
     </section>
