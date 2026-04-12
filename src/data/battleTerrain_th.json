@@ -1,0 +1,43 @@
+[
+  {
+    "id": "electric",
+    "nameTh": "ภูมิประเทศไฟฟ้า",
+    "nameEn": "Electric Terrain",
+    "accent": "#EAB308",
+    "lines": [
+      "โปเกมอนที่อยู่บนสนามจะไม่ถูกทำให้ติดสถานะ Sleep",
+      "ท่าประเภท Electric ของโปเกมอนที่อยู่บนสนามจะแรงขึ้น 30%"
+    ]
+  },
+  {
+    "id": "grassy",
+    "nameTh": "ภูมิประเทศหญ้า",
+    "nameEn": "Grassy Terrain",
+    "accent": "#22C55E",
+    "lines": [
+      "เมื่อจบเทิร์นแต่ละครั้งจะฟื้นฟู HP 1/16 ของค่า HP สูงสุดให้โปเกมอนที่อยู่บนสนาม",
+      "ท่าประเภท Grass ของโปเกมอนที่อยู่บนสนามจะแรงขึ้น 30%",
+      "ลดความแรงของท่า Earthquake / Magnitude / Bulldoze ลง 50%"
+    ]
+  },
+  {
+    "id": "misty",
+    "nameTh": "ภูมิประเทศหมอก",
+    "nameEn": "Misty Terrain",
+    "accent": "#EC4899",
+    "lines": [
+      "โปเกมอนที่อยู่บนสนามจะไม่ติดสถานะ Poison , Burn , Freeze , Sleep หรือ Paralysis",
+      "ลดความแรงของท่าประเภท Dragon ลง 50%"
+    ]
+  },
+  {
+    "id": "psychic",
+    "nameTh": "ภูมิประเทศจิต",
+    "nameEn": "Psychic Terrain",
+    "accent": "#A855F7",
+    "lines": [
+      "โปเกมอนที่อยู่บนสนามจะป้องการท่าที่มี Priority ได้",
+      "เพิ่มความแรงของท่าประเภท Psychic ของโปเกมอนที่อยู่บนสนาม 30%"
+    ]
+  }
+]

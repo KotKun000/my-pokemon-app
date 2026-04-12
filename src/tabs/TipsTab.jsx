@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import battleStatusData from '../data/battleStatus_th.json';
+import battleTerrainData from '../data/battleTerrain_th.json';
 import battleWeatherData from '../data/battleWeather_th.json';
 import { loadTypeCards, typeLabelEn } from '../utils/typeMatchups';
 import { TYPE_COLORS } from '../utils/typeColors';
 import { getBattleStatusIconUrl } from '../utils/statusIcons';
+import { getBattleTerrainIconUrl } from '../utils/terrainIcons';
 import { getBattleWeatherIconUrl } from '../utils/weatherIcons';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
@@ -11,6 +13,7 @@ const TIPS_SUB_TABS = [
   { key: 'types', label: 'การแพ้ชนะของประเภทต่างๆ' },
   { key: 'status', label: 'สถานะต่างๆ' },
   { key: 'weather', label: 'สภาพอากาศ' },
+  { key: 'terrain', label: 'Terrain' },
 ];
 
 function TypeIcon({ type, className = 'tips-chip-icon' }) {
@@ -200,13 +203,65 @@ function WeatherCard({ item }) {
 function WeatherSubPanel() {
   return (
     <section className="pokemon-detail-section tips-weather-section">
-      <h4>สภาพอากาศในสนามรบ</h4>
-      <p className="tips-weather-lead">
-        สรุปผลของสภาพอากาศต่อท่าและโปเกมอน — ตัวเลขอาจต่างตามรุ่นเกม (เช่น โมเดลความแรงท่า Gen 5+)
-      </p>
+      <div className="tips-weather-card-container">
+        <p className="tips-weather-lead">
+          หลังจากถูกเปิดใช้งานสภาพอากาศ จะมีระยะเวลา 5 เทิร์นหลังจากนั้นสภาพอากาศจะถูกลบออก
+        </p>
+      </div>
       <div className="tips-type-grid">
         {battleWeatherData.map((item) => (
           <WeatherCard key={item.id} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function TerrainCard({ item }) {
+  const accent = item.accent || '#64748b';
+
+  return (
+    <article
+      className="tips-status-card tips-terrain-card"
+      style={{ '--tips-card-accent': accent }}
+      aria-labelledby={`tips-terrain-${item.id}`}
+    >
+      <header className="tips-status-card-head">
+        <h3 className="tips-status-card-title" id={`tips-terrain-${item.id}`}>
+          <span className="tips-status-card-name">{item.nameEn}</span>
+          <img
+            src={getBattleTerrainIconUrl(item.id)}
+            alt=""
+            className="tips-status-card-icon"
+            width={28}
+            height={28}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </h3>
+      </header>
+      <ul className="tips-status-card-lines">
+        {(item.lines || []).map((line, index) => (
+          <li key={`${item.id}-${index}`}>{line}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+function TerrainSubPanel() {
+  return (
+    <section className="pokemon-detail-section tips-terrain-section">
+      <p className="tips-terrain-lead">
+        มีระยะเวลา 5 เทิร์นหลังจากถูกเปิดใช้งาน Terrain จะถูกลบออก
+        โปเกมอนที่อยู่บนสนามจะได้รับผลของ Terrain ตามประเภทของสนาม ยกเว้นโปเกมอนประเภท Flying หรือ Ability Levitate
+      </p>
+      <div className="tips-type-grid">
+        {battleTerrainData.map((item) => (
+          <TerrainCard key={item.id} item={item} />
         ))}
       </div>
     </section>
@@ -289,6 +344,7 @@ function TipsTab() {
           )}
           {activeSub === 'status' && <StatusSubPanel />}
           {activeSub === 'weather' && <WeatherSubPanel />}
+          {activeSub === 'terrain' && <TerrainSubPanel />}
         </div>
       </div>
     </section>
