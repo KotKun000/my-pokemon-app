@@ -1,0 +1,93 @@
+[
+  {
+    "id": "sun",
+    "nameTh": "แดดจัด",
+    "nameEn": "Harsh sunlight",
+    "accent": "#F59E0B",
+    "lines": [
+      "เพิ่มความแรงของท่าประเภท Fire 50%",
+      "ลดความแรงของท่าประเภท Water 50%",
+      "ทำให้โปเกมอนไม่สามารถติดสถานะ Freeze ได้"
+    ]
+  },
+  {
+    "id": "rain",
+    "nameTh": "ฝน",
+    "nameEn": "Rain",
+    "accent": "#3B82F6",
+    "lines": [
+      "เพิ่มความแรงของท่าประเภท Water 50%",
+      "ลดความแรงของท่าประเภท Fire 50%"
+    ]
+  },
+  {
+    "id": "sandstorm",
+    "nameTh": "พายุทราย",
+    "nameEn": "Sandstorm",
+    "accent": "#B45309",
+    "lines": [
+      "เมื่อจบเทิร์นแต่ละครั้งจะลด HP 1/16 ของค่า HP สูงสุด ยกเว้นโปเกมอนประเภท Rock , Ground , Steel",
+      "โปเกมอนประเภท Rock ได้รับ Sp. Def เพิ่ม 50% เมื่ออยู่ในสภาพอากาศ Sandstorm"
+    ]
+  },
+  {
+    "id": "hail",
+    "nameTh": "ลูกเห็บ",
+    "nameEn": "Hail",
+    "accent": "#7DD3FC",
+    "lines": [
+      "เมื่อจบเทิร์นแต่ละครั้งจะลด HP 1/16 ของค่า HP สูงสุด ยกเว้นโปเกมอนประเภท Ice"
+    ]
+  },
+  {
+    "id": "snow",
+    "nameTh": "หิมะ",
+    "nameEn": "Snow",
+    "accent": "#E0F2FE",
+    "lines": [
+      "โปเกมอนประเภท Ice ได้รับ Defense เพิ่ม 50% เมื่ออยู่ในสภาพอากาศ Snow"
+    ]
+  },
+  {
+    "id": "fog",
+    "nameTh": "หมอก",
+    "nameEn": "Fog",
+    "accent": "#94A3B8",
+    "lines": [
+      "ลด Accuracy ของท่าทุกประเภท"
+    ]
+  },
+  {
+    "id": "Extremely harsh sunlight",
+    "nameTh": "แดดจัดมากกว่า",
+    "nameEn": "Extremely harsh sunlight",
+    "accent": "#F59E0B",
+    "lines": [
+      "เพิ่มความแรงของท่าประเภท Fire 50%",
+      "ท่าประเภท Water ไม่สามารถใช้งานได้",
+      "ไม่สามารถถูกกลบสภาพอากาศออกได้"
+    ]
+  },
+  {
+    "id": "Heavy rain",
+    "nameTh": "ฝนหนัก",
+    "nameEn": "Heavy rain",
+    "accent": "#3B82F6",
+    "lines": [
+      "เพิ่มความแรงของท่าประเภท Water 50%",
+      "ท่าประเภท Fire ไม่สามารถใช้งานได้",
+      "ไม่สามารถถูกกลบสภาพอากาศออกได้"
+    ]
+  },
+  {
+    "id": "Strong winds",
+    "nameTh": "ลมแรง",
+    "nameEn": "Strong winds",
+    "accent": "#3B82F6",
+    "lines": [
+      "ท่าประเภท Rock , Electric , Ice จะทำดาเมจต่อโปเกมอนประเภท Flying เป็น Effective แทนที่จะเป็น Super Effective",
+      "สามารถกลบสภาพอากาศออกได้ทุกสภาพอากาศ"
+    ]
+  }
+
+]

@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import battleStatusData from '../data/battleStatus_th.json';
+import battleWeatherData from '../data/battleWeather_th.json';
 import { loadTypeCards, typeLabelEn } from '../utils/typeMatchups';
 import { TYPE_COLORS } from '../utils/typeColors';
 import { getBattleStatusIconUrl } from '../utils/statusIcons';
+import { getBattleWeatherIconUrl } from '../utils/weatherIcons';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
 const TIPS_SUB_TABS = [
   { key: 'types', label: 'การแพ้ชนะของประเภทต่างๆ' },
   { key: 'status', label: 'สถานะต่างๆ' },
+  { key: 'weather', label: 'สภาพอากาศ' },
 ];
 
 function TypeIcon({ type, className = 'tips-chip-icon' }) {
@@ -59,7 +62,6 @@ function TypeCard({ card }) {
           <h3 className="tips-type-card-title" id={`tips-type-title-${card.type}`}>
             {card.labelEn}
           </h3>
-          <p className="tips-type-card-sub">{card.type}</p>
         </div>
       </header>
 
@@ -160,6 +162,57 @@ function StatusSubPanel() {
   );
 }
 
+function WeatherCard({ item }) {
+  const accent = item.accent || '#64748b';
+
+  return (
+    <article
+      className="tips-status-card tips-weather-card"
+      style={{ '--tips-card-accent': accent }}
+      aria-labelledby={`tips-weather-${item.id}`}
+    >
+      <header className="tips-status-card-head">
+        <h3 className="tips-status-card-title" id={`tips-weather-${item.id}`}>
+          <span className="tips-status-card-name">{item.nameEn}</span>
+          <img
+            src={getBattleWeatherIconUrl(item.id)}
+            alt=""
+            className="tips-status-card-icon"
+            width={28}
+            height={28}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </h3>
+      </header>
+      <ul className="tips-status-card-lines">
+        {(item.lines || []).map((line, index) => (
+          <li key={`${item.id}-${index}`}>{line}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+function WeatherSubPanel() {
+  return (
+    <section className="pokemon-detail-section tips-weather-section">
+      <h4>สภาพอากาศในสนามรบ</h4>
+      <p className="tips-weather-lead">
+        สรุปผลของสภาพอากาศต่อท่าและโปเกมอน — ตัวเลขอาจต่างตามรุ่นเกม (เช่น โมเดลความแรงท่า Gen 5+)
+      </p>
+      <div className="tips-type-grid">
+        {battleWeatherData.map((item) => (
+          <WeatherCard key={item.id} item={item} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function TypesSubPanel({ cards, loading, error }) {
   return (
     <>
@@ -235,6 +288,7 @@ function TipsTab() {
             <TypesSubPanel cards={cards} loading={loading} error={error} />
           )}
           {activeSub === 'status' && <StatusSubPanel />}
+          {activeSub === 'weather' && <WeatherSubPanel />}
         </div>
       </div>
     </section>
