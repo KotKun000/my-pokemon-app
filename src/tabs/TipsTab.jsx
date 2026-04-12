@@ -11,7 +11,8 @@ import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 
 const TIPS_SUB_TABS = [
   { key: 'types', label: 'การแพ้ชนะของประเภทต่างๆ' },
-  { key: 'status', label: 'สถานะต่างๆ' },
+  { key: 'statusNonVolatile', label: 'สถานะถาวร' },
+  { key: 'statusVolatile', label: 'สถานะชั่วคราว)' },
   { key: 'weather', label: 'สภาพอากาศ' },
   { key: 'terrain', label: 'Terrain' },
 ];
@@ -153,11 +154,13 @@ function StatusCard({ item }) {
   );
 }
 
-function StatusSubPanel() {
+function StatusSubPanel({ category }) {
+  const items = battleStatusData.filter((item) => item.category === category);
   return (
     <section className="pokemon-detail-section tips-status-section">
+      <h4>{category === 'nonVolatile' ? 'สถานะที่หากเปลี่ยนตัวออกไปก็ยังคงสถานะไว้ได้' : 'สถานะที่หากเปลี่ยนตัวออกไปก็จะหายไป'}</h4>
       <div className="tips-type-grid">
-        {battleStatusData.map((item) => (
+        {items.map((item) => (
           <StatusCard key={item.id} item={item} />
         ))}
       </div>
@@ -342,7 +345,10 @@ function TipsTab() {
           {activeSub === 'types' && (
             <TypesSubPanel cards={cards} loading={loading} error={error} />
           )}
-          {activeSub === 'status' && <StatusSubPanel />}
+          {activeSub === 'statusNonVolatile' && (
+            <StatusSubPanel category="nonVolatile" />
+          )}
+          {activeSub === 'statusVolatile' && <StatusSubPanel category="volatile" />}
           {activeSub === 'weather' && <WeatherSubPanel />}
           {activeSub === 'terrain' && <TerrainSubPanel />}
         </div>
