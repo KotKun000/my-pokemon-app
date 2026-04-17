@@ -472,11 +472,15 @@ function TypesSubPanel({ cards, loading, error }) {
   );
 }
 
-function TipsTab() {
-  const [activeSub, setActiveSub] = useState('types');
+function TipsTab({ initialSub = 'types' }) {
+  const [activeSub, setActiveSub] = useState(initialSub);
   const [cards, setCards] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setActiveSub(initialSub || 'types');
+  }, [initialSub]);
 
   useEffect(() => {
     let cancelled = false;

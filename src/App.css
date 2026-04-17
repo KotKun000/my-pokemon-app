@@ -628,6 +628,194 @@
   box-sizing: border-box;
 }
 
+/* Guide tab — same embedded shell as Tips */
+.guide-panel {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 8px 0 32px;
+  box-sizing: border-box;
+}
+
+.guide-panel,
+.guide-panel button,
+.guide-panel input,
+.guide-panel select,
+.guide-panel textarea,
+.guide-panel summary {
+  font-family: inherit;
+}
+
+.guide-panel .guide-detail-embed.pokemon-detail-modal {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  max-height: none;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+}
+
+.guide-content {
+  padding: 18px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.guide-lead {
+  margin: 0 0 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  gap: 14px;
+}
+
+.guide-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: linear-gradient(165deg, #ffffff 0%, #f9fafb 48%, #f4f6f8 100%);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.guide-card-summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: 800;
+  color: #0f172a;
+  list-style: none;
+}
+
+.guide-card-summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide-card-summary::after {
+  content: '▾';
+  float: right;
+  color: #64748b;
+  transition: transform 0.18s ease;
+}
+
+.guide-card[open] .guide-card-summary::after {
+  transform: rotate(180deg);
+}
+
+.guide-card-body {
+  padding: 0 14px 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.guide-paragraph {
+  margin: 12px 0 8px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.guide-list {
+  margin: 12px 0 0;
+  padding-left: 1.15rem;
+  color: #334155;
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.guide-list--nested {
+  margin-top: 8px;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.guide-team-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.guide-mode {
+  border: 1px solid #e8ecf1;
+  border-radius: 14px;
+  background: #fbfcfe;
+  padding: 12px 12px 10px;
+}
+
+.guide-mode-title {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.guide-example-title {
+  margin: 12px 0 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.guide-list--examples {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #334155;
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+
+.guide-list--examples li {
+  margin: 0 0 6px;
+}
+
+.guide-list--examples li:last-child {
+  margin-bottom: 0;
+}
+
+.guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.guide-link-btn {
+  border: 1.5px solid #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.guide-link-btn:hover {
+  transform: translateY(-1px);
+  background: #dbeafe;
+  border-color: #60a5fa;
+}
+
+.guide-muted {
+  color: #64748b;
+  font-size: 0.88rem;
+  margin-top: 12px;
+}
+
+/* Ensure all text inside Tips tab uses the same font stack (incl. buttons/tables). */
+.tips-panel,
+.tips-panel button,
+.tips-panel input,
+.tips-panel select,
+.tips-panel textarea,
+.tips-panel table {
+  font-family: inherit;
+}
+
 .tips-panel .tips-detail-embed.pokemon-detail-modal {
   width: 100%;
   max-width: 100%;
