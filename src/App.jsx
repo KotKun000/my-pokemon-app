@@ -4,6 +4,7 @@ import ItemTab from './tabs/ItemTab';
 import MoveTab from './tabs/MoveTab';
 import PlaceholderTab from './tabs/PlaceholderTab';
 import PokemonTab from './tabs/PokemonTab';
+import GuideTab from './tabs/GuideTab';
 import TipsTab from './tabs/TipsTab';
 
 const NAV_ITEMS = [
@@ -17,6 +18,14 @@ const NAV_ITEMS = [
 
 function App() {
   const [activePage, setActivePage] = useState('pokemon');
+  const [tipsInitialSub, setTipsInitialSub] = useState('types');
+
+  const handleNavigate = (page, options = {}) => {
+    setActivePage(page);
+    if (page === 'tips' && options.tipsSub) {
+      setTipsInitialSub(options.tipsSub);
+    }
+  };
 
   return (
     <main className="app-shell">
@@ -31,7 +40,7 @@ function App() {
           <button
             key={item.key}
             type="button"
-            onClick={() => setActivePage(item.key)}
+            onClick={() => handleNavigate(item.key)}
             className={`nav-tab ${activePage === item.key ? 'active' : ''}`}
           >
             {item.label}
@@ -42,8 +51,9 @@ function App() {
       {activePage === 'pokemon' && <PokemonTab />}
       {activePage === 'item' && <ItemTab />}
       {activePage === 'move' && <MoveTab />}
-      {activePage === 'tips' && <TipsTab />}
-      {!['pokemon', 'item', 'move', 'tips'].includes(activePage) && (
+      {activePage === 'tips' && <TipsTab initialSub={tipsInitialSub} />}
+      {activePage === 'guide' && <GuideTab onNavigate={handleNavigate} />}
+      {!['pokemon', 'item', 'move', 'tips', 'guide'].includes(activePage) && (
         <PlaceholderTab />
       )}
     </main>
