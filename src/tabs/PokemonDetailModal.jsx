@@ -928,10 +928,7 @@ function PokemonDetailModal({ pokemonName, onClose }) {
                                     }}
                                   />
                                 )}
-                                <span
-                                  className="move-list-name"
-                                  style={{ color: info?.type ? TYPE_COLORS[info.type] : '#1e293b' }}
-                                >
+                                <span className="move-list-name">
                                   {m.name.replace(/-/g, ' ')}
                                 </span>
                                 {info?.damage_class && (
