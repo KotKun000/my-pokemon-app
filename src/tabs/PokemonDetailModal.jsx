@@ -4,6 +4,10 @@ import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 import ABILITY_TH from '../data/abilities_th.json';
 import movesData from '../data/moves_th.json';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
+import {
+  VERSION_GROUP_LABELS,
+  VERSION_GROUP_ORDER,
+} from '../utils/gameVersions';
 
 const MOVES_INDEX = Object.fromEntries(movesData.map((m) => [m.name, m]));
 
@@ -40,46 +44,6 @@ function categorizeMoves(moves) {
   const otherMethods = Object.keys(groups).filter((m) => !METHOD_PRIORITY.includes(m) && groups[m]?.length > 0);
   return { groups, orderedMethods: [...orderedMethods, ...otherMethods] };
 }
-
-const VERSION_GROUP_ORDER = [
-  'scarlet-violet',
-  'legends-arceus',
-  'brilliant-diamond-and-shining-pearl',
-  'sword-shield',
-  'ultra-sun-ultra-moon',
-  'sun-moon',
-  'lets-go-pikachu-lets-go-eevee',
-  'omega-ruby-alpha-sapphire',
-  'x-y',
-  'black-2-white-2',
-  'black-white',
-  'heartgold-soulsilver',
-  'platinum',
-  'diamond-pearl',
-  'firered-leafgreen',
-  'emerald',
-  'ruby-sapphire',
-];
-
-const VERSION_GROUP_LABELS = {
-  'scarlet-violet': 'Scarlet / Violet',
-  'legends-arceus': 'Legends: Arceus',
-  'brilliant-diamond-and-shining-pearl': 'BD / SP',
-  'sword-shield': 'Sword / Shield',
-  'ultra-sun-ultra-moon': 'Ultra S/M',
-  'sun-moon': 'Sun / Moon',
-  'lets-go-pikachu-lets-go-eevee': "Let's Go",
-  'omega-ruby-alpha-sapphire': 'OR / AS',
-  'x-y': 'X / Y',
-  'black-2-white-2': 'B2 / W2',
-  'black-white': 'Black / White',
-  'heartgold-soulsilver': 'HG / SS',
-  'platinum': 'Platinum',
-  'diamond-pearl': 'Diamond / Pearl',
-  'firered-leafgreen': 'FR / LG',
-  'emerald': 'Emerald',
-  'ruby-sapphire': 'Ruby / Sapphire',
-};
 
 function getPokemonGen(id) {
   if (id <= 151) return 1;
