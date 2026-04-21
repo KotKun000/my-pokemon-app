@@ -228,6 +228,7 @@ function WeatherCard({ item }) {
             }}
           />
         </h3>
+        <span className="tips-status-card-name">{item.nameTh}</span>
       </header>
       <ul className="tips-status-card-lines">
         {(item.lines || []).map((line, index) => (
