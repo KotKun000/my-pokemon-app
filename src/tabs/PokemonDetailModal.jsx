@@ -4,10 +4,6 @@ import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 import ABILITY_TH from '../data/abilities_th.json';
 import movesData from '../data/moves_th.json';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
-import {
-  VERSION_GROUP_LABELS,
-  VERSION_GROUP_ORDER,
-} from '../utils/gameVersions';
 
 const MOVES_INDEX = Object.fromEntries(movesData.map((m) => [m.name, m]));
 
@@ -44,30 +40,6 @@ function categorizeMoves(moves) {
   const otherMethods = Object.keys(groups).filter((m) => !METHOD_PRIORITY.includes(m) && groups[m]?.length > 0);
   return { groups, orderedMethods: [...orderedMethods, ...otherMethods] };
 }
-
-function getPokemonGen(id) {
-  if (id <= 151) return 1;
-  if (id <= 251) return 2;
-  if (id <= 386) return 3;
-  if (id <= 493) return 4;
-  if (id <= 649) return 5;
-  if (id <= 721) return 6;
-  if (id <= 809) return 7;
-  if (id <= 905) return 8;
-  return 9;
-}
-
-const GEN_MIN_VERSION_GROUP = {
-  1: 'ruby-sapphire',
-  2: 'ruby-sapphire',
-  3: 'ruby-sapphire',
-  4: 'diamond-pearl',
-  5: 'black-white',
-  6: 'x-y',
-  7: 'sun-moon',
-  8: 'sword-shield',
-  9: 'scarlet-violet',
-};
 
 const evoChainCache = {};
 const itemCache = {};
@@ -350,9 +322,6 @@ function PokemonDetailModal({ pokemonName, onClose }) {
   const [showMoves, setShowMoves] = useState(false);
   const [selectedMove, setSelectedMove] = useState(null);
   const [selectedMethod, setSelectedMethod] = useState('');
-  const [selectedVersionGroup, setSelectedVersionGroup] = useState('');
-  const [abilityDropdownOpen, setAbilityDropdownOpen] = useState(false);
-  const [versionSearch, setVersionSearch] = useState('');
 
   useEffect(() => {
     setCurrentPokemonName(pokemonName);
@@ -361,9 +330,6 @@ function PokemonDetailModal({ pokemonName, onClose }) {
     setShowMoves(false);
     setSelectedMove(null);
     setSelectedMethod('');
-    setSelectedVersionGroup('');
-    setAbilityDropdownOpen(false);
-    setVersionSearch('');
   }, [pokemonName]);
 
   useEffect(() => {
@@ -659,121 +625,23 @@ function PokemonDetailModal({ pokemonName, onClose }) {
 
               <section className="pokemon-detail-section">
                 <h4>ความสามารถ (Abilities)</h4>
-                {abilityDetails.length > 0 && (() => {
-                  const allVersionGroups = [...new Set(
-                    abilityDetails.flatMap((a) => Object.keys(a.versionDescriptions || {}))
-                  )];
-                  const orderedGroups = VERSION_GROUP_ORDER.filter((vg) => allVersionGroups.includes(vg));
-                  const otherGroups = allVersionGroups.filter((vg) => !VERSION_GROUP_ORDER.includes(vg));
-                  const pokemonGen = getPokemonGen(detail.id);
-                  const minVG = GEN_MIN_VERSION_GROUP[pokemonGen];
-                  const minVGIndex = VERSION_GROUP_ORDER.indexOf(minVG);
-                  const displayGroups = [...orderedGroups, ...otherGroups].filter((vg) => {
-                    const idx = VERSION_GROUP_ORDER.indexOf(vg);
-                    return idx === -1 || idx <= minVGIndex;
-                  });
-                  const activeVG = (selectedVersionGroup && displayGroups.includes(selectedVersionGroup))
-                    ? selectedVersionGroup
-                    : displayGroups[0] || '';
-                  return (
-                    <>
-                      <div className={`ability-version-dropdown ${abilityDropdownOpen ? 'open' : ''}`}>
-                        <button
-                          type="button"
-                          className="ability-version-trigger"
-                          onClick={() => setAbilityDropdownOpen((v) => !v)}
-                        >
-                          <span>{VERSION_GROUP_LABELS[activeVG] || activeVG}</span>
-                          <svg viewBox="0 0 20 20" fill="currentColor" className="ability-version-chevron"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
-                        </button>
-                        {abilityDropdownOpen && (() => {
-                          const searchLower = versionSearch.toLowerCase();
-                          const filteredGroups = versionSearch
-                            ? displayGroups.filter((vg) =>
-                                (VERSION_GROUP_LABELS[vg] || vg).toLowerCase().includes(searchLower)
-                              )
-                            : displayGroups;
-                          return (
-                            <div className="ability-version-menu">
-                              <div className="ability-version-search-wrap">
-                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" className="ability-version-search-icon"><circle cx="8" cy="8" r="5" /><path d="M13 13l3.5 3.5" strokeLinecap="round" /></svg>
-                                <input
-                                  type="text"
-                                  className="ability-version-search"
-                                  placeholder="ค้นหาเวอร์ชั่น..."
-                                  value={versionSearch}
-                                  onChange={(e) => setVersionSearch(e.target.value)}
-                                  onClick={(e) => e.stopPropagation()}
-                                  autoFocus
-                                />
-                                {versionSearch && (
-                                  <button type="button" className="ability-version-search-clear" onClick={() => setVersionSearch('')}>✕</button>
-                                )}
-                              </div>
-                              <div className="ability-version-list">
-                                {filteredGroups.length > 0 ? filteredGroups.map((vg) => (
-                                  <button
-                                    key={vg}
-                                    type="button"
-                                    className={`ability-version-item ${activeVG === vg ? 'active' : ''}`}
-                                    onClick={() => { setSelectedVersionGroup(vg); setAbilityDropdownOpen(false); setVersionSearch(''); }}
-                                  >
-                                    {VERSION_GROUP_LABELS[vg] || vg}
-                                  </button>
-                                )) : (
-                                  <p className="ability-version-empty">ไม่พบเวอร์ชั่น</p>
-                                )}
-                              </div>
-                            </div>
-                          );
-                        })()}
+                <div className="ability-card-list">
+                  {(abilityDetails.length > 0 ? abilityDetails : detail.abilities).map((a) => (
+                    <div
+                      key={a.name}
+                      className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}
+                    >
+                      <div className="ability-card-header">
+                        <AbilityIcon hidden={a.isHidden} />
+                        <span className="ability-card-name">{a.name}</span>
+                        {a.isHidden && <span className="ability-card-badge">Hidden</span>}
                       </div>
-                      <div className="ability-card-list">
-                        {abilityDetails.map((a) => {
-                          const versionDesc = a.versionDescriptions?.[activeVG];
-                          const displayDesc = versionDesc || a.shortEffect || '';
-                          return (
-                            <div
-                              key={a.name}
-                              className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}
-                            >
-                              <div className="ability-card-header">
-                                <AbilityIcon hidden={a.isHidden} />
-                                <span className="ability-card-name">{a.name}</span>
-                                {a.isHidden && <span className="ability-card-badge">Hidden</span>}
-                                {a.generation && (
-                                  <span className="ability-card-gen">Gen {a.generation}</span>
-                                )}
-                              </div>
-                              {displayDesc && (
-                                <p className="ability-card-desc">{displayDesc}</p>
-                              )}
-                              {versionDesc && (
-                                <p className="ability-card-version-source">{VERSION_GROUP_LABELS[activeVG] || activeVG}</p>
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </>
-                  );
-                })()}
-                {!abilityDetails.length && (
-                  <div className="ability-card-list">
-                    {detail.abilities.map((a) => (
-                      <div key={a.name} className={`ability-card ${a.isHidden ? 'ability-card--hidden' : ''}`}>
-                        <div className="ability-card-header">
-                          <AbilityIcon hidden={a.isHidden} />
-                          <span className="ability-card-name">{a.name}</span>
-                          {a.isHidden && <span className="ability-card-badge">Hidden</span>}
-                        </div>
-                        {a.shortEffect && (
-                          <p className="ability-card-desc">{a.shortEffect}</p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
+                      {a.shortEffect && (
+                        <p className="ability-card-desc">{a.shortEffect}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </section>
 
               <section className="pokemon-detail-section">
