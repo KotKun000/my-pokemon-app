@@ -351,10 +351,7 @@ function PriorityMoveRow({ segment, muted }) {
           }}
         />
       )}
-      <span
-        className="move-list-name"
-        style={{ color: info?.type ? TYPE_COLORS[info.type] : '#1e293b' }}
-      >
+      <span className="move-list-name">
         {displayName}
         {footnoteMark ? (
           <sup className="tips-priority-move-footnote-mark">{footnoteMark}</sup>

@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import BuildTeamTab from './tabs/BuildTeamTab';
 import ItemTab from './tabs/ItemTab';
 import MoveTab from './tabs/MoveTab';
 import PlaceholderTab from './tabs/PlaceholderTab';
@@ -51,9 +52,10 @@ function App() {
       {activePage === 'pokemon' && <PokemonTab />}
       {activePage === 'item' && <ItemTab />}
       {activePage === 'move' && <MoveTab />}
+      {activePage === 'build-team' && <BuildTeamTab />}
       {activePage === 'tips' && <TipsTab initialSub={tipsInitialSub} />}
       {activePage === 'guide' && <GuideTab onNavigate={handleNavigate} />}
-      {!['pokemon', 'item', 'move', 'tips', 'guide'].includes(activePage) && (
+      {!['pokemon', 'item', 'move', 'build-team', 'tips', 'guide'].includes(activePage) && (
         <PlaceholderTab />
       )}
     </main>

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 import PokemonDetailModal from './PokemonDetailModal';
@@ -60,6 +60,8 @@ function PokemonTab() {
   const [pokemonPage, setPokemonPage] = useState(1);
   const [selectedPokemonName, setSelectedPokemonName] = useState(null);
   const [selectedGen, setSelectedGen] = useState(0);
+  const [genDropdownOpen, setGenDropdownOpen] = useState(false);
+  const genDropdownRef = useRef(null);
   const closePokemonDetail = useCallback(() => setSelectedPokemonName(null), []);
 
   useEffect(() => {
@@ -139,6 +141,21 @@ function PokemonTab() {
     );
   }, []);
 
+  // ─── ปิด dropdown Gen เมื่อคลิกนอกพื้นที่ ───
+  useEffect(() => {
+    if (!genDropdownOpen) return undefined;
+    const handleClickOutside = (event) => {
+      if (
+        genDropdownRef.current &&
+        !genDropdownRef.current.contains(event.target)
+      ) {
+        setGenDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [genDropdownOpen]);
+
   const filteredPokemon = useMemo(() => {
     const keyword = pokemonQuery.trim().toLowerCase();
     let data = pokemonData;
@@ -210,25 +227,82 @@ function PokemonTab() {
         />
       </section>
       <section className="gen-filter-bar">
-        <button
-          type="button"
-          className={`gen-filter-btn ${selectedGen === 0 ? 'active' : ''}`}
-          onClick={() => setSelectedGen(0)}
+        <div
+          ref={genDropdownRef}
+          className={`ability-version-dropdown gen-filter-dropdown ${genDropdownOpen ? 'open' : ''}`}
         >
-          <span className="gen-filter-label">All</span>
-        </button>
-        {GEN_RANGES.map((range) => (
           <button
-            key={range.gen}
             type="button"
-            className={`gen-filter-btn ${selectedGen === range.gen ? 'active' : ''}`}
-            onClick={() => setSelectedGen(range.gen)}
-            title={`${range.label} · ${range.region} (#${range.min}–#${range.max})`}
+            className="ability-version-trigger gen-filter-trigger"
+            onClick={() => setGenDropdownOpen((v) => !v)}
           >
-            <span className="gen-filter-label">{range.label}</span>
-            <span className="gen-filter-region">{range.region}</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="gen-filter-icon"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
+            </svg>
+            <span>
+              Gen:{' '}
+              <strong>
+                {selectedGen === 0
+                  ? 'ทั้งหมด'
+                  : (() => {
+                      const r = GEN_RANGES.find((g) => g.gen === selectedGen);
+                      return r ? `${r.label} · ${r.region}` : `Gen ${selectedGen}`;
+                    })()}
+              </strong>
+            </span>
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="ability-version-chevron"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clipRule="evenodd"
+              />
+            </svg>
           </button>
-        ))}
+          {genDropdownOpen && (
+            <div className="ability-version-menu gen-filter-menu">
+              <div className="ability-version-list">
+                <button
+                  type="button"
+                  className={`ability-version-item ${selectedGen === 0 ? 'active' : ''}`}
+                  onClick={() => {
+                    setSelectedGen(0);
+                    setGenDropdownOpen(false);
+                  }}
+                >
+                  ทั้งหมด
+                </button>
+                {GEN_RANGES.map((range) => (
+                  <button
+                    key={range.gen}
+                    type="button"
+                    className={`ability-version-item ${selectedGen === range.gen ? 'active' : ''}`}
+                    onClick={() => {
+                      setSelectedGen(range.gen);
+                      setGenDropdownOpen(false);
+                    }}
+                  >
+                    {range.label} · {range.region}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </section>
       <section className="type-filter-bar">
         <button
