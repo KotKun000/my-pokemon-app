@@ -1,6 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
+import {
+  fetchVersionGroupPokemonIds,
+  VERSION_GROUP_LABELS,
+  VERSION_GROUP_ORDER,
+} from '../utils/gameVersions';
 import PokemonDetailModal from './PokemonDetailModal';
 
 const POKEMON_PER_PAGE = 35;
@@ -46,6 +51,11 @@ function PokemonTab() {
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [pokemonPage, setPokemonPage] = useState(1);
   const [selectedPokemonName, setSelectedPokemonName] = useState(null);
+  const [selectedVersionGroup, setSelectedVersionGroup] = useState('');
+  const [versionPokemonIds, setVersionPokemonIds] = useState(null);
+  const [versionDropdownOpen, setVersionDropdownOpen] = useState(false);
+  const [versionSearch, setVersionSearch] = useState('');
+  const versionDropdownRef = useRef(null);
   const closePokemonDetail = useCallback(() => setSelectedPokemonName(null), []);
 
   useEffect(() => {
@@ -125,9 +135,54 @@ function PokemonTab() {
     );
   }, []);
 
+  // ─── โหลดรายชื่อ species ของเวอร์ชั่นเกมที่เลือก (lazy + cache) ───
+  useEffect(() => {
+    if (!selectedVersionGroup) {
+      setVersionPokemonIds(null);
+      return undefined;
+    }
+
+    let cancelled = false;
+    const load = async () => {
+      try {
+        setVersionPokemonIds(null);
+        const ids = await fetchVersionGroupPokemonIds(selectedVersionGroup);
+        if (cancelled) return;
+        setVersionPokemonIds(new Set(ids));
+      } catch {
+        if (!cancelled) setVersionPokemonIds(new Set());
+      }
+    };
+    load();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedVersionGroup]);
+
+  // ─── ปิด dropdown เวอร์ชั่นเกมเมื่อคลิกนอกพื้นที่ ───
+  useEffect(() => {
+    if (!versionDropdownOpen) return undefined;
+    const handleClickOutside = (event) => {
+      if (
+        versionDropdownRef.current &&
+        !versionDropdownRef.current.contains(event.target)
+      ) {
+        setVersionDropdownOpen(false);
+        setVersionSearch('');
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [versionDropdownOpen]);
+
   const filteredPokemon = useMemo(() => {
     const keyword = pokemonQuery.trim().toLowerCase();
     let data = pokemonData;
+
+    if (selectedVersionGroup && versionPokemonIds) {
+      data = data.filter((pokemon) => versionPokemonIds.has(pokemon.id));
+    }
 
     if (selectedTypes.length > 0) {
       data = data.filter((pokemon) =>
@@ -137,11 +192,11 @@ function PokemonTab() {
 
     if (!keyword) return data;
     return data.filter((pokemon) => pokemon.name.toLowerCase().includes(keyword));
-  }, [pokemonData, pokemonQuery, selectedTypes]);
+  }, [pokemonData, pokemonQuery, selectedTypes, selectedVersionGroup, versionPokemonIds]);
 
   useEffect(() => {
     setPokemonPage(1);
-  }, [pokemonQuery, selectedTypes, pokemonData.length]);
+  }, [pokemonQuery, selectedTypes, selectedVersionGroup, pokemonData.length]);
 
   const totalPokemonPages = Math.max(
     1,
@@ -175,6 +230,14 @@ function PokemonTab() {
     return Array.from(typeSet).sort();
   }, [pokemonData]);
 
+  const filteredVersionGroups = useMemo(() => {
+    const q = versionSearch.trim().toLowerCase();
+    if (!q) return VERSION_GROUP_ORDER;
+    return VERSION_GROUP_ORDER.filter((vg) =>
+      (VERSION_GROUP_LABELS[vg] || vg).toLowerCase().includes(q)
+    );
+  }, [versionSearch]);
+
   return (
     <>
       <section className="search-panel">
@@ -185,6 +248,117 @@ function PokemonTab() {
           placeholder="ค้นหาโปเกมอน เช่น pikachu"
           className="search-input"
         />
+      </section>
+      <section className="version-filter-bar">
+        <div
+          ref={versionDropdownRef}
+          className={`ability-version-dropdown ${versionDropdownOpen ? 'open' : ''}`}
+        >
+          <button
+            type="button"
+            className="ability-version-trigger version-filter-trigger"
+            onClick={() => setVersionDropdownOpen((v) => !v)}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="version-filter-icon"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M8 3v4M16 3v4M3 10h18" />
+            </svg>
+            <span>
+              เวอร์ชั่นเกม:{' '}
+              <strong>
+                {selectedVersionGroup
+                  ? VERSION_GROUP_LABELS[selectedVersionGroup] || selectedVersionGroup
+                  : 'ทั้งหมด'}
+              </strong>
+            </span>
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="ability-version-chevron"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          {versionDropdownOpen && (
+            <div className="ability-version-menu">
+              <div className="ability-version-search-wrap">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="ability-version-search-icon"
+                >
+                  <circle cx="8" cy="8" r="5" />
+                  <path d="M13 13l3.5 3.5" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="text"
+                  className="ability-version-search"
+                  placeholder="ค้นหาเวอร์ชั่น..."
+                  value={versionSearch}
+                  onChange={(e) => setVersionSearch(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  autoFocus
+                />
+                {versionSearch && (
+                  <button
+                    type="button"
+                    className="ability-version-search-clear"
+                    onClick={() => setVersionSearch('')}
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
+              <div className="ability-version-list">
+                <button
+                  type="button"
+                  className={`ability-version-item ${!selectedVersionGroup ? 'active' : ''}`}
+                  onClick={() => {
+                    setSelectedVersionGroup('');
+                    setVersionDropdownOpen(false);
+                    setVersionSearch('');
+                  }}
+                >
+                  ทั้งหมด (All Games)
+                </button>
+                {filteredVersionGroups.length > 0 ? (
+                  filteredVersionGroups.map((vg) => (
+                    <button
+                      key={vg}
+                      type="button"
+                      className={`ability-version-item ${selectedVersionGroup === vg ? 'active' : ''}`}
+                      onClick={() => {
+                        setSelectedVersionGroup(vg);
+                        setVersionDropdownOpen(false);
+                        setVersionSearch('');
+                      }}
+                    >
+                      {VERSION_GROUP_LABELS[vg] || vg}
+                    </button>
+                  ))
+                ) : (
+                  <p className="ability-version-empty">ไม่พบเวอร์ชั่น</p>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
       </section>
       <section className="type-filter-bar">
         <button
