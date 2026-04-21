@@ -297,7 +297,7 @@ function MoveTab() {
 
             <div className="move-stats">
               <div className="move-stat">
-                <span className="move-stat-label">พลัง</span>
+                <span className="move-stat-label">ความแรง</span>
                 <span className="move-stat-value">{move.power ?? '—'}</span>
               </div>
               <div className="move-stat">

@@ -131,7 +131,7 @@ function GuideTab({ onNavigate }) {
             </details>
 
             <details className="guide-card">
-              <summary className="guide-card-summary">การจัดทีม</summary>
+              <summary className="guide-card-summary">4) การจัดทีม</summary>
               <div className="guide-card-body">
                 <div className="guide-team-stack">
                   <section className="guide-mode" aria-label="Universal team building">
@@ -195,14 +195,14 @@ function GuideTab({ onNavigate }) {
             </details>
 
             <details className="guide-card">
-              <summary className="guide-card-summary">สิ่งที่ไม่ควรทำ</summary>
+              <summary className="guide-card-summary">5) สิ่งที่ไม่ควรทำ</summary>
               <div className="guide-card-body">
                 <ul className="guide-list">
-                  <li>ไม่ดูธาตุแล้วฝืนตีท่าที่โดนต้านทานซ้ำๆ</li>
-                  <li>ไม่สนใจ Physical/Special แล้วเลือกท่าผิดฝั่งกับสเตตัสหลักของตัวเอง</li>
-                  <li>ใส่ท่าซ้ำ เช่น 4 ท่าดาเมจประเภทเดียว จนไม่มีทางแก้สถานการณ์</li>
-                  <li>ทำทีมที่แพ้ประเภทเดียวกันเยอะเกินไป โดยไม่รู้ว่าจุดอ่อนคืออะไร</li>
-                  <li>มองข้ามความแม่นยำอาจทำให้พลาดในจังหวะสำคัญได้</li>
+                  <li><strong>1)</strong> ไม่ดูธาตุแล้วฝืนตีท่าที่โดนต้านทานซ้ำๆ</li>
+                  <li><strong>2)</strong> ไม่สนใจ Physical/Special แล้วเลือกท่าผิดฝั่งกับสเตตัสหลักของตัวเอง</li>
+                  <li><strong>3)</strong> ใส่ท่าซ้ำ เช่น 4 ท่าดาเมจประเภทเดียว จนไม่มีทางแก้สถานการณ์</li>
+                  <li><strong>4)</strong> ทำทีมที่แพ้ประเภทเดียวกันเยอะเกินไป โดยไม่รู้ว่าจุดอ่อนคืออะไร</li>
+                  <li><strong>5)</strong> มองข้ามความแม่นยำอาจทำให้พลาดในจังหวะสำคัญได้</li>
                 </ul>
                 <div className="guide-actions">
                   <button type="button" className="guide-link-btn" onClick={goToTipsType}>

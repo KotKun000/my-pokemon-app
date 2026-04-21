@@ -1,7 +1,7 @@
 [
   {
     "id": "sun",
-    "nameTh": "แดดจัด",
+    "nameTh": "แดดจ้า",
     "nameEn": "Harsh sunlight",
     "accent": "#F59E0B",
     "lines": [
@@ -12,7 +12,7 @@
   },
   {
     "id": "rain",
-    "nameTh": "ฝน",
+    "nameTh": "ฝนตก",
     "nameEn": "Rain",
     "accent": "#3B82F6",
     "lines": [
@@ -32,7 +32,7 @@
   },
   {
     "id": "hail",
-    "nameTh": "ลูกเห็บ",
+    "nameTh": "พายุลูกเห็บ",
     "nameEn": "Hail",
     "accent": "#7DD3FC",
     "lines": [
@@ -41,7 +41,7 @@
   },
   {
     "id": "snow",
-    "nameTh": "หิมะ",
+    "nameTh": "หิมะตก",
     "nameEn": "Snow",
     "accent": "#E0F2FE",
     "lines": [
@@ -59,7 +59,7 @@
   },
   {
     "id": "Extremely harsh sunlight",
-    "nameTh": "แดดจัดมากกว่า",
+    "nameTh": "แดดจัด",
     "nameEn": "Extremely harsh sunlight",
     "accent": "#F59E0B",
     "lines": [
@@ -70,7 +70,7 @@
   },
   {
     "id": "Heavy rain",
-    "nameTh": "ฝนหนัก",
+    "nameTh": "ฝนตกหนัก",
     "nameEn": "Heavy rain",
     "accent": "#3B82F6",
     "lines": [
