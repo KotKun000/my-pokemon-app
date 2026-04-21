@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getDefensiveChart } from '../utils/pokemonTypeDefense';
 import { getFallbackTypeIconUrl, getTypeIconUrl } from '../utils/typeIcons';
-import ABILITY_EN from '../data/abilities_en.json';
+import ABILITY_TH from '../data/abilities_th.json';
 import movesData from '../data/moves_th.json';
 import { getTypeBorderStyle, TYPE_COLORS } from '../utils/typeColors';
 
@@ -256,11 +256,11 @@ async function fetchEvolutionChain(pokemonName) {
 }
 
 function fetchAbilityDetail(name) {
-  const data = ABILITY_EN[name];
+  const data = ABILITY_TH[name];
   if (!data) return { name, shortEffect: '', generation: '', versionDescriptions: {} };
   return {
     name,
-    shortEffect: data.short_effect_en || '',
+    shortEffect: data.short_effect_th || '',
     generation: '',
     versionDescriptions: data.game_descriptions || {},
   };
