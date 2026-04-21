@@ -154,77 +154,46 @@
 .gen-filter-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 14px;
 }
 
-.gen-filter-btn {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  min-width: 68px;
-  padding: 7px 12px;
-  border-radius: 12px;
-  border: 1.5px solid #cbd5e1;
-  background: #ffffff;
-  color: #334155;
-  cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.16s ease,
-    background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+.gen-filter-dropdown {
+  width: auto;
 }
 
-.gen-filter-btn:hover {
+.gen-filter-trigger {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
   border-color: #93c5fd;
-  background: #eff6ff;
   color: #1d4ed8;
-  transform: translateY(-1px);
 }
 
-.gen-filter-btn.active {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  border-color: #1d4ed8;
-  color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22),
-    0 6px 14px rgba(30, 64, 175, 0.28);
-  transform: translateY(-1px);
+.gen-filter-trigger:hover {
+  background: linear-gradient(135deg, #dbeafe 0%, #bae6fd 100%);
+  border-color: #60a5fa;
 }
 
-.gen-filter-label {
-  font-size: 0.82rem;
+.gen-filter-trigger strong {
   font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
+  color: #1e3a8a;
 }
 
-.gen-filter-region {
-  font-size: 0.68rem;
-  font-weight: 500;
-  opacity: 0.75;
-  line-height: 1.1;
+.gen-filter-icon {
+  flex-shrink: 0;
+  color: #3b82f6;
 }
 
-.gen-filter-btn.active .gen-filter-region {
-  opacity: 0.9;
+.gen-filter-menu {
+  min-width: 180px;
 }
 
 @media (max-width: 600px) {
-  .gen-filter-bar {
-    gap: 6px;
-  }
-
-  .gen-filter-btn {
-    min-width: 58px;
-    padding: 6px 10px;
-  }
-
-  .gen-filter-label {
-    font-size: 0.78rem;
-  }
-
-  .gen-filter-region {
-    font-size: 0.64rem;
+  .gen-filter-trigger {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
